@@ -18,47 +18,102 @@
 
   <script src="js/modernizr.custom.js"></script>
 
-  <!-- 🔹 Dark/Light Mode Styles -->
   <style>
     /* Default Light Mode */
     body {
       background-color: #ffffff;
       color: #000000;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Dark Mode */
+    /* ===================== */
+    /* DARK MODE OVERRIDES   */
+    /* ===================== */
+    body.dark-mode,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode p,
+    body.dark-mode span,
+    body.dark-mode li,
+    body.dark-mode a,
+    body.dark-mode .block-title,
+    body.dark-mode .ci-text,
+    body.dark-mode .home-text,
+    body.dark-mode .info-list-w-icon,
+    body.dark-mode .btn,
+    body.dark-mode .menu-item a {
+      color: #fff !important;
+    }
+
     body.dark-mode {
       background-color: #121212;
-      color: #e0e0e0;
     }
-
     body.dark-mode header,
     body.dark-mode footer,
     body.dark-mode .page-container {
-      background-color: #1e1e1e;
+      background-color: #1e1e1e !important;
     }
 
-    body.dark-mode a {
-      color: #9ecbff;
+    body.dark-mode .btn-primary,
+    body.dark-mode .btn-secondary {
+      background-color: #223255;
+      border-color: #9ecbff;
+      color: #fff;
     }
 
-    /* Toggle Button Styling */
+    body.dark-mode .block-title {
+      border-bottom: 2px solid #9ecbff;
+    }
+
+    /* ============================== */
+    /* HEADER FLEX & TOGGLE CENTERING */
+    /* ============================== */
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .text-logo {
+      margin-right: auto;
+    }
+    .site-nav {
+      margin-left: auto;
+    }
+
     #theme-toggle {
       background: none;
       border: 1px solid #ccc;
       padding: 5px 10px;
-      margin-left: 20px;
       border-radius: 5px;
       cursor: pointer;
       font-size: 14px;
       color: inherit;
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: rgba(38,38,38,0.85);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
     }
     #theme-toggle:hover {
       background: #f0f0f0;
+      color: #111;
+    }
+    body.dark-mode #theme-toggle {
+      border: 1px solid #9ecbff;
+      background: #223255;
+      color: #fff;
     }
     body.dark-mode #theme-toggle:hover {
       background: #2b2b2b;
+      color: #fff;
     }
   </style>
 </head>
@@ -87,8 +142,8 @@
               <div class="logo-text">Opeyemi <span>Ojajuni</span></div>
             </a>
           </div>
-          <!-- /Text Logo -->
-
+          <!-- Dark/Light Mode Toggle (centered) -->
+          <button id="theme-toggle"><i class="fa fa-moon-o"></i> Dark Mode</button>
           <!-- Navigation -->
           <div class="site-nav mobile-menu-hide">
             <ul class="leven-classic-menu site-main-menu">
@@ -98,10 +153,6 @@
               <li class="menu-item"><a href="awards.html">Awards</a></li>
             </ul>
           </div>
-
-          <!-- Dark/Light Mode Toggle -->
-          <button id="theme-toggle"><i class="fa fa-moon-o"></i> Dark Mode</button>
-
           <!-- Mobile Menu Toggle -->
           <a class="menu-toggle mobile-visible">
             <i class="fa fa-bars"></i>
@@ -110,7 +161,7 @@
       </header>
       <!-- /Header -->
 
-      <!-- Main Content -->
+      <!-- Content -->
       <div id="main" class="site-main">
         <div id="main-content" class="single-page-content">
           <div id="primary" class="content-area">    
@@ -270,11 +321,12 @@
   <script src="js/validator.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- 🔹 Theme Toggle Script -->
+  <!-- Theme Toggle Script -->
   <script>
     const toggleBtn = document.getElementById("theme-toggle");
     const body = document.body;
 
+    // On load, check preference
     if (localStorage.getItem("theme") === "dark") {
       body.classList.add("dark-mode");
       toggleBtn.innerHTML = '<i class="fa fa-sun-o"></i> Light Mode';
