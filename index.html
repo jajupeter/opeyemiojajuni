@@ -1,153 +1,235 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-
+<html lang="en" class="no-js" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <title>Opeyemi Peter ojajuni, Ph.D.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Opeyemi Ojajuni - Resume / CV / vCard" />
-    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio" />
-    <meta name="author" content="lmpixels" />
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Opeyemi Peter ojajuni, Ph.D.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Opeyemi Ojajuni - Resume / CV / vCard" />
+  <meta name="keywords" content="vcard, responsive, retina, resume, jquery, css3, bootstrap, portfolio" />
+  <meta name="author" content="lmpixels" />
+  <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- Existing CSS (keep) -->
+  <link rel="stylesheet" href="css/normalize.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <script src="js/modernizr.custom.js"></script>
-  </head>
+  <script src="js/modernizr.custom.js"></script>
 
-  <body class="page">
+  <!-- Minimal theme + icon styling (new) -->
+  <style>
+    /* THEME TOKENS */
+    :root{
+      --bg: #ffffff;
+      --surface: #f7f8fa;
+      --text: #111418;
+      --muted: #5b6573;
+      --accent: #0ea5e9;
+      --icon: #667085;
+      --icon-hover: #111418;
+      --border: #e5e7eb;
+    }
+    [data-theme="dark"]{
+      --bg: #0b0f14;
+      --surface: #0f151c;
+      --text: #e6e9ef;
+      --muted: #aab2bf;
+      --accent: #22d3ee;
+      --icon: #aab2bf;
+      --icon-hover: #ffffff;
+      --border: #1f2a37;
+    }
 
-    <div class="lm-animated-bg"></div>
-    
-    <!-- Loading animation -->
-    <div class="preloader">
-      <div class="preloader-animation">
-        <div class="preloader-spinner">
-        </div>
-      </div>
+    /* Apply tokens without fighting your theme too much */
+    body.page{
+      background: var(--bg);
+      color: var(--text);
+    }
+    .header,
+    .site-footer{
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-container a{ color: var(--accent); }
+    .block-title h2{ color: var(--text); }
+
+    /* THEME TOGGLE */
+    .theme-toggle{
+      display:flex; align-items:center; gap:.5rem;
+      border:1px solid var(--border);
+      background:transparent; color:var(--text);
+      padding:.35rem .6rem; border-radius:999px;
+      cursor:pointer; line-height:1;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .theme-toggle:hover{ background:var(--surface); }
+    .theme-toggle svg{ width:18px; height:18px; display:block; }
+
+    /* SOCIAL ICONS (shared for hero + footer) */
+    .social-icons{
+      display:flex; gap:14px; align-items:center;
+    }
+    .social-icons a{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:36px; height:36px; border-radius:50%;
+      color: var(--icon);
+      background: transparent;
+      border: 1px solid var(--border);
+      transition: color .2s ease, border-color .2s ease, transform .15s ease;
+    }
+    .social-icons a:hover{
+      color: var(--hover, var(--icon-hover));
+      border-color: currentColor;
+      transform: translateY(-2px);
+    }
+    .social-icons a svg{
+      width:18px; height:18px; fill: currentColor; display:block;
+    }
+
+    /* Brand hover colors per icon (set via --hover inline style or classes) */
+    .scholar:hover{ --hover:#4285F4; }      /* Google blue */
+    .linkedin:hover{ --hover:#0A66C2; }     /* LinkedIn blue */
+    .researchgate:hover{ --hover:#00CCBB; } /* RG green */
+    .github:hover{ --hover:#ffffff; }       /* GitHub (white in dark) */
+
+    /* Footer tidy */
+    .footer-social-links{ list-style:none; padding:0; margin:0; display:flex; gap:10px; }
+    .footer-social-links li{ margin:0; }
+    .footer-social{ display:flex; align-items:center; gap:10px; }
+    .footer-copyrights p{ color: var(--muted); }
+  </style>
+</head>
+
+<body class="page">
+  <div class="lm-animated-bg"></div>
+
+  <!-- Loading animation -->
+  <div class="preloader">
+    <div class="preloader-animation">
+      <div class="preloader-spinner"></div>
     </div>
-    <!-- /Loading animation -->
+  </div>
 
-    <!-- Scroll To Top Button -->
-    <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
-    <!-- /Scroll To Top Button -->
+  <!-- Scroll To Top Button -->
+  <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
 
-    <div class="page-scroll">
-      <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+  <div class="page-scroll">
+    <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
 
-        <!-- Header -->
-        <header id="site_header" class="header">
-          <div class="header-content clearfix">
-                
-            <!-- Text Logo -->
-            <div class="text-logo">
-              <a href="index.html">
-                <div class="logo-symbol">OO</div>
-                <div class="logo-text">Opeyemi <span>Ojajuni</span></div>
-              </a>
-            </div>
-            <!-- /Text Logo -->
+      <!-- Header -->
+      <header id="site_header" class="header">
+        <div class="header-content clearfix">
 
-            <!-- Navigation -->
-            <div class="site-nav mobile-menu-hide">
-              <ul class="leven-classic-menu site-main-menu">
-                <li class="menu-item current-menu-item">
-                  <a href="index.html">About Me</a>
-                </li>
-
-                <li class="menu-item">
-                  <a href="publications.html">Publications</a>
-                </li>
-
-                <li class="menu-item">
-                  <a href="projects.html">Projects</a>
-                </li>
-
-                <li class="menu-item">
-                  <a href="awards.html">Awards</a>
-                </li>
-
-
-              </ul>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <a class="menu-toggle mobile-visible">
-              <i class="fa fa-bars"></i>
+          <!-- Text Logo -->
+          <div class="text-logo">
+            <a href="index.html">
+              <div class="logo-symbol">OO</div>
+              <div class="logo-text">Opeyemi <span>Ojajuni</span></div>
             </a>
-            <!-- Mobile Menu Toggle -->
           </div>
-        </header>
-        <!-- /Header -->
 
-        <div id="main" class="site-main">
-          <div id="main-content" class="single-page-content">
-            <div id="primary" class="content-area">    
-              <div id="content" class="page-content site-content single-post" role="main">
-                <!-- Home Page Top Part -->
-                <div class="row">
-                  <div class=" col-xs-12 col-sm-12">
-                    <div class="home-content">
-                      <div class="row flex-v-align">
-                        
-                        <div class="col-sm-12 col-md-5 col-lg-5">
-                          <div class="home-photo">
-                            <div class="hp-inner" style="background-image: url(img/main_photo.jpg);">
-                            </div>
-                          </div>
+          <!-- NAV -->
+          <div class="site-nav mobile-menu-hide">
+            <ul class="leven-classic-menu site-main-menu">
+              <li class="menu-item current-menu-item"><a href="index.html">About Me</a></li>
+              <li class="menu-item"><a href="publications.html">Publications</a></li>
+              <li class="menu-item"><a href="projects.html">Projects</a></li>
+              <li class="menu-item"><a href="awards.html">Awards</a></li>
+            </ul>
+          </div>
+
+          <!-- THEME TOGGLE (NEW) -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">
+            <!-- Sun/Moon combo icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 18a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm10-8a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm14.95 6.364a1 1 0 0 1-1.415 1.415l-.708-.708a1 1 0 1 1 1.415-1.415l.708.708ZM6.172 6.172A1 1 0 1 1 4.757 4.757l.708-.708A1 1 0 0 1 6.88 5.464l-.708.708Zm0 11.656-.708.708A1 1 0 0 1 4.05 17.12l.708-.708A1 1 0 1 1 6.172 17.828Zm11.656-11.656.708-.708A1 1 0 0 1 20.95 6.88l-.708.708A1 1 0 1 1 17.828 6.172Z"/>
+            </svg>
+            <span id="themeLabel" style="font-size:.85rem;">Light</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <a class="menu-toggle mobile-visible"><i class="fa fa-bars"></i></a>
+        </div>
+      </header>
+      <!-- /Header -->
+
+      <div id="main" class="site-main">
+        <div id="main-content" class="single-page-content">
+          <div id="primary" class="content-area">
+            <div id="content" class="page-content site-content single-post" role="main">
+
+              <!-- Home Top -->
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                  <div class="home-content">
+                    <div class="row flex-v-align">
+
+                      <div class="col-sm-12 col-md-5 col-lg-5">
+                        <div class="home-photo">
+                          <div class="hp-inner" style="background-image: url(img/main_photo.jpg);"></div>
                         </div>
+                      </div>
 
-                        <div class="col-sm-12 col-md-7 col-lg-7">
-                          <div class="home-text hp-left">
-                              
-                            <div class="owl-carousel text-rotation">                                    
-                              <div class="item">
-                                <h4> XR & AI Learning Innovation Research Group</h4>
-                              </div>
+                      <div class="col-sm-12 col-md-7 col-lg-7">
+                        <div class="home-text hp-left">
+                          <div class="owl-carousel text-rotation">
+                            <div class="item"><h4> XR & AI Learning Innovation Research Group</h4></div>
+                            <div class="item"><h4>VR Jags <br>Southern University and A&M College, Baton Rouge, LA, USA.</h4></div>
+                          </div>
 
-                              <div class="item">
-                                <h4>VR Jags  <br>Southern University and A&M College, Baton Rouge, LA, USA.</h4>
-                              </div>
-                            </div>
-                            <p>College of Sciences and Engineering<br> 
-                              Southern University and A&M College.<br>
-                              801 Hardling Blvd,<br>
-                              Baton Rouge, LA 70807 US.<br>
-                              opeyemi.ojajuni@sus.edu<br>
-                              <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en">
-                                <!-- <i class="fa fa-google" style="font-size:20px; color:red;"></i> -->
-                                Google Scholar
-                              </a> | <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283//">
-                                <!-- <i class="linecons linecons-megaphone"></i> -->
-                                LinkedIn
-                              </a> | <a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf">
-                                <!-- <i class="linecons linecons-display"></i> -->
-                                ResearchGate
-                              </a> | <a href="https://github.com/jajupeter">
-                                <!-- <i class="linecons linecons-display"></i> -->
-                                GitHub
+                          <p>
+                            College of Sciences and Engineering<br>
+                            Southern University and A&M College.<br>
+                            801 Hardling Blvd, Baton Rouge, LA 70807 US.<br>
+                            opeyemi.ojajuni@sus.edu
+                          </p>
 
-                              </a>
-                            </p>
-                            <div class="home-buttons" style="display: flex; gap: 10px;">
-                              <a href="Ope_Jaju2_CV.pdf" target="_blank" class="btn btn-primary">Download Short CV</a>
-                              <a href="Ope_Jaju_CV.pdf" target="_blank" class="btn btn-primary">Download Long CV</a>
-                           
-                              <!-- <a href="#" target="_self" class="btn btn-secondary">Contact</a> -->
-                            </div>
+                          <!-- SOCIAL ICONS (NEW) -->
+                          <div class="social-icons" aria-label="Social profiles">
+                            <!-- Google Scholar -->
+                            <a class="scholar" href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+                              <!-- book icon (generic for Scholar) -->
+                              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <path d="M4 4h10a2 2 0 0 1 2 2v12a1 1 0 0 1-1.447.894L12 17.118l-2.553 1.776A1 1 0 0 1 8 18V6a2 2 0 0 0-2-2Zm14 0h2v16h-2z"/>
+                              </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a class="linkedin" href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 6 3.33 6 7.66V24h-5v-6.8c0-1.62-.03-3.7-2.25-3.7-2.25 0-2.6 1.75-2.6 3.57V24h-5V8z"/>
+                              </svg>
+                            </a>
+                            <!-- ResearchGate -->
+                            <a class="researchgate" href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate">
+                              <!-- stylized RG letters -->
+                              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" fill="currentColor" opacity=".12"></circle>
+                                <path d="M7.5 8.2h3.3c1.6 0 2.6.9 2.6 2.2 0 1.1-.7 2-1.8 2.2l2 3.3h-1.9l-1.8-3H9.2v3H7.5V8.2Zm1.7 1.5v2.1h1.6c.6 0 1.1-.4 1.1-1.1 0-.7-.5-1.1-1.1-1.1H9.2Z"/>
+                              </svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a class="github" href="https://github.com/jajupeter" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.78.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.47 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 .5Z"/>
+                              </svg>
+                            </a>
+                          </div>
+
+                          <div class="home-buttons" style="display:flex; gap:10px; margin-top:14px;">
+                            <a href="Ope_Jaju2_CV.pdf" target="_blank" class="btn btn-primary">Download Short CV</a>
+                            <a href="Ope_Jaju_CV.pdf" target="_blank" class="btn btn-primary">Download Long CV</a>
                           </div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
+              </div>
                 <!-- Home Page Top Part -->
 
                 <!-- Services -->
@@ -330,50 +412,72 @@
           </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="site-footer clearfix">
-          <div class="footer-social">
-            <ul class="footer-social-links">
-              <li><a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en">Google Scholar</a></li>
+<!-- Footer -->
+<footer class="site-footer clearfix">
+  <div class="footer-social">
+    <ul class="footer-social-links">
+      <li>
+        <div class="social-icons">
+          <a class="scholar" href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 24 24"><path d="M4 4h10a2 2 0 0 1 2 2v12a1 1 0 0 1-1.447.894L12 17.118l-2.553 1.776A1 1 0 0 1 8 18V6a2 2 0 0 0-2-2Zm14 0h2v16h-2z"/></svg>
+          </a>
+          <a class="linkedin" href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 6 3.33 6 7.66V24h-5v-6.8c0-1.62-.03-3.7-2.25-3.7-2.25 0-2.6 1.75-2.6 3.57V24h-5V8z"/></svg>
+          </a>
+          <a class="researchgate" href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate" title="ResearchGate">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" fill="currentColor" opacity=".12"></circle>
+              <path d="M7.5 8.2h3.3c1.6 0 2.6.9 2.6 2.2 0 1.1-.7 2-1.8 2.2l2 3.3h-1.9l-1.8-3H9.2v3H7.5V8.2Zm1.7 1.5v2.1h1.6c.6 0 1.1-.4 1.1-1.1 0-.7-.5-1.1-1.1-1.1H9.2Z"/>
+            </svg>
+          </a>
+          <a class="github" href="https://github.com/jajupeter" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.84 1.32 3.53 1.01.11-.78.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.47 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.83.57A12 12 0 0 0 12 .5Z"/></svg>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-copyrights">
+    <p>© <a href="http://xxxxx/" target="new">University xxxxxx</a></p>
+  </div>
+</footer>
+<!-- /Footer -->
 
-              <li><a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/">LinkedIn</a></li>
+</div>
+</div>
 
-              <li><a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf">ResearchGate</a></li>
+<!-- JS (keep existing) -->
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src='js/jquery.shuffle.min.js'></script>
+<script src='js/masonry.pkgd.min.js'></script>
+<script src='js/owl.carousel.min.js'></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/main.js"></script>
 
-              <li><a href="https://github.com/jajupeter">GitHub</a></li>
+<!-- Theme toggle logic (NEW) -->
+<script>
+(function(){
+const root = document.documentElement;
+const btn = document.getElementById('themeToggle');
+const label = document.getElementById('themeLabel');
 
-              <!--li>
-                <a href="#" target="_blank">Twitter</a>
-              </li>
+// Determine initial theme: saved > system > light
+const saved = localStorage.getItem('theme');
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initial = saved || (prefersDark ? 'dark' : 'light');
+root.setAttribute('data-theme', initial);
+if(label) label.textContent = initial.charAt(0).toUpperCase() + initial.slice(1);
 
-              <li>
-                <a href="#" target="_blank">Facebook</a>
-              </li>
-
-              <li>
-                <a href="#" target="_blank">Instagram</a>
-              </li>
-            </ul>
-          </div>
-              
-          <div class="footer-copyrights">
-            <p>© <a href="http://xxxxx/" target="new">University xxxxxx</a></p>
-          </div>
-        </footer>
-        <!-- /Footer -->
-        
-      </div>
-    </div>
-
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src='js/jquery.shuffle.min.js'></script>
-    <script src='js/masonry.pkgd.min.js'></script>
-    <script src='js/owl.carousel.min.js'></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/validator.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-
+btn && btn.addEventListener('click', function(){
+  const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', current);
+  localStorage.setItem('theme', current);
+  if(label) label.textContent = current.charAt(0).toUpperCase() + current.slice(1);
+});
+})();
+</script>
+</body>
 </html>
