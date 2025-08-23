@@ -19,7 +19,7 @@
   <!-- Icons for badges -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Project Card Styles (white cards + bold black titles) -->
+  <!-- Project Card + Modal + Carousel Styles -->
   <style>
     :root{
       --card-bg:#ffffff;
@@ -27,12 +27,7 @@
       --title:#0b1220;
       --text:#1f2a37;
       --muted:#475569;
-      --pill1:#e9f5ff;
-      --pill2:#eefcf7;
-      --pill3:#fff5ec;
-      --accent1:#0ea5e9; /* badge icon tint */
-      --accent2:#10b981;
-      --accent3:#f59e0b;
+      --accent1:#0ea5e9;
     }
 
     .proj-wrap{ max-width:1200px; margin: 0 auto; padding: 0 16px 48px; }
@@ -101,6 +96,23 @@
     .proj-modal p{ color:#334155; }
     .proj-modal h4{ margin:16px 0 8px; font-weight:800; color:#0b1220; }
     .proj-modal a{ color:#0369a1; text-decoration: underline; }
+
+    /* Carousel inside modal */
+    .modal-gallery{ margin-top:14px; }
+    .modal-gallery .igv-slide{
+      border-radius:12px; overflow:hidden;
+      border:1px solid #e6eef5; background:#f8fafc;
+      box-shadow:0 8px 18px rgba(2,6,23,.06);
+    }
+    .modal-gallery img,
+    .modal-gallery video{ width:100%; height:auto; display:block; }
+    .owl-theme .owl-nav [class*='owl-']{
+      background:#0ea5e9; color:#fff !important; border-radius:10px; padding:4px 10px !important; margin:4px;
+    }
+    .owl-theme .owl-dots .owl-dot span{
+      width:10px; height:10px; background:#cbd5e1;
+    }
+    .owl-theme .owl-dots .owl-dot.active span{ background:#0ea5e9; }
   </style>
 
   <script src="js/modernizr.custom.js"></script>
@@ -160,9 +172,7 @@
                 <article class="proj-card">
                   <div class="proj-thumb">
                     <img src="./Projects_files/graph_network.gif" alt="ICLERT VR Training">
-                    <div class="proj-badges">
-
-                    </div>
+                    <div class="proj-badges"></div>
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">Immersive Crisis Leader Emergency Response Training (ICLERT) Applied research Project</h3>
@@ -177,24 +187,20 @@
                   </div>
                 </article>
 
-                <!-- DynamicDeepFlow -->
+                <!-- Immersive Geospatial Visualization -->
                 <article class="proj-card">
                   <div class="proj-thumb">
-                    <img src="./Projects_files/tldcrnn.png" alt="DynamicDeepFlow">
-                    <div class="proj-badges">
-
-                    </div>
+                    <img src="./Projects_files/tldcrnn.png" alt="Immersive Geospatial Visualization">
+                    <div class="proj-badges"></div>
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">Immersive Geospatial Visualization in VR Systems</h3>
-                    <p class="proj-summary">An immersive 3D digital twin of North Baton Rouge that transforms geospatial data into VR experiences empowering urban planners,researchers, educators, and communities to explore, analyze, and reimagine urban spaces in real time.</p>
+                    <p class="proj-summary">An immersive 3D digital twin of North Baton Rouge that transforms geospatial data into VR experiences empowering urban planners, researchers, educators, and communities.</p>
                     <div class="proj-tags">
                       <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
                       <span class="proj-badge"><i class="fa-solid fa-map"></i> Geospatial Data</span>
                       <span class="proj-badge"><i class="fa-solid fa-globe"></i> Visualization</span>
                       <span class="proj-badge"><i class="fa-solid fa-city"></i> Urban Planning</span>
-
-
                     </div>
                     <button class="proj-btn proj-btn--primary" data-open="#modal-dynflow">Read More</button>
                   </div>
@@ -404,48 +410,66 @@
   </div>
 
   <!-- ====== MODALS ====== -->
+  <!-- ICLERT modal with CAROUSEL -->
   <div class="proj-modal" id="modal-iclert" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>Immersive Crisis Leader Emergency Response Training (ICLERT) Applied research Project</h3>
       <h4>Project Overview</h4>
-      <p>ICLERT is a university–agency collaboration applied research project that redefines how crisis leadership is taught and practiced. Born in the aftermath of COVID-19, when the demand for scalable and 
-        adaptable training became urgent, ICLERT combines academic research expertise with public health and emergency management partners, leveraging high-fidelity VR and digital twin technology to replace static tabletop drills with hyper-realistic, scenario-driven simulations. 
-        From hurricanes to electrical failures and gas leaks, the platform immerses emergency managers, police, and risk officers in complex, concurrent incidents where split-second decisions can be practiced safely, without operational risk. The outcome of the project is a scalable, 
-        replicable model that not only advances applied research in VR/AR and data-driven training, but also elevates confidence, accelerates response times, and strengthens organizational resilience in the face of real-world crisis.</p>
+      <p>ICLERT is a university–agency collaboration applied research project that redefines how crisis leadership is taught and practiced. Born after COVID-19, ICLERT combines high-fidelity VR and digital twins to replace static drills with hyper-real, scenario-driven simulations for hurricanes, gas leaks, and electrical failures.</p>
       <h4>Approach</h4>
-      <p>We built a LiDAR-accurate 3D digital twin of Southern University, integrating scenario-driven VR modules for hurricanes, gas leaks, and electrical failures to simulate concurrent crises under pressure. 
-        A modular curriculum (3 foundational, 7 hazard-specific, 2 integrated simulations) was optimized for Meta Quest 3 and CAVE systems, enabling scalable deployment. 
-        An analytics layer with assessments, group tests, and feedback dashboards generated measurable insights into learning gains, decision speed, and user confidence. All content, code, and documentation was packaged for replication, ensuring rapid adoption across universities, agencies, and statewide partners</p>
+      <p>We built a LiDAR-accurate campus twin, a modular curriculum (3 foundational, 7 hazard-specific, 2 integrated simulations) for Meta Quest 3 and CAVE, and an analytics layer that measures learning gains, decision speed, and confidence. All assets are packaged for replication across universities and agencies.</p>
       <h4>Outcome</h4>
-      <p>We have already trained 35+ crisis leaders through immersive, real-time VR scenarios, demonstrating measurable gains in decision-making speed, confidence, and crisis readiness. 
-        With 10+ deployment-ready modules now in use, the program not only strengthens frontline response but also inspires a new generation of students to pursue careers in emergency management. 
-        In partnership with the Louisiana Department of Health, ICLERT showcases the power of university–agency collaboration, delivering a replicable model that strengthens workforce resilience, supports regulatory compliance, and advances statewide disaster preparedness.</p>
+      <p>Trained 35+ crisis leaders with measurable gains in decision speed and confidence. 10+ deployment-ready modules are in use; with the Louisiana Department of Health partnership, the model scales statewide for workforce resilience and preparedness.</p>
 
-      <!--p><a href="https://www.youtube.com/watch?v=hqIQfs0foEg" target="_blank">Talk</a></p-->
+      <!-- CAROUSEL (Option B) -->
+      <div class="modal-gallery owl-carousel owl-theme igv-carousel">
+        <!-- Replace src paths with your real media -->
+        <div class="igv-slide"><img src="media/iclert_twin.jpg" alt="LiDAR Digital Twin"></div>
+        <div class="igv-slide"><img src="media/iclert_scenario.jpg" alt="Scenario Driven Training"></div>
+        <div class="igv-slide">
+          <video controls playsinline preload="metadata">
+            <source src="media/iclert_demo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Immersive Geospatial Visualization modal with CAROUSEL -->
   <div class="proj-modal" id="modal-dynflow" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>Immersive Geospatial Visualization in VR Systems</h3>
       <h4>Project Overview</h4>
-      <p>This project builds an immersive geospatial digital twin of Baton Rouge, combining OpenStreetMap (OSM), ArcGIS, and CityEngine with high-fidelity rendering in VR headsets and CAVE systems. 
-        Designed for researchers, urban planners, educators, and the public, the platform enables users to step into a live 3D representation of the city, interact with infrastructure, and explore urban spaces beyond the limits of traditional maps. 
-        By fusing spatial datasets with immersive technologies, the project demonstrates how applied research can bridge cartography, visualization, and real-world decision-making.</p>
+      <p>We built an immersive geospatial digital twin of Baton Rouge using OSM, ArcGIS, and CityEngine, rendered for VR headsets and CAVE systems. Users explore a live 3D representation of the city to interact with infrastructure and land use far beyond 2D maps.</p>
       <h4>Approach</h4>
-      <p>We engineered a data-to-immersion pipeline that starts with geospatial extraction from OSM and ArcGIS, preparing multi-layer datasets of roads, land use, terrain, and infrastructure. Using Esri CityEngine, we procedurally modeled North Baton Rouge into a realistic 3D cityscape, applying textures and optimizing for real-time rendering. 
-        The models were deployed across VR headsets (Oculus, HTC Vive) and CAVE systems, enabling both single-user and multi-user immersive experiences. Interactive tools for navigation, zoom, and landmark exploration were layered on top, while user testing provided insights on usability, realism, and potential applications in planning, education, and tourism.</p>
+      <p>Our pipeline extracts/cleans multi-layer GIS, procedurally models the city, and deploys to VR and CAVE with intuitive navigation/zoom/landmark tools. Usability testing informed realism and planning/education use cases.</p>
       <h4>Outcome</h4>
-      <p>The project delivered an interactive 3D Baton Rouge model accessible in VR and CAVE systems, enabling deeper spatial understanding of urban form and land use compared to 2D maps. 
-        It demonstrated value as both an educational and planning tool, supporting city design, geography instruction, and public engagement. Critically, the project established a scalable framework that can be extended to other cities, setting the stage for immersive digital twins that integrate real-time data streams (traffic, weather, environment). 
-        This applied research highlights how immersive geospatial visualization can evolve into dynamic, decision-ready platforms for smart cities and digital transformation..</p>
+      <p>An interactive 3D Baton Rouge model in VR and CAVE that boosts spatial understanding and planning workflows. The framework is city-agnostic and ready for real-time data streams (traffic, weather) to evolve toward digital twins.</p>
+
+      <!-- CAROUSEL (Option B) -->
+      <div class="modal-gallery owl-carousel owl-theme igv-carousel">
+        <!-- Replace src paths with your real media -->
+        <div class="igv-slide"><img src="media/br_overview.jpg" alt="Baton Rouge Overview"></div>
+        <div class="igv-slide"><img src="media/cityengine_blocks.jpg" alt="CityEngine Procedural Blocks"></div>
+        <div class="igv-slide">
+          <video controls playsinline preload="metadata">
+            <source src="media/vr_nav_demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="igv-slide">
+          <video controls playsinline preload="metadata">
+            <source src="media/cave_walkthrough.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Other modals (unchanged content) -->
   <div class="proj-modal" id="modal-netpredict" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
@@ -536,21 +560,48 @@
   </div>
   <!-- ====== /MODALS ====== -->
 
-  <!-- Tiny JS to open/close modals -->
+  <!-- Tiny JS to open/close modals + init/refresh carousels -->
   <script>
+    // Open/close modals
     document.addEventListener('click', (e) => {
       const opener = e.target.closest('[data-open]');
       const closer = e.target.closest('[data-close]');
       if (opener){
         const sel = opener.getAttribute('data-open');
         const modal = document.querySelector(sel);
-        if (modal){ modal.setAttribute('aria-hidden','false'); }
+        if (modal){
+          modal.setAttribute('aria-hidden','false');
+          // Initialize carousels inside the now-open modal
+          initModalCarousels(modal);
+        }
       }
       if (closer || e.target.classList.contains('overlay')){
         const modal = e.target.closest('.proj-modal') || document.querySelector('.proj-modal[aria-hidden="false"]');
         if (modal){ modal.setAttribute('aria-hidden','true'); }
       }
     });
+
+    // Initialize or refresh Owl Carousels inside a given modal
+    function initModalCarousels(root){
+      const $carousels = $(root).find('.igv-carousel');
+      $carousels.each(function(){
+        const $c = $(this);
+        if ($c.hasClass('owl-loaded')) {
+          $c.trigger('refresh.owl.carousel');
+        } else {
+          $c.owlCarousel({
+            items:1,
+            margin:10,
+            loop:true,
+            nav:true,
+            dots:true,
+            autoplay:false,
+            autoplayHoverPause:true,
+            video:true
+          });
+        }
+      });
+    }
   </script>
 
   <!-- Your existing scripts -->
