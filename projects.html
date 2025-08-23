@@ -19,6 +19,81 @@
   <link rel="stylesheet" href="css/main.css" type="text/css">
 
   <script src="js/modernizr.custom.js"></script>
+
+<!-- Font Awesome (icons for badges/tags) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Project Cards Styles -->
+<style>
+:root{
+  --card:#0f141b; --text:#eaf2fb; --muted:#a9bfd6;
+  --ring:#76e4f7; --ring2:#9ef7d2; --border:rgba(255,255,255,.08);
+}
+.proj-wrap{ max-width:1100px; margin: 0 auto; padding: 0 16px 24px; }
+.proj-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
+@media (min-width:768px){ .proj-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (min-width:1100px){ .proj-grid{ grid-template-columns: repeat(3,1fr); } }
+
+.proj-card{
+  background: var(--card);
+  color: var(--text);
+  border:1px solid var(--border);
+  border-radius:16px; overflow:hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  transform: translateZ(0);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  cursor: default;
+}
+.proj-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.5);
+  border-color: rgba(118,228,247,.35);
+}
+.proj-thumb{ position:relative; aspect-ratio:16/9; background:#081019; overflow:hidden; }
+.proj-thumb img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .5s ease; }
+.proj-card:hover .proj-thumb img{ transform: scale(1.06); }
+
+/* badges on the image */
+.proj-badges{ position:absolute; left:10px; bottom:10px; display:flex; gap:6px; flex-wrap:wrap; }
+.proj-badge{
+  font-size:12px; padding:4px 8px; border-radius:999px;
+  color:#02141f; background: linear-gradient(135deg, var(--ring2), var(--ring));
+  border:1px solid rgba(255,255,255,.2);
+  display:inline-flex; align-items:center; gap:6px;
+}
+
+.proj-body{ padding:14px; }
+.proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; }
+.proj-summary{ margin:0 0 10px; font-size:14px; color: var(--muted); }
+.proj-tags{ font-size:12px; color:#cfe6ff; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.9; }
+.proj-btn{
+  appearance:none; border:1px solid rgba(255,255,255,.12);
+  background: transparent; color: var(--text);
+  padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
+  transition: all .25s ease;
+}
+.proj-btn--primary{
+  background: linear-gradient(135deg, #3a86ff, #68f0ff);
+  color:#00111a; border-color:transparent; font-weight:600;
+}
+.proj-btn:hover{ transform: translateY(-1px); }
+
+/* Modal (popup) */
+.proj-modal{ position:fixed; inset:0; display:none; }
+.proj-modal[aria-hidden="false"]{ display:block; }
+.proj-modal .overlay{ position:absolute; inset:0; background:rgba(3,10,16,.72); backdrop-filter: blur(4px); }
+.proj-modal .dialog{
+  position:relative; z-index:1; margin:6vh auto; max-width:880px;
+  background:#0e141b; color:var(--text); border:1px solid var(--border);
+  border-radius:16px; padding:20px 22px 22px; box-shadow:0 18px 45px rgba(0,0,0,.5);
+}
+.proj-modal .close{ position:absolute; right:10px; top:10px; font-size:26px; line-height:1;
+  background:transparent; border:none; color:#cfe6ff; cursor:pointer; }
+.proj-modal h3{ margin:0 0 6px; }
+.proj-modal p{ color:#c8d7e6; }
+.proj-modal h4{ margin:16px 0 8px; }
+</style>
+
 </head>
 
 <body class="page">
