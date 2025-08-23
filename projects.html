@@ -1,110 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Opeyemi Peter ojajuni, Ph.D.</title>
+  <title>Opeyemi Peter Ojajuni, Ph.D. — Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Opeyemi Ojajuni - Resume / CV / vCard" />
-  <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio" />
+  <meta name="description" content="Projects - Opeyemi Ojajuni" />
+  <meta name="keywords" content="vcard, responsive, resume, portfolio, projects, ai, vr, networking" />
   <meta name="author" content="lmpixels" />
   <link rel="shortcut icon" href="favicon.ico">
 
-
+  <!-- Existing site styles -->
   <link rel="stylesheet" href="css/normalize.css" type="text/css">
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
   <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
 
+  <!-- Icons for badges/tags -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Project Cards Styles (lightweight, self-contained) -->
+  <style>
+    :root{
+      --card:#0f141b; --text:#eaf2fb; --muted:#a9bfd6;
+      --ring:#76e4f7; --ring2:#9ef7d2; --border:rgba(255,255,255,.08);
+    }
+    .proj-wrap{ max-width:1200px; margin: 0 auto; padding: 0 16px 40px; }
+    .proj-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
+    @media (min-width:768px){ .proj-grid{ grid-template-columns: repeat(2,1fr); } }
+    @media (min-width:1200px){ .proj-grid{ grid-template-columns: repeat(3,1fr); } }
+
+    .proj-card{
+      background: var(--card); color: var(--text);
+      border:1px solid var(--border); border-radius:16px; overflow:hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+      transform: translateZ(0);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .proj-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(0,0,0,.5);
+      border-color: rgba(118,228,247,.35);
+    }
+    .proj-thumb{ position:relative; aspect-ratio:16/9; background:#081019; overflow:hidden; }
+    .proj-thumb img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .5s ease; }
+    .proj-card:hover .proj-thumb img{ transform: scale(1.06); }
+
+    .proj-badges{ position:absolute; left:10px; bottom:10px; display:flex; gap:6px; flex-wrap:wrap; }
+    .proj-badge{
+      font-size:12px; padding:4px 8px; border-radius:999px;
+      color:#02141f; background: linear-gradient(135deg, var(--ring2), var(--ring));
+      border:1px solid rgba(255,255,255,.2);
+      display:inline-flex; align-items:center; gap:6px;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+    }
+
+    .proj-body{ padding:14px; }
+    .proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; }
+    .proj-summary{ margin:0 0 10px; font-size:14px; color: var(--muted); min-height: 60px; }
+    .proj-tags{ font-size:12px; color:#cfe6ff; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.9; }
+    .proj-btn{
+      appearance:none; border:1px solid rgba(255,255,255,.12);
+      background: transparent; color: var(--text);
+      padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
+      transition: all .25s ease;
+    }
+    .proj-btn--primary{
+      background: linear-gradient(135deg, #3a86ff, #68f0ff);
+      color:#00111a; border-color:transparent; font-weight:600;
+    }
+    .proj-btn:hover{ transform: translateY(-1px); }
+
+    /* Modal (popup) */
+    .proj-modal{ position:fixed; inset:0; display:none; }
+    .proj-modal[aria-hidden="false"]{ display:block; }
+    .proj-modal .overlay{ position:absolute; inset:0; background:rgba(3,10,16,.72); backdrop-filter: blur(4px); }
+    .proj-modal .dialog{
+      position:relative; z-index:1; margin:6vh auto; max-width:900px;
+      background:#0e141b; color:var(--text); border:1px solid var(--border);
+      border-radius:16px; padding:22px 22px 24px; box-shadow:0 18px 45px rgba(0,0,0,.5);
+    }
+    .proj-modal .close{ position:absolute; right:10px; top:6px; font-size:28px; line-height:1;
+      background:transparent; border:none; color:#cfe6ff; cursor:pointer; }
+    .proj-modal h3{ margin:0 0 6px; }
+    .proj-modal p{ color:#c8d7e6; }
+    .proj-modal h4{ margin:16px 0 8px; }
+    .proj-modal a{ color:#8fe3ff; text-decoration: underline; }
+  </style>
+
   <script src="js/modernizr.custom.js"></script>
-
-<!-- Font Awesome (icons for badges/tags) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Project Cards Styles -->
-<style>
-:root{
-  --card:#0f141b; --text:#eaf2fb; --muted:#a9bfd6;
-  --ring:#76e4f7; --ring2:#9ef7d2; --border:rgba(255,255,255,.08);
-}
-.proj-wrap{ max-width:1100px; margin: 0 auto; padding: 0 16px 24px; }
-.proj-grid{ display:grid; grid-template-columns:1fr; gap:20px; }
-@media (min-width:768px){ .proj-grid{ grid-template-columns: repeat(2,1fr); } }
-@media (min-width:1100px){ .proj-grid{ grid-template-columns: repeat(3,1fr); } }
-
-.proj-card{
-  background: var(--card);
-  color: var(--text);
-  border:1px solid var(--border);
-  border-radius:16px; overflow:hidden;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
-  transform: translateZ(0);
-  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-  cursor: default;
-}
-.proj-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(0,0,0,.5);
-  border-color: rgba(118,228,247,.35);
-}
-.proj-thumb{ position:relative; aspect-ratio:16/9; background:#081019; overflow:hidden; }
-.proj-thumb img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .5s ease; }
-.proj-card:hover .proj-thumb img{ transform: scale(1.06); }
-
-/* badges on the image */
-.proj-badges{ position:absolute; left:10px; bottom:10px; display:flex; gap:6px; flex-wrap:wrap; }
-.proj-badge{
-  font-size:12px; padding:4px 8px; border-radius:999px;
-  color:#02141f; background: linear-gradient(135deg, var(--ring2), var(--ring));
-  border:1px solid rgba(255,255,255,.2);
-  display:inline-flex; align-items:center; gap:6px;
-}
-
-.proj-body{ padding:14px; }
-.proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; }
-.proj-summary{ margin:0 0 10px; font-size:14px; color: var(--muted); }
-.proj-tags{ font-size:12px; color:#cfe6ff; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.9; }
-.proj-btn{
-  appearance:none; border:1px solid rgba(255,255,255,.12);
-  background: transparent; color: var(--text);
-  padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
-  transition: all .25s ease;
-}
-.proj-btn--primary{
-  background: linear-gradient(135deg, #3a86ff, #68f0ff);
-  color:#00111a; border-color:transparent; font-weight:600;
-}
-.proj-btn:hover{ transform: translateY(-1px); }
-
-/* Modal (popup) */
-.proj-modal{ position:fixed; inset:0; display:none; }
-.proj-modal[aria-hidden="false"]{ display:block; }
-.proj-modal .overlay{ position:absolute; inset:0; background:rgba(3,10,16,.72); backdrop-filter: blur(4px); }
-.proj-modal .dialog{
-  position:relative; z-index:1; margin:6vh auto; max-width:880px;
-  background:#0e141b; color:var(--text); border:1px solid var(--border);
-  border-radius:16px; padding:20px 22px 22px; box-shadow:0 18px 45px rgba(0,0,0,.5);
-}
-.proj-modal .close{ position:absolute; right:10px; top:10px; font-size:26px; line-height:1;
-  background:transparent; border:none; color:#cfe6ff; cursor:pointer; }
-.proj-modal h3{ margin:0 0 6px; }
-.proj-modal p{ color:#c8d7e6; }
-.proj-modal h4{ margin:16px 0 8px; }
-</style>
-
 </head>
 
 <body class="page">
-
   <div class="lm-animated-bg"></div>
 
   <!-- Loading animation -->
   <div class="preloader">
     <div class="preloader-animation">
-      <div class="preloader-spinner">
-      </div>
+      <div class="preloader-spinner"></div>
     </div>
   </div>
   <!-- /Loading animation -->
@@ -119,7 +113,6 @@
       <!-- Header -->
       <header id="site_header" class="header">
         <div class="header-content clearfix">
-
           <!-- Text Logo -->
           <div class="text-logo">
             <a href="index.html">
@@ -127,35 +120,19 @@
               <div class="logo-text">Opeyemi <span>Ojajuni</span></div>
             </a>
           </div>
-          <!-- /Text Logo -->
 
           <!-- Navigation -->
           <div class="site-nav mobile-menu-hide">
             <ul class="leven-classic-menu site-main-menu">
-              <li class="menu-item">
-                <a href="index.html">About Me</a>
-              </li>
-
-              <li class="menu-item current-menu-item">
-                <a href="publications.html">Publications</a>
-              </li>
-
-              <li class="menu-item">
-                <a href="projects.html">Projects</a>
-              </li>
-
-              <li class="menu-item">
-                <a href="awards.html">Awards</a>
-              </li>
-
+              <li class="menu-item"><a href="index.html">About Me</a></li>
+              <li class="menu-item"><a href="publications.html">Publications</a></li>
+              <li class="menu-item current-menu-item"><a href="projects.html">Projects</a></li>
+              <li class="menu-item"><a href="awards.html">Awards</a></li>
             </ul>
           </div>
 
           <!-- Mobile Menu Toggle -->
-          <a class="menu-toggle mobile-visible">
-            <i class="fa fa-bars"></i>
-          </a>
-          <!-- Mobile Menu Toggle -->
+          <a class="menu-toggle mobile-visible"><i class="fa fa-bars"></i></a>
         </div>
       </header>
       <!-- /Header -->
@@ -166,706 +143,398 @@
 
             <div class="page-title" style="text-align: center; padding: 40px 70px;">
               <h1>Projects</h1>
-              <div class="page-subtitle">
-                <!-- <h4> 8 Years of Experience</h4> -->
-              </div>
+              <div class="page-subtitle"></div>
             </div>
-            <div id="content" class="page-content site-content single-post" role="main">
 
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+            <!-- ====== PROJECT CARDS (scannable grid) ====== -->
+            <section class="proj-wrap">
+              <div class="proj-grid">
 
-                  <div class="block-title">
-                    <h2> Immersive Crisis Leader Emergency Response Training (ICLERT) Applied Research Project </h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>ICLERT is a university–agency collaboration that redefines how crisis leadership is taught and practiced. Born in the aftermath of COVID-19, when the demand for scalable and adaptable training became urgent, ICLERT combines academic research expertise with public health and emergency management partners, leveraging high-fidelity VR and digital twin technology to replace static tabletop drills with hyper-realistic, scenario-driven simulations. From hurricanes to electrical failures and gas leaks, the platform immerses emergency managers, police, and risk officers in complex, concurrent incidents where split-second decisions can be practiced safely, without operational risk. The outcome of the project is a scalable, replicable model that not only advances applied research in VR/AR and data-driven training, but also elevates confidence, accelerates response times, and strengthens organizational resilience in the face of real-world crisis.</p>
-                        <p>We built a LiDAR-accurate 3D digital twin of Southern University, integrating scenario-driven VR modules for hurricanes, gas leaks, and electrical failures to simulate concurrent crises under pressure. A modular curriculum (3 foundational, 7 hazard-specific, 2 integrated simulations) was optimized for Meta Quest 3 and CAVE systems, enabling scalable deployment. An analytics layer with assessments, group tests, and feedback dashboards generated measurable insights into learning gains, decision speed, and user confidence. All content, code, and documentation was packaged for replication, ensuring rapid adoption across universities, agencies, and statewide partners.</p>
-                      </div>
+                <!-- ICLERT -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/graph_network.gif" alt="ICLERT VR Training">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
+                      <span class="proj-badge"><i class="fa-solid fa-cubes"></i> Digital Twin</span>
+                      <span class="proj-badge"><i class="fa-solid fa-handshake"></i> Univ–Agency</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/graph_network.gif" align="center">
-                    <p>We have already trained 35+ crisis leaders through immersive, real-time VR scenarios, demonstrating measurable gains in decision-making speed, confidence, and crisis readiness. With 10+ deployment-ready modules now in use, the program not only strengthens frontline response but also inspires a new generation of students to pursue careers in emergency management. In partnership with the Louisiana Department of Health, ICLERT showcases the power of university–agency collaboration, delivering a replicable model that strengthens workforce resilience, supports regulatory compliance, and advances statewide disaster preparedness. <a
-                        href="https://www.computer.org/csdl/proceedings-article/icnp/2019/08888090/1ezRKmgOSXK"
-                        target="new"> Paper1</a> , <a
-                        href="https://link.springer.com/chapter/10.1007/978-3-030-45778-5_20" target="new"> Paper2</a> ,
-                      <a href="https://www.youtube.com/watch?v=hqIQfs0foEg" target="new"> Talk.</a>
-                    </p>
-
+                  <div class="proj-body">
+                    <h3 class="proj-title">ICLERT: Immersive Crisis Leader Training</h3>
+                    <p class="proj-summary">LiDAR‑accurate campus twin + high‑fidelity simulations for hurricanes, gas leaks, and electrical hazards. Scalable curriculum and outcome analytics for decision speed & confidence.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-headset"></i> Quest 3 / CAVE</span>
+                      <span><i class="fa-solid fa-brain"></i> Assessment</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-iclert">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- /Services -->
+                </article>
 
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
-
-                  <div class="block-title">
-                    <h2>DynamicDeepFlow: An Approach for Identifying Changes in Network Traffic Flow Using Unsupervised
-                      Clustering</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/tldcrnn.png" align="center">
-                    <p>Understanding flow changes in network traffic has great importance in designing and building
-                      robust networking infrastructure. Recent efforts from industry and academia have led to the
-                      development of monitoring tools that are capable of collecting real-time flow data, predicting
-                      future traffic patterns, and mirroring packet headers. These monitoring tools, however, require
-                      offline analysis of the data to understand the big versus small flows and recognize congestion hot
-                      spots in the network, which is still an unfilled gap in research. </p>
-
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-
-                        <p>In this study, we proposed
-                          an innovative unsupervised clustering approach, DynamicDeepFlow, for network traffic pattern
-                          clustering. The DynamicDeepFlow can recognize unseen network traffic patterns based on the
-                          analysis of the rapid flow changes from the historical data. The proposed method consists of a
-                          deep learning model, variational autoencoder, and a shallow learning model, k-means++. The
-                          variational autoencoder is used to compress and extract the most useful features from the flow
-                          inputs. The compressed and extracted features then serve as input-output pairs to k-means++.
-                          The k-means++ explores the structure hidden in these features and then uses them to cluster
-                          the network traffic patterns. To the best of our knowledge, this is one of the first attempts
-                          to apply a real-time network clustering approach to monitor network operations. The real-world
-                          network flow data from Energy Sciences Network (a network serving the U.S. Department of
-                          Energy to support U.S. scientific research) was utilized to verify the performance of the
-                          proposed approach in network traffic pattern clustering. The verification results show that
-                          the proposed method
-                          is able to distinguish anomalous network traffic patterns from normal
-                          patterns, and thereby trigger an anomaly flag <a
-                            href="https://dl.acm.org/doi/abs/10.1007/978-3-030-98978-1_7" target="new"> Paper</a> , <a
-                            href="https://lightbytes.es.net/2021/12/02/esnet-machine-learning-researchers-win-best-paper-at-mln-2021/"
-                            target="new"> BEST PAPER AWARD</a>.
-                        </p>
-                      </div>
+                <!-- DynamicDeepFlow -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/tldcrnn.png" alt="DynamicDeepFlow">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-brain"></i> AI/ML</span>
+                      <span class="proj-badge"><i class="fa-solid fa-network-wired"></i> WAN</span>
+                      <span class="proj-badge"><i class="fa-solid fa-award"></i> Best Paper</span>
                     </div>
                   </div>
-                </div>
-
-
-              </div>
-              <!-- /Services -->
-
-
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
-
-
-
-                  <div class="block-title">
-                    <h2>NetPredict: Real-time Deep Learning Predictions for Network Traffic Forecasting</h2>
+                  <div class="proj-body">
+                    <h3 class="proj-title">DynamicDeepFlow</h3>
+                    <p class="proj-summary">VAE + k‑means++ pipeline detects rapid traffic pattern changes and flags anomalies in real‑time on research networks.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-chart-line"></i> Unsupervised</span>
+                      <span><i class="fa-solid fa-database"></i> ESnet</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-dynflow">Read More</button>
                   </div>
-                </div>
-              </div>
+                </article>
 
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Predicting network traffic in advance can impact how engineers configure and utilize network
-                          bandwidth to manage available capacity, prevent congestion and better use network resources.
-                        </p>
-
-                        <p>However,in large wide area networks (WANs), network traffic is generated in immense volumes
-                          and patterns constantly change based on user behaviors, causing prediction models loose
-                          accuracy in the future.</p>
-
-                        <p>In this work, we demonstrate NetPredict, a real-time data framework for deploying and testing
-                          multiple ML models for network traffic prediction. Focused on predicting hourly, weekly and
-                          monthly. NetPredict allows users to deploy their deep learning or statistical prediction
-                          models to predict link bandwidth and measure how well they are performing in real-time.
-                          Through an interactive interface, engineers can select the least used routing paths to prevent
-                          congestion. NetPredict also accompanies a trust dashboard that shows how well ML models
-                          perform with real-time network traffic.</p>
-
-                        <p> NetPredict is designed to deploy and test multiple prediction models - statistical and
-                          machine learning - and show how well each model performs with real-time data. This helps build
-                          trust in the prediction models, to view how good the models perform and allows users/engineers
-                          to switch between models for their decision-making. </p>
-                      </div>
+                <!-- NetPredict -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/netpred.gif" alt="NetPredict">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-microchip"></i> Forecasting</span>
+                      <span class="proj-badge"><i class="fa-solid fa-gauge-high"></i> Dashboard</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/netpred.gif" align="center">
-                    <p>NetPredict Demo showing the Graphical user interface. A source and destination is been selected
-                      and the most optimal network path is calculated considering the different traffic contions such as
-                      bandwitdth, throuput and latency. NetPredict is focused on predicting hourly, weekly and monthly,
-                      and it allows users to deploy their deep learning or statistical prediction models to predict link
-                      bandwidth and measure how well they are performing in real-time. <a
-                        href="https://www.osti.gov/biblio/1769344" target="new"> Link.</a> </p>
-
+                  <div class="proj-body">
+                    <h3 class="proj-title">NetPredict</h3>
+                    <p class="proj-summary">Deploy & compare ML/stat models to forecast link bandwidth; engineers select the most trustworthy model per horizon.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-brain"></i> DL + Stats</span>
+                      <span><i class="fa-solid fa-route"></i> Path Planning</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-netpredict">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- /Services -->
+                </article>
 
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
-
-
-
-
-
-                  <div class="block-title">
-                    <h2>Deep Reinforcement Learning based Control for two-dimensional Coherent Laser beam Combining</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>High power lasers are indispensable for various applications in advanced particle
-                          accelerators and other applications both in industrial initiatives and fundamental research.
-                          The past decade has seen a rapid development of several studies of coherent beam combining
-                          (CBC) of fiber lasers demonstrating great potential in breaking through the power limitation
-                          of a single laser beam while maintaining good beam quality, controlling the phase of a
-                          coherent laser beam and optimal tuning of particle accelerators remains a very challenging
-                          problem. There has been an increasing interest in machine learning techniques, especially deep
-                          reinforcement learning both in the particle accelerator community and academia, where
-                          researchers have proposed approaches to tackle the problem of attaining an optimal working
-                          point and performance recovery after the machine drifts. For instance, a common reference beam
-                          can be used for phase detection where each input beam interfaces with a fraction in a free
-                          space to measure the phase errors. The stochastic parallel gradient descent (SPDG) is another
-                          technique used in controlling phase where it randomly searches for an optimum set of values
-                          However, all these techniques comes with some instinctive limitations. It is pertinent to note
-                          that even though traditional coherent laser beam combining stabilization methods rely
-                          exclusively on a reaction to observed data, improving the latency of the feedback loop and
-                          controlling the beam intensity remains a challenging task</p>
-                        <p>In this work, we demonstrate deep reinforcement learning based phase stabilization control
-                          for two-dimensional filled-aperture diffractive coherent combining. Various approaches were
-                          tested on simulation and experimental data for combining 3 × 3 beams using pattern
-                          recognition.</p>
-                      </div>
+                <!-- DRL for Coherent Laser Beam Combining -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/laser.gif" alt="DRL Coherent Laser Combining">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-bolt"></i> Lasers</span>
+                      <span class="proj-badge"><i class="fa-solid fa-robot"></i> Reinforcement Learning</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/laser.gif" align="center">
-                    <p>Demo showing Snapshot of the real-setup and how stability is achieved keeping the center beam
-                      intensity highest. In the real system for example, the noise bandwidth is about 100Hz and the
-                      sample rate is kHz, and we have 100s of these laser beams. So,fast feedback is needed to control
-                      and stabilize the system against unwanted noise in real-time. The main objective is to always keep
-                      the center beam intensity highest irrespective of the environmental pertubations. <a
-                        href="https://opg.optica.org/abstract.cfm?uri=LAC-2020-JTu5A.7" target="new"> Paper1</a> , <a
-                        href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-8-12639&id=470958" target="new">
-                        Paper2</a> , <a href="https://opg.optica.org/abstract.cfm?uri=ASSL-2020-ATu4A.6" target="new">
-                        Paper3.</a> </p>
-
+                  <div class="proj-body">
+                    <h3 class="proj-title">DRL for Coherent Laser Combining</h3>
+                    <p class="proj-summary">Deep RL stabilizes 3×3 beam arrays, maximizing center-beam intensity under noise and drift in real setups.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-atom"></i> Optics</span>
+                      <span><i class="fa-solid fa-flask"></i> Experimental</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-laser">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- /Services -->
+                </article>
 
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
-
-
-
-
-
-                  <div class="block-title">
-                    <h2> Dynamic Graph Neural Network for Traffic Forecasting in Wide Area Networks </h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p> Wide area networking infrastructures (WANs), particularly science and research WANs, are the
-                          backbone for moving large volumes of scientific data between experimental facilities and data
-                          centers. With demands growing at exponential rates, these networks are struggling to cope with
-                          large data volumes, real-time responses, and overall network performance. Network operators
-                          are increasingly looking for innovative ways to manage the limited underlying network
-                          resources. Forecasting network traffic is a critical capability for proactive resource
-                          management, congestion mitigation, and dedicated transfer provisioning. To this end, we
-                          propose a non autoregressive graph-based neural network for multistep network traffic
-                          forecasting. Specifically, we develop a dynamic variant of diffusion convolutional recurrent
-                          neural networks to forecast traffic in research WANs. We evaluate the efficacy of our approach
-                          on real traffic from ESnet, the U.S. Department of Energy's dedicated science network. Our
-                          results show that compared to classical forecasting methods,
-                          our approach explicitly learns the dynamic nature of spatiotemporal traffic patterns, showing
-                          significant improvements in forecasting accuracy. Our technique can surpass existing
-                          statistical and deep learning approaches by achieving ~20% mean absolute percentage error for
-                          multiple hours of forecasts despite dynamic network traffic settings.
-
-                        </p>
-                      </div>
+                <!-- Dynamic GNN for WAN Forecasting -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/ddcrnn.png" alt="Dynamic GNN for WAN Forecasting">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-project-diagram"></i> Graph NN</span>
+                      <span class="proj-badge"><i class="fa-solid fa-network-wired"></i> WAN</span>
                     </div>
                   </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/ddcrnn.png" align="center">
-                    <p>Dynamic-DCRNN (D-DCRNN) model architecture. It takes an adjacency matrix computed from the
-                      current state of the network traffic amongthe sites of the WAN network topology and the traffic as
-                      a time-series at each node of the graph. The encoder-decoder deepneural network is used to
-                      forecast the network traffic for mutiple time steps. <a
-                        href="https://www.computer.org/csdl/proceedings-article/big-data/2020/09512748/1w7eCiTsXy87"
-                        target="new"> Paper</a>. </p>
-
+                  <div class="proj-body">
+                    <h3 class="proj-title">Dynamic GNN for WAN Forecasting</h3>
+                    <p class="proj-summary">Dynamic DCRNN learns spatiotemporal patterns to forecast multi‑step traffic on ESnet with improved accuracy.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-clock"></i> Multistep</span>
+                      <span><i class="fa-solid fa-sitemap"></i> Non‑autoregressive</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-dgnn">Read More</button>
                   </div>
-                </div>
+                </article>
 
-              </div>
-              <!-- /Services -->
-
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
-
-
-
-
-
-                  <div class="block-title">
-                    <h2>NetGraf: An End-to-End Learning Network Monitoring Service</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Network monitoring services are of enormous importance to ensure optimal performance is being
-                          delivered and help determine any failing services. Particularly for large data transfers,
-                          checking key performance indicators like throughput, packet loss, and latency can make or
-                          break experiment results. However, network monitoring tools are very diverse in metrics
-                          collected and dependent on the devices installed. Additionally, there are limited tools that
-                          can learn and determine the cause of degraded performance. This paper presents NetGraf, a
-                          novel end-to-end learning monitoring system that utilizes current monitoring tools, merges
-                          multiple data sources into one dashboard for easy use, and provides machine learning libraries
-                          to analyze the data and perform real-time anomaly finding. Using a database backend, NetGraf
-                          can learn performance trends and show users if network performance has degraded. We
-                          demonstrate how NetGraf can easily be deployed through automation services and linked to
-                          multiple monitoring sources to collect data. Via the machine learning innovation and merging
-                          various data sources, NetGraf aims to fulfill the need for holistic learning network telemetry
-                          monitoring. To the best of our knowledge, this is the first-ever end-to-end learning
-                          monitoring service. We demonstrate its use on two network setups to showcase its impact.</p>
-                      </div>
+                <!-- NetGraf -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/pic2.jpg" alt="NetGraf">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-layer-group"></i> Telemetry</span>
+                      <span class="proj-badge"><i class="fa-solid fa-brain"></i> ML Anomaly</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/pic2.jpg" align="center">
-                    <p>The NetGraf architecture comprises of three modules: Network, Data Aggregation, Machine Learning
-                      and Visualization modules. <a href="https://ieeexplore.ieee.org/abstract/document/9652600"
-                        target="new"> Paper</a>, <a href="https://github.com/esnet/netgraf" target="new"> Code</a>, <a
-                        href="https://scinet.supercomputing.org/community/documents/130/INDIS2021_PaperTalk_Mohammed.pdf"
-                        target="new"> Slides</a>.</p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">NetGraf</h3>
+                    <p class="proj-summary">End‑to‑end learning monitoring: merges data sources, learns trends, and surfaces real‑time performance degradation.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-database"></i> Multi‑source</span>
+                      <span><i class="fa-solid fa-chart-area"></i> Viz</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-netgraf">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+                </article>
 
-
-
-                  <div class="block-title">
-                    <h2>Net-Preflight Check: Using File transfer to Measure Network Performance before Large Data
-                      Transfers</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>During bulk data transfer for exascale scientific applications, measuring the available
-                          throughput is very useful for route selection in high-speed networks, Quality of service
-                          verification, and traffic engineering. Recent years have seen a surge in available throughput
-                          estimation tools, especially in Research and Education (R&E) Networks. Some tools have been
-                          proposed and evaluated in simulation and over a limited number of Internet paths. However,
-                          there is still significant uncertainty in the performance and flexibility of these tools at
-                          large. Furthermore, some existing tools' primary concern is the lack of network performance
-                          history or a memory that stores previous configurations and network measurements..</p>
-                        <br>
-                        <p>This work introduces Net-PreFlight, a simple end-to-end, lightweight tool for measuring
-                          available throughput, traceroute, and maintains memory, compared to existing tools like Iperf.
-                          Our tool focuses on throughput measurements, flexibility, a retentive memory, security, and
-                          performance. We conduct experiments between multiple Data Transfer Node (DTN) setups in
-                          isolated and public network setups to measure how throughput measurements fare in the two
-                          domains. In all scenarios, Net-Preflight produces comparable results as established tools and
-                          hence positions itself as a complementary tool for situations where the deployment of Iperf or
-                          perfSONAR is not possible. In addition, Net-Preflight features retentive memory to easily
-                          compare past and present measurements. Our analysis reveals that using socket and file
-                          transfer protocols performs well in initial measurements and also indicates that parallel TCP
-                          streams are equivalent to using a large maximum segment size on a single connection in the
-                          absence of congestion. Here, we lay the foundation to build a new monitoring system for DTN
-                          bulk transfers that target end-users who require optimum network performance.</p>
-                      </div>
+                <!-- Net-Preflight Check -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/netpref.jpg" alt="Net-Preflight Check">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-file-arrow-up"></i> File Transfer</span>
+                      <span class="proj-badge"><i class="fa-solid fa-gauge"></i> Throughput</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/netpref.jpg" align="center">
-                    <p>Throughput measurement for large data transfer over isolated Network (CHI@UC to CHI@TACC) and
-                      public Network (NERSC DTN to CHI@UC DTN).</p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">Net‑Preflight Check</h3>
+                    <p class="proj-summary">Lightweight tool for available throughput + traceroute with retentive memory—ideal where perfSONAR isn’t feasible.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-shield-halved"></i> DTN</span>
+                      <span><i class="fa-solid fa-network-wired"></i> R&amp;E</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-preflight">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+                </article>
 
-                  <div class="block-title">
-                    <h2>DeepRoute Mininet Implementation: Herding Elephant and Mice Flows with Reinforcement Learning
-                    </h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Wide area networks are built to have enough resilience and flexibility, such as offering many
-                          paths between multiple pairs of end hosts. To prevent congestion, current practices involve
-                          numerous tweaking of routing tables to optimize path computation, such as flow diversion to
-                          alternate paths or load balancing. However, this process is slow, costly and require difficult
-                          online decision-making to learn appropriate settings, such as flow arrival rate, workload, and
-                          current network environment. Inspired by recent advances in AI to manage resources, we present
-                          DeepRoute, a model-less reinforcement learning approach that translates the path computation
-                          problem to a learning problem. Learning from the network environment, DeepRoute learns
-                          strategies to manage arriving elephant and mice flows to improve the average path utilization
-                          in the network. Comparing to other strategies such as prioritizing certain flows and random
-                          decisions, DeepRoute is shown to improve average network path utilization to 30% and
-                          potentially reduce possible congestion across the whole network.</p>
-                        <br>
-                        <p>This work presents results in simulation and also how DeepRoute can be demonstrated by a
-                          Mininet implementation.</p>
-                      </div>
+                <!-- DeepRoute (Mininet) -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/d4.jpg" alt="DeepRoute Mininet">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-person-running"></i> RL Routing</span>
+                      <span class="proj-badge"><i class="fa-solid fa-diagram-project"></i> SDN</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/d4.jpg" align="center">
-                    <p>Topology used in the Simulation Model (bu = bandwidth units occupied and tu = time units
-                      occupied), Q-values for Local and Global levels. <a
-                        href="https://link.springer.com/chapter/10.1007/978-3-030-45778-5_20" target="new"> Paper</a>
-                    </p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">DeepRoute (Mininet)</h3>
+                    <p class="proj-summary">Model‑free RL herds elephant/mice flows to improve path utilization and reduce congestion across WANs.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-vial"></i> Simulation</span>
+                      <span><i class="fa-solid fa-code-branch"></i> BYOC</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-deeproute">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+                </article>
 
-
-
-
-                  <div class="block-title">
-                    <h2>Predicting WAN traffic volumes using Fourier and multivariate SARIMA approach</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Network traffic has been a critical issue that has attracted massive attention in network
-                          operations research and the industry. This paper tackles the need to understand traffic
-                          patterns across a high-speed network topology by developing statistical models that use
-                          multivariate data models, incorporating seasonality, peak frequencies, and link relationships
-                          to improve future predictions.</p>
-                        <br>
-                        <p>Using Fourier transforms to extract seasons and peak frequencies, we perform seasonality
-                          tests and ARIMA measures to determine optimal parameters to use in our model. Our study shows
-                          that network traffic is non-stationary and possesses seasonality, making SARIMA the most
-                          suitable approach. Furthermore, based on network traces collected from multiple time zones of
-                          the R&E WAN, our results indicate an improved prediction accuracy of 93.7% from the
-                          multivariate model with better RMSE and smaller confidence intervals. Our work provides
-                          critical insights into studying network traffic and prediction methods necessary for future
-                          research in network capacity management.</p>
-                      </div>
+                <!-- SARIMA + Fourier -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/overall.png" alt="SARIMA + Fourier">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-wave-square"></i> Time Series</span>
+                      <span class="proj-badge"><i class="fa-solid fa-arrows-spin"></i> Seasonality</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/overall.png" align="center">
-                    <p> Studying network traffic as a time-series problem. using FFT to extract frequency patterns
-                      across the traffic traces, to validate the variability among the traces used in this study FFT
-                      extracts symmetry frequencies for signals, as finite sum of sine waves. A variation of discrete
-                      Fourier transformation equation (DFT), helps extract positive frequencies in the dataset. <a
-                        href="https://www.inderscienceonline.com/doi/abs/10.1504/IJBDI.2021.118742" target="new">
-                        Paper</a></p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">WAN Forecasting with SARIMA</h3>
+                    <p class="proj-summary">Fourier features + multivariate SARIMA capture seasonality and link relationships for improved WAN traffic prediction.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-signal"></i> FFT</span>
+                      <span><i class="fa-solid fa-cubes"></i> Multivariate</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-sarima">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+                </article>
 
-
-
-
-
-                  <div class="block-title">
-                    <h2>Failure prediction using machine learning in a virtualised HPC system and applicationh</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Failure is an increasingly important issue in high performance computing and cloud systems.
-                          As large-scale systems continue to grow in scale and complexity, mitigating the impact of
-                          failure and providing accurate predictions with sufficient lead time remains a challenging
-                          research problem. Traditional existing fault-tolerance strategies such as regular
-                          check-pointing and replication are not adequate because of the emerging complexities of high
-                          performance computing systems. This necessitates the importance of having an effective as well
-                          as proactive failure management approach in place aimed at minimizing the effect of failure
-                          within the system. With the advent of machine learning techniques, the ability to learn from
-                          past information to predict future pattern of behaviours makes it possible to predict
-                          potential system failure more accurately.</p>
-                        <br>
-                        <p>In this work, we explore the predictive abilities of machine learning by applying a number of
-                          algorithms to improve the accuracy of failure prediction. We have developed a failure
-                          prediction model using time series and machine learning, and performed comparison based tests
-                          on the prediction accuracy. The primary algorithms we considered are the support vector
-                          machine (SVM), random forest (RF), k-nearest neighbors (KNN), classification and regression
-                          trees (CART) and linear discriminant analysis (LDA). Experimental results indicates that the
-                          average prediction accuracy of our model using SVM when predicting failure is 90% accurate and
-                          effective compared to other algorithms. This finding implies that our method can effectively
-                          predict all possible future system and application failures within the system. </p>
-                      </div>
+                <!-- HPC Failure Prediction -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/failure.jpg" alt="HPC Failure Prediction">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-triangle-exclamation"></i> Reliability</span>
+                      <span class="proj-badge"><i class="fa-solid fa-brain"></i> ML</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/failure.jpg" align="center">
-                    <p> Proposed system model and architecture. Failure prediction using machine learning in a
-                      virtualised HPC system and application. <a
-                        href="https://link.springer.com/article/10.1007/s10586-019-02917-1" target="new"> Paper</a></p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">HPC Failure Prediction</h3>
+                    <p class="proj-summary">Time‑series + classical ML (SVM, RF, KNN, CART, LDA) to anticipate failures in virtualized HPC systems.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-server"></i> Virtualized</span>
+                      <span><i class="fa-solid fa-chart-simple"></i> Benchmarking</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-hpc">Read More</button>
                   </div>
-                </div>
-              </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+                </article>
 
-
-
-
-
-
-
-                  <div class="block-title">
-                    <h2>Failover strategy for fault tolerance in cloud computing environment</h2>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="info-list-w-icon">
-                    <div class="info-block-w-icon">
-                      <!-- <div class="ci-icon">
-                          <i class="linecons linecons-pen"></i>
-                        </div> -->
-
-                      <div class="ci-text">
-                        <!-- <h4>Copywrite</h4> -->
-                        <p>Cloud fault tolerance is an important issue in cloud computing platforms and applications. In
-                          the event of an unexpected system failure or malfunction, a robust fault-tolerant design may
-                          allow the cloud to continue functioning correctly possibly at a reduced level instead of
-                          failing completely. To ensure high availability of critical cloud services, the application
-                          execution, and hardware performance, various fault-tolerant techniques exist for building
-                          self-autonomous cloud systems. In comparison with current approaches, this paper proposes a
-                          more robust and reliable architecture using optimal checkpointing strategy to ensure high
-                          system availability and reduced system task service finish time. Using pass rates and
-                          virtualized mechanisms, the proposed smart failover strategy (SFS) scheme uses components such
-                          as cloud fault manager, cloud controller, cloud load balancer, and a selection mechanism,
-                          providing fault tolerance via redundancy, optimized selection, and checkpointing.</p>
-                        <br>
-                        <p>In our approach, the cloud fault manager repairs faults generated before the task time
-                          deadline is reached, blocking unrecoverable faulty nodes as well as their virtual nodes. This
-                          scheme is also able to remove temporary software faults from recoverable faulty nodes, thereby
-                          making them available for future request. We argue that the proposed SFS algorithm makes the
-                          system highly fault tolerant by considering forward and backward recovery using diverse
-                          software tools. Compared with existing approaches, preliminary experiment of the SFS algorithm
-                          indicates an increase in pass rates and a consequent decrease in failure rates, showing an
-                          overall good performance in task allocations. We present these results using experimental
-                          validation tools with comparison with other techniques, laying a foundation for a fully
-                          fault-tolerant infrastructure as a service cloud environment. </p>
-                      </div>
+                <!-- Cloud Failover Strategy -->
+                <article class="proj-card">
+                  <div class="proj-thumb">
+                    <img src="./Projects_files/ft.jpg" alt="Cloud Failover Strategy">
+                    <div class="proj-badges">
+                      <span class="proj-badge"><i class="fa-solid fa-cloud"></i> Cloud</span>
+                      <span class="proj-badge"><i class="fa-solid fa-shield"></i> Fault Tolerance</span>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6">
-                  <div class="ci-text">
-                    <img src="./Projects_files/ft.jpg" align="center">
-                    <p> Fault tolerance architecture. The FT model (FTm) of a cloud computing system is represented by a
-                      finite-ordered list of elements or a sequence of five elements. <a
-                        href="https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2491" target="new"> Paper</a< /p>
+                  <div class="proj-body">
+                    <h3 class="proj-title">Cloud Failover Strategy (SFS)</h3>
+                    <p class="proj-summary">Checkpointing + redundancy + optimized selection to improve availability and task completion under faults.</p>
+                    <div class="proj-tags">
+                      <span><i class="fa-solid fa-diagram-project"></i> IaaS</span>
+                      <span><i class="fa-solid fa-gauge-high"></i> HA</span>
+                    </div>
+                    <button class="proj-btn proj-btn--primary" data-open="#modal-cloud">Read More</button>
                   </div>
-                </div>
+                </article>
+
               </div>
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+            </section>
+            <!-- ====== /PROJECT CARDS ====== -->
 
+          </div>
+        </div>
+      </div>
 
+      <!-- Footer -->
+      <footer class="site-footer clearfix">
+        <div class="footer-social">
+          <ul class="footer-social-links">
+            <li><a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+            <li><a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank">ResearchGate</a></li>
+            <li><a href="https://github.com/jajupeter" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </footer>
+      <!-- /Footer -->
 
+    </div>
+  </div>
 
+  <!-- ====== MODALS (detail on demand) ====== -->
+  <div class="proj-modal" id="modal-iclert" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>ICLERT: Immersive Crisis Leader Emergency Response Training</h3>
+      <p>University–agency collaboration using a LiDAR‑accurate digital twin of Southern University (Dome emergency shelter & EOC). Scenario‑driven VR modules simulate concurrent incidents—hurricanes, gas leaks, electrical failures—to practice prioritization and decision‑making under pressure.</p>
+      <h4>Curriculum & Analytics</h4>
+      <p>Modular set: 3 foundational, 7 hazard‑specific, 2 integrated simulations; optimized for Meta Quest 3 and CAVE. Assessment layer (pre/post, group tests, checks, surveys) generates metrics on learning gains, decision speed, and confidence; packaged for replication statewide.</p>
+      <p><a href="https://www.youtube.com/watch?v=hqIQfs0foEg" target="_blank">Talk</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-dynflow" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>DynamicDeepFlow</h3>
+      <p>Innovative unsupervised method combining a Variational Autoencoder (feature compression) with k‑means++ clustering to detect emerging traffic patterns and anomalies from ESnet flow histories in near real‑time.</p>
+      <p><a href="https://dl.acm.org/doi/abs/10.1007/978-3-030-98978-1_7" target="_blank">Paper</a> · <a href="https://lightbytes.es.net/2021/12/02/esnet-machine-learning-researchers-win-best-paper-at-mln-2021/" target="_blank">Best Paper</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-netpredict" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>NetPredict</h3>
+      <p>Real‑time framework to deploy and compare deep learning and statistical models for link‑level traffic forecasting (hourly/weekly/monthly). Includes a trust dashboard so engineers can select models based on performance and confidence.</p>
+      <p><a href="https://www.osti.gov/biblio/1769344" target="_blank">Link</a></p>
+    </div>
+  </div>
 
-                 
+  <div class="proj-modal" id="modal-laser" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Deep RL for Coherent Laser Beam Combining</h3>
+      <p>Deep reinforcement learning stabilizes two‑dimensional filled‑aperture diffractive CBC, keeping the center beam intensity maximized under kHz sampling and ~100 Hz noise bandwidth; validated in simulation and experiment (3×3 beams).</p>
+      <p><a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-8-12639&id=470958" target="_blank">Paper</a></p>
+    </div>
+  </div>
 
-              <!-- Services -->
-              <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                  <div class="p-10"></div>
+  <div class="proj-modal" id="modal-dgnn" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Dynamic Graph Neural Network for WAN Forecasting</h3>
+      <p>Dynamic‑DCRNN uses adjacency from current traffic states and node time‑series to forecast multiple steps ahead on ESnet, learning the evolving spatiotemporal structure beyond classical methods.</p>
+      <p><a href="https://www.computer.org/csdl/proceedings-article/big-data/2020/09512748/1w7eCiTsXy87" target="_blank">Paper</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-netgraf" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>NetGraf: End‑to‑End Learning Monitoring Service</h3>
+      <p>Merges multiple telemetry sources into a single dashboard and applies ML libraries for trend learning and anomaly detection. Deployed via automation; demonstrated on multiple network setups.</p>
+      <p><a href="https://ieeexplore.ieee.org/abstract/document/9652600" target="_blank">Paper</a> · <a href="https://github.com/esnet/netgraf" target="_blank">Code</a> · <a href="https://scinet.supercomputing.org/community/documents/130/INDIS2021_PaperTalk_Mohammed.pdf" target="_blank">Slides</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-preflight" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Net‑Preflight Check</h3>
+      <p>Simple end‑to‑end tool for available throughput + traceroute with retentive “memory” of measurements. Comparable to established tools; useful where perfSONAR or iPerf deployment is constrained.</p>
+    </div>
+  </div>
 
-                  <!-- /Footer -->
+  <div class="proj-modal" id="modal-deeproute" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>DeepRoute (Mininet): RL Flow Herding</h3>
+      <p>Translates path computation into a model‑free RL problem to manage elephant/mice flows, improving average path utilization and mitigating congestion versus heuristics or random baselines.</p>
+      <p><a href="https://link.springer.com/chapter/10.1007/978-3-030-45778-5_20" target="_blank">Paper</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-sarima" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>WAN Forecasting with Fourier + SARIMA</h3>
+      <p>Extracts seasonal/peak frequencies via FFT; multivariate SARIMA exploits link relationships to improve WAN traffic predictions with tighter confidence bounds.</p>
+      <p><a href="https://www.inderscienceonline.com/doi/abs/10.1504/IJBDI.2021.118742" target="_blank">Paper</a></p>
+    </div>
+  </div>
 
-                          <!-- Footer -->
-                    <footer class="site-footer clearfix">
-                      <div class="footer-social">
-                        <ul class="footer-social-links">
-                        <li><a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en">Google Scholar</a></li>
-                        <li><a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/">LinkedIn</a></li>
-                        <li><a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf">ResearchGate</a></li>
-                        <li><a href="https://github.com/jajupeter">GitHub</a></li>
+  <div class="proj-modal" id="modal-hpc" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Failure Prediction in Virtualized HPC</h3>
+      <p>Time‑series features + ML classifiers (SVM, RF, KNN, CART, LDA) to anticipate system/app failures, enabling proactive mitigation in large‑scale environments.</p>
+      <p><a href="https://link.springer.com/article/10.1007/s10586-019-02917-1" target="_blank">Paper</a></p>
+    </div>
+  </div>
 
+  <div class="proj-modal" id="modal-cloud" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Smart Failover Strategy (SFS) for Cloud</h3>
+      <p>Architectural approach combining checkpointing, redundancy, RBAC, and optimized selection to keep cloud services available and reduce task completion time under failure modes.</p>
+      <p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2491" target="_blank">Paper</a></p>
+    </div>
+  </div>
+  <!-- ====== /MODALS ====== -->
 
-        <!-- /Footer -->
-                </div>
-              </div>
+  <!-- Minimal JS to handle modals -->
+  <script>
+    document.addEventListener('click', (e) => {
+      const opener = e.target.closest('[data-open]');
+      const closer = e.target.closest('[data-close]');
+      if (opener){
+        const sel = opener.getAttribute('data-open');
+        const modal = document.querySelector(sel);
+        if (modal){ modal.setAttribute('aria-hidden','false'); }
+      }
+      if (closer || e.target.classList.contains('overlay')){
+        const modal = e.target.closest('.proj-modal') || document.querySelector('.proj-modal[aria-hidden="false"]');
+        if (modal){ modal.setAttribute('aria-hidden','true'); }
+      }
+    });
+  </script>
 
-              <script src="js/jquery-2.1.3.min.js"></script>
-              <script src="js/imagesloaded.pkgd.min.js"></script>
-              <script src="js/bootstrap.min.js"></script>
-              <script src='js/jquery.shuffle.min.js'></script>
-              <script src='js/masonry.pkgd.min.js'></script>
-              <script src='js/owl.carousel.min.js'></script>
-              <script src="js/jquery.magnific-popup.min.js"></script>
-              <script src="js/validator.js"></script>
-              <script src="js/main.js"></script>
+  <!-- Existing site scripts -->
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src='js/jquery.shuffle.min.js'></script>
+  <script src='js/masonry.pkgd.min.js'></script>
+  <script src='js/owl.carousel.min.js'></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/validator.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
