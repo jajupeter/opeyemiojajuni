@@ -6,87 +6,101 @@
   <title>Opeyemi Peter Ojajuni, Ph.D. — Projects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Projects - Opeyemi Ojajuni" />
-  <meta name="keywords" content="vcard, responsive, resume, portfolio, projects, ai, vr, networking" />
-  <meta name="author" content="lmpixels" />
+  <meta name="keywords" content="portfolio projects ai ml vr networking research" />
   <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- Existing site styles -->
+  <!-- Your existing site styles -->
   <link rel="stylesheet" href="css/normalize.css" type="text/css">
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
   <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
 
-  <!-- Icons for badges/tags -->
+  <!-- Icons for badges -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Project Cards Styles (lightweight, self-contained) -->
+  <!-- Project Card Styles (white cards + bold black titles) -->
   <style>
     :root{
-      --card:#0f141b; --text:#eaf2fb; --muted:#a9bfd6;
-      --ring:#76e4f7; --ring2:#9ef7d2; --border:rgba(255,255,255,.08);
+      --card-bg:#ffffff;
+      --card-border:#e6eef5;
+      --title:#0b1220;
+      --text:#1f2a37;
+      --muted:#475569;
+      --pill1:#e9f5ff;
+      --pill2:#eefcf7;
+      --pill3:#fff5ec;
+      --accent1:#0ea5e9; /* badge icon tint */
+      --accent2:#10b981;
+      --accent3:#f59e0b;
     }
-    .proj-wrap{ max-width:1200px; margin: 0 auto; padding: 0 16px 40px; }
+
+    .proj-wrap{ max-width:1200px; margin: 0 auto; padding: 0 16px 48px; }
     .proj-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
     @media (min-width:768px){ .proj-grid{ grid-template-columns: repeat(2,1fr); } }
     @media (min-width:1200px){ .proj-grid{ grid-template-columns: repeat(3,1fr); } }
 
+    /* WHITE CARD */
     .proj-card{
-      background: var(--card); color: var(--text);
-      border:1px solid var(--border); border-radius:16px; overflow:hidden;
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-      transform: translateZ(0);
-      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      background: var(--card-bg);
+      color: var(--text);
+      border:1px solid var(--card-border);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 8px 22px rgba(2,6,23,.06);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
     .proj-card:hover{
       transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.5);
-      border-color: rgba(118,228,247,.35);
+      box-shadow: 0 14px 36px rgba(2,6,23,.12);
+      border-color:#d7e4f0;
     }
-    .proj-thumb{ position:relative; aspect-ratio:16/9; background:#081019; overflow:hidden; }
+
+    .proj-thumb{ position:relative; aspect-ratio:16/9; background:#eef4fb; overflow:hidden; }
     .proj-thumb img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .5s ease; }
     .proj-card:hover .proj-thumb img{ transform: scale(1.06); }
 
     .proj-badges{ position:absolute; left:10px; bottom:10px; display:flex; gap:6px; flex-wrap:wrap; }
     .proj-badge{
       font-size:12px; padding:4px 8px; border-radius:999px;
-      color:#02141f; background: linear-gradient(135deg, var(--ring2), var(--ring));
-      border:1px solid rgba(255,255,255,.2);
+      background:#f3f4f6; color:#0b1220; border:1px solid rgba(2,6,23,.06);
       display:inline-flex; align-items:center; gap:6px;
-      box-shadow:0 6px 18px rgba(0,0,0,.25);
+      box-shadow:0 6px 14px rgba(2,6,23,.08);
     }
+    .proj-badge i{ color: var(--accent1); }
 
-    .proj-body{ padding:14px; }
-    .proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; }
-    .proj-summary{ margin:0 0 10px; font-size:14px; color: var(--muted); min-height: 60px; }
-    .proj-tags{ font-size:12px; color:#cfe6ff; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.9; }
+    .proj-body{ padding:16px 16px 18px; }
+    .proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; color:var(--title); font-weight:800; }
+    .proj-summary{ margin:0 0 12px; font-size:14px; color: var(--muted); min-height: 60px; }
+    .proj-tags{ font-size:12px; color:#0f172a; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.8; }
+    .proj-tags i{ margin-right:4px; color:#64748b; }
+
     .proj-btn{
-      appearance:none; border:1px solid rgba(255,255,255,.12);
-      background: transparent; color: var(--text);
+      appearance:none; border:1px solid #dbe7f3;
+      background: #f8fafc; color:#0b1220;
       padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
-      transition: all .25s ease;
+      transition: all .2s ease;
     }
     .proj-btn--primary{
-      background: linear-gradient(135deg, #3a86ff, #68f0ff);
-      color:#00111a; border-color:transparent; font-weight:600;
+      background: #0ea5e9; color:#ffffff; border-color:#0ea5e9; font-weight:700;
     }
-    .proj-btn:hover{ transform: translateY(-1px); }
+    .proj-btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
 
     /* Modal (popup) */
     .proj-modal{ position:fixed; inset:0; display:none; }
     .proj-modal[aria-hidden="false"]{ display:block; }
-    .proj-modal .overlay{ position:absolute; inset:0; background:rgba(3,10,16,.72); backdrop-filter: blur(4px); }
+    .proj-modal .overlay{ position:absolute; inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(3px); }
     .proj-modal .dialog{
       position:relative; z-index:1; margin:6vh auto; max-width:900px;
-      background:#0e141b; color:var(--text); border:1px solid var(--border);
-      border-radius:16px; padding:22px 22px 24px; box-shadow:0 18px 45px rgba(0,0,0,.5);
+      background:#ffffff; color:#0b1220; border:1px solid #e6eef5;
+      border-radius:16px; padding:22px; box-shadow:0 18px 45px rgba(2,6,23,.25);
     }
     .proj-modal .close{ position:absolute; right:10px; top:6px; font-size:28px; line-height:1;
-      background:transparent; border:none; color:#cfe6ff; cursor:pointer; }
-    .proj-modal h3{ margin:0 0 6px; }
-    .proj-modal p{ color:#c8d7e6; }
-    .proj-modal h4{ margin:16px 0 8px; }
-    .proj-modal a{ color:#8fe3ff; text-decoration: underline; }
+      background:transparent; border:none; color:#334155; cursor:pointer; }
+    .proj-modal h3{ margin:0 0 6px; font-weight:800; }
+    .proj-modal p{ color:#334155; }
+    .proj-modal h4{ margin:16px 0 8px; font-weight:800; color:#0b1220; }
+    .proj-modal a{ color:#0369a1; text-decoration: underline; }
   </style>
 
   <script src="js/modernizr.custom.js"></script>
@@ -97,15 +111,10 @@
 
   <!-- Loading animation -->
   <div class="preloader">
-    <div class="preloader-animation">
-      <div class="preloader-spinner"></div>
-    </div>
+    <div class="preloader-animation"><div class="preloader-spinner"></div></div>
   </div>
-  <!-- /Loading animation -->
 
-  <!-- Scroll To Top Button -->
   <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
-  <!-- /Scroll To Top Button -->
 
   <div class="page-scroll">
     <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
@@ -113,7 +122,6 @@
       <!-- Header -->
       <header id="site_header" class="header">
         <div class="header-content clearfix">
-          <!-- Text Logo -->
           <div class="text-logo">
             <a href="index.html">
               <div class="logo-symbol">OO</div>
@@ -121,7 +129,6 @@
             </a>
           </div>
 
-          <!-- Navigation -->
           <div class="site-nav mobile-menu-hide">
             <ul class="leven-classic-menu site-main-menu">
               <li class="menu-item"><a href="index.html">About Me</a></li>
@@ -131,7 +138,6 @@
             </ul>
           </div>
 
-          <!-- Mobile Menu Toggle -->
           <a class="menu-toggle mobile-visible"><i class="fa fa-bars"></i></a>
         </div>
       </header>
@@ -146,12 +152,11 @@
               <div class="page-subtitle"></div>
             </div>
 
-            <!-- ====== PROJECT CARDS (scannable grid) ====== -->
+            <!-- ============ PROJECT CARD GRID (WHITE CARDS) ============ -->
             <section class="proj-wrap">
               <div class="proj-grid">
 
                 <!-- ICLERT -->
-                 
                 <article class="proj-card">
                   <div class="proj-thumb">
                     <img src="./Projects_files/graph_network.gif" alt="ICLERT VR Training">
@@ -163,7 +168,7 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">ICLERT: Immersive Crisis Leader Training</h3>
-                    <p class="proj-summary">LiDAR‑accurate campus twin + high‑fidelity simulations for hurricanes, gas leaks, and electrical hazards. Scalable curriculum and outcome analytics for decision speed & confidence.</p>
+                    <p class="proj-summary">LiDAR‑accurate campus twin + high‑fidelity simulations for hurricanes, gas leaks, and electrical hazards. Scalable curriculum and analytics for decision speed & confidence.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-headset"></i> Quest 3 / CAVE</span>
                       <span><i class="fa-solid fa-brain"></i> Assessment</span>
@@ -184,7 +189,7 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">DynamicDeepFlow</h3>
-                    <p class="proj-summary">VAE + k‑means++ pipeline detects rapid traffic pattern changes and flags anomalies in real‑time on research networks.</p>
+                    <p class="proj-summary">VAE + k‑means++ detects rapid traffic pattern changes and flags anomalies in real‑time on research networks.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-chart-line"></i> Unsupervised</span>
                       <span><i class="fa-solid fa-database"></i> ESnet</span>
@@ -204,7 +209,7 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">NetPredict</h3>
-                    <p class="proj-summary">Deploy & compare ML/stat models to forecast link bandwidth; engineers select the most trustworthy model per horizon.</p>
+                    <p class="proj-summary">Deploy & compare ML/stat models to forecast link bandwidth; engineers pick the most trustworthy model per horizon.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-brain"></i> DL + Stats</span>
                       <span><i class="fa-solid fa-route"></i> Path Planning</span>
@@ -224,7 +229,7 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">DRL for Coherent Laser Combining</h3>
-                    <p class="proj-summary">Deep RL stabilizes 3×3 beam arrays, maximizing center-beam intensity under noise and drift in real setups.</p>
+                    <p class="proj-summary">Deep RL stabilizes 3×3 beam arrays, maximizing center‑beam intensity under noise and drift in real setups.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-atom"></i> Optics</span>
                       <span><i class="fa-solid fa-flask"></i> Experimental</span>
@@ -244,7 +249,7 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">Dynamic GNN for WAN Forecasting</h3>
-                    <p class="proj-summary">Dynamic DCRNN learns spatiotemporal patterns to forecast multi‑step traffic on ESnet with improved accuracy.</p>
+                    <p class="proj-summary">Dynamic‑DCRNN learns spatiotemporal patterns to forecast multi‑step traffic on ESnet with improved accuracy.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-clock"></i> Multistep</span>
                       <span><i class="fa-solid fa-sitemap"></i> Non‑autoregressive</span>
@@ -363,7 +368,7 @@
                     </div>
                   </div>
                   <div class="proj-body">
-                    <h3 class="proj-title">Cloud Failover Strategy (SFS)</h3>
+                    <h3 class="proj-title">Smart Failover Strategy (SFS)</h3>
                     <p class="proj-summary">Checkpointing + redundancy + optimized selection to improve availability and task completion under faults.</p>
                     <div class="proj-tags">
                       <span><i class="fa-solid fa-diagram-project"></i> IaaS</span>
@@ -375,7 +380,7 @@
 
               </div>
             </section>
-            <!-- ====== /PROJECT CARDS ====== -->
+            <!-- ============ /GRID ============ -->
 
           </div>
         </div>
@@ -392,12 +397,11 @@
           </ul>
         </div>
       </footer>
-      <!-- /Footer -->
 
     </div>
   </div>
 
-  <!-- ====== MODALS (detail on demand) ====== -->
+  <!-- ====== MODALS ====== -->
   <div class="proj-modal" id="modal-iclert" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
@@ -415,7 +419,7 @@
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>DynamicDeepFlow</h3>
-      <p>Innovative unsupervised method combining a Variational Autoencoder (feature compression) with k‑means++ clustering to detect emerging traffic patterns and anomalies from ESnet flow histories in near real‑time.</p>
+      <p>Variational Autoencoder + k‑means++ compresses and clusters flow features to reveal emergent traffic behavior and anomalies from ESnet traces.</p>
       <p><a href="https://dl.acm.org/doi/abs/10.1007/978-3-030-98978-1_7" target="_blank">Paper</a> · <a href="https://lightbytes.es.net/2021/12/02/esnet-machine-learning-researchers-win-best-paper-at-mln-2021/" target="_blank">Best Paper</a></p>
     </div>
   </div>
@@ -445,7 +449,7 @@
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>Dynamic Graph Neural Network for WAN Forecasting</h3>
-      <p>Dynamic‑DCRNN uses adjacency from current traffic states and node time‑series to forecast multiple steps ahead on ESnet, learning the evolving spatiotemporal structure beyond classical methods.</p>
+      <p>Dynamic‑DCRNN uses adjacency from current traffic states and node time‑series to forecast multiple steps ahead on ESnet, learning evolving spatiotemporal structure.</p>
       <p><a href="https://www.computer.org/csdl/proceedings-article/big-data/2020/09512748/1w7eCiTsXy87" target="_blank">Paper</a></p>
     </div>
   </div>
@@ -504,13 +508,13 @@
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>Smart Failover Strategy (SFS) for Cloud</h3>
-      <p>Architectural approach combining checkpointing, redundancy, RBAC, and optimized selection to keep cloud services available and reduce task completion time under failure modes.</p>
+      <p>Combines checkpointing, redundancy, RBAC, and optimized selection to keep cloud services available and reduce task completion time under failure modes.</p>
       <p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/spe.2491" target="_blank">Paper</a></p>
     </div>
   </div>
   <!-- ====== /MODALS ====== -->
 
-  <!-- Minimal JS to handle modals -->
+  <!-- Tiny JS to open/close modals -->
   <script>
     document.addEventListener('click', (e) => {
       const opener = e.target.closest('[data-open]');
@@ -527,7 +531,7 @@
     });
   </script>
 
-  <!-- Existing site scripts -->
+  <!-- Your existing scripts -->
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/imagesloaded.pkgd.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
