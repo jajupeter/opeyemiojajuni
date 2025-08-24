@@ -106,8 +106,31 @@
     }
     .modal-gallery img,
     .modal-gallery video{ width:100%; height:auto; display:block; }
+
+    /* ==== SMALL INLINE NAV BUTTONS (Prev/Next) ==== */
+    .owl-theme .owl-nav{
+      display:flex !important;
+      justify-content:flex-end;   /* put both on same line to the right */
+      gap:8px;
+      margin-top:10px;
+    }
     .owl-theme .owl-nav [class*='owl-']{
-      background:#0ea5e9; color:#fff !important; border-radius:10px; padding:4px 10px !important; margin:4px;
+      background:#0ea5e9;
+      color:#fff !important;
+      border-radius:8px;
+      padding:4px 8px !important;   /* smaller buttons */
+      margin:0 !important;
+      font-size:12px;               /* small text size (for icons this affects size a bit) */
+      line-height:1;
+      width:auto !important;        /* prevent 100% width from any theme */
+      display:inline-flex !important;
+      align-items:center;
+      justify-content:center;
+      min-width:32px;               /* compact hit area */
+      height:28px;                  /* compact height */
+    }
+    .owl-theme .owl-dots{
+      display:flex; justify-content:center; gap:6px; margin-top:6px;
     }
     .owl-theme .owl-dots .owl-dot span{
       width:10px; height:10px; background:#cbd5e1;
@@ -423,9 +446,8 @@
       <h4>Outcome</h4>
       <p>Trained 35+ crisis leaders with measurable gains in decision speed and confidence. 10+ deployment-ready modules are in use; with the Louisiana Department of Health partnership, the model scales statewide for workforce resilience and preparedness.</p>
 
-      <!-- CAROUSEL (Option B) -->
+      <!-- CAROUSEL -->
       <div class="modal-gallery owl-carousel owl-theme igv-carousel">
-        <!-- Replace src paths with your real media -->
         <div class="igv-slide"><img src="media/iclert_twin.jpg" alt="LiDAR Digital Twin"></div>
         <div class="igv-slide"><img src="media/iclert_scenario.jpg" alt="Scenario Driven Training"></div>
         <div class="igv-slide">
@@ -450,14 +472,13 @@
       <h4>Outcome</h4>
       <p>An interactive 3D Baton Rouge model in VR and CAVE that boosts spatial understanding and planning workflows. The framework is city-agnostic and ready for real-time data streams (traffic, weather) to evolve toward digital twins.</p>
 
-      <!-- CAROUSEL (Option B) -->
+      <!-- CAROUSEL -->
       <div class="modal-gallery owl-carousel owl-theme igv-carousel">
-        <!-- Replace src paths with your real media -->
         <div class="igv-slide"><img src="media/br_overview.jpg" alt="Baton Rouge Overview"></div>
         <div class="igv-slide"><img src="media/cityengine_blocks.jpg" alt="CityEngine Procedural Blocks"></div>
         <div class="igv-slide">
           <video controls playsinline preload="metadata">
-            <source src="Projects_files/IMG_0888.MOV" type="video/mp4">
+            <source src="media/vr_nav_demo.mp4" type="video/mp4">
           </video>
         </div>
         <div class="igv-slide">
@@ -593,7 +614,11 @@
             items:1,
             margin:10,
             loop:true,
-            nav:true,
+            nav:true,                            // keep nav visible
+            navText:[
+              "<i class='fa fa-chevron-left' aria-hidden='true'></i>",
+              "<i class='fa fa-chevron-right' aria-hidden='true'></i>"
+            ],                                   // small chevron icons
             dots:true,
             autoplay:false,
             autoplayHoverPause:true,
