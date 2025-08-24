@@ -214,12 +214,12 @@
                 <!-- Immersive Geospatial Visualization -->
                 <article class="proj-card">
                   <div class="proj-thumb">
-                    <img src="./Projects_files/tldcrnn.png" alt="Immersive Geospatial Visualization">
+                    <img src="./Projects_files/viz1.png" alt="Immersive Geospatial Visualization">
                     <div class="proj-badges"></div>
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">Immersive Geospatial Visualization in VR Systems</h3>
-                    <p class="proj-summary">An immersive 3D digital twin of North Baton Rouge that transforms geospatial data into VR experiences empowering urban planners, researchers, educators, and communities.</p>
+                    <p class="proj-summary">An immersive 3D digital twin that transforms geospatial data into VR experiences empowering urban planners, researchers, educators,and communities.</p>
                     <div class="proj-tags">
                       <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
                       <span class="proj-badge"><i class="fa-solid fa-map"></i> Geospatial Data</span>
@@ -483,30 +483,29 @@
   </div>
 
   <!-- Immersive Geospatial Visualization modal with CAROUSEL -->
-  <div class="proj-modal" id="modal-dynflow" aria-hidden="true">
+  <div class="proj-modal" id="modal-Viz" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>Immersive Geospatial Visualization in VR Systems</h3>
-      <h4>Project Overview</h4>
-      <p>We built an immersive geospatial digital twin of Baton Rouge using OSM, ArcGIS, and CityEngine, rendered for VR headsets and CAVE systems. Users explore a live 3D representation of the city to interact with infrastructure and land use far beyond 2D maps.</p>
-      <h4>Approach</h4>
-      <p>Our pipeline extracts/cleans multi-layer GIS, procedurally models the city, and deploys to VR and CAVE with intuitive navigation/zoom/landmark tools. Usability testing informed realism and planning/education use cases.</p>
-      <h4>Outcome</h4>
-      <p>An interactive 3D Baton Rouge model in VR and CAVE that boosts spatial understanding and planning workflows. The framework is city-agnostic and ready for real-time data streams (traffic, weather) to evolve toward digital twins.</p>
+      <!--h4>Project Overview</h4-->
+      <p>Traditional 2D maps limit how planners, educators, and researchers understand complex urban systems. This project bridges that gap by creating an immersive geospatial digital twin with OSM, ArcGIS, and CityEngine, rendered in VR headsets and CAVE systems.</p>
+      <p>We engineered a geospatial-to-VR pipeline that transforms OSM layers into attribute-driven 3D city scenes with ArcGIS CityEngine.These models export seamlessly into Unity for deployment across Meta Quest 3 and multi-user CAVE systems with georeferenced precision. Usability testing confirmed visual realism and revealed strong applications in planning, education, training, and community engagement.</p>
+      <p>The result is an interactive 3D environment that transforms static spatial data into rich, experiential exploration.</p>
 
       <!-- CAROUSEL -->
       <div class="modal-gallery owl-carousel owl-theme igv-carousel">
-        <div class="igv-slide"><img src="media/br_overview.jpg" alt="Baton Rouge Overview"></div>
-        <div class="igv-slide"><img src="media/cityengine_blocks.jpg" alt="CityEngine Procedural Blocks"></div>
+        <!--div class="igv-slide"><img src="media/br_overview.jpg" alt="Baton Rouge Overview"></div>
+        <div class="igv-slide"><img src="media/cityengine_blocks.jpg" alt="CityEngine Procedural Blocks"></div-->
+        
         <div class="igv-slide">
           <video controls playsinline preload="metadata">
-            <source src="media/vr_nav_demo.mp4" type="video/mp4">
+            <source src="Projects_files/subr_tour.mp4" type="video/mp4">
           </video>
         </div>
         <div class="igv-slide">
           <video controls playsinline preload="metadata">
-            <source src="Projects_files/IMG_0888.MOV" type="video/mp4">
+            <source src="Projects_files/Viz2.MOV" type="video/mp4">
           </video>
         </div>
       </div>
