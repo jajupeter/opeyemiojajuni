@@ -228,8 +228,8 @@
                   </div>
                   <div class="proj-body">
                     <h3 class="proj-title">House Price Prediction App</h3>
-                    <p class="proj-summary">This interactive AI app predicts whether a student in a STEM program will be academically successful (above average) or not successful (below average), based on 15 personal, academic, and socio-economic parameters.
-                      The App is designed to support: Early warning systems for educators, Resource planning for school administrators,Data-driven research in educational performance. </p>
+                    <p class="proj-summary">The House Price Prediction App is an interactive AI-driven platform built with Streamlit, designed to estimate residential property values in King County, Washington, using housing data from 2014/–2015.
+                      Powered by a trained Deep Learning regression model, the app showcases how machine learning can bring accuracy and accessibility to real-estate valuation through a simple, user-friendly web interface.. </p>
                     <div class="proj-tags">
                       <span class="proj-badge"><i class="fa-solid fa-database"></i> MLOps</span>
                       <span class="proj-badge"><i class="fa-solid fa-stream"></i> Streamlit</span>
@@ -537,17 +537,41 @@
       <button class="close" data-close aria-label="Close">&times;</button>
       <h3>House Price Prediction App</h3>
       <h3>Problem Statement</h3>
-      <p>Educational institutions often lack real-time tools to identify students at risk of underperforming. This project builds an ML-powered solution to help identify such students early using interpretable features — enabling proactive interventions..</p>
+      <p>Accurately pricing residential properties is one of the most critical steps in real estate. 
+        Traditional valuation methods rely heavily on manual appraisals or simplistic statistical models, 
+        which are often time-consuming, subjective, and unable to capture complex non-linear relationships 
+        in housing features.</p>
       <h3>Solution</h3>
-      <p>The Student Academic Success Prediction App is a machine learning model that predicts the academic success of a student based on their personal, academic, and socio-economic data. The app is designed to support: Early warning systems for educators, Resource planning for school administrators,Data-driven research in educational performance.</p>
-      <h3>MLOps Pipeline</h3>
-      <p>The app uses a machine learning model to make predictions based on the input data. The app is built using Streamlit and Python. The app is deployed and hosted on Streamlit Cloud. The app is monitored using Streamlit Metrics. The app is optimized for performance and scalability. The app is secure and compliant with GDPR and HIPAA.</p>
-      <h3>Results</h3>
-      <p>The app has been tested and validated with a dataset of 1000 students. The app has an accuracy of 90%.</p>
-      <p>MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads.</p>
-      <p>Improves early intervention decisions and program resource allocation.</p>
+      <p>TThe House Price Prediction App is an AI-powered interactive tool built with <b>Streamlit</b>. 
+        Using a trained <b>Deep Learning regression model</b> on the 
+        <i>King County Housing Dataset (2014–2015)</i>, it estimates house prices based on 
+        <b>18 key features</b> such as square footage, number of bedrooms/bathrooms, year built, 
+        renovation status, and geolocation. 
+        The app provides a simple and user-friendly web interface for real-estate stakeholders, 
+        buyers, and sellers to obtain instant, data-driven price predictions.</p>
+        <h3>🔄 MLOps Pipeline</h3>
+        <p>
+          <ul>
+            <li><b>Data Collection & Preprocessing:</b> Cleaned dataset, removed non-essential fields (<code>id</code>, <code>date</code>, <code>view</code>), and normalized features using <code>MinMaxScaler</code>.</li>
+            <li><b>Modeling:</b> Built and trained an <b>Artificial Neural Network (ANN)</b> with TensorFlow/Keras, optimized for regression tasks.</li>
+            <li><b>Deployment:</b> Packaged into a Streamlit app and deployed on <b>Streamlit Cloud</b> for real-time access.</li>
+            <li><b>Version Control:</b> Managed with GitHub for collaboration and reproducibility.</li>
+          </ul>
+        </p>
+    
+        <h3>📊 Results</h3>
+        <p>
+          The app successfully demonstrates the use of deep learning in real-estate valuation. 
+          Users can interactively test scenarios by adjusting property features, 
+          instantly receiving predicted prices. The model delivers robust predictions, 
+          and the streamlined interface improves accessibility for non-technical users. 
+        </p>
+        <p>
+          Overall, the app highlights how AI can enable faster, more objective, 
+          and scalable property valuation compared to traditional methods.
+        </p>
+      </div>
     </div>
-  </div>
 
   <!-- ICLERT -->
   <div class="proj-modal" id="modal-iclert" aria-hidden="true">
