@@ -214,6 +214,35 @@
                     <button class="proj-btn proj-btn--primary" data-open="#modal-dui-ml">Read More</button>
                   </div>
                 </article>
+                <!-- InsightBot: Research Tool -->
+              <article class="proj-card">
+                <div class="proj-thumb" style="aspect-ratio:auto; background:#0e1117;">
+                  <img src="./Projects_files/InsightBot.png" alt="InsightBot: AI-Powered Research Tool"
+                                   style="width:100%; height:auto; object-fit:contain; display:block; background:#0e1117;">
+                  <div class="proj-badges"></div>
+                </div>
+                <div class="proj-body">
+                   <h3 class="proj-title">InsightBot: AI-Powered Research Tool</h3>
+                   <p class="proj-summary">
+                      Streamlit app that ingests up to three article URLs, chunks content with RecursiveCharacterTextSplitter,
+                      embeds via OpenAIEmbeddings, indexes in FAISS, and answers questions using a RetrievalQA chain with source citations.
+                      Designed for rapid literature/news synthesis with a clean dark-mode UI.
+                  </p>
+                  <div class="proj-tags">
+                    <span class="proj-badge"><i class="fa-solid fa-code"></i> Python 3.11</span>
+                    <span class="proj-badge"><i class="fa-solid fa-window-maximize"></i> Streamlit</span>
+                    <span class="proj-badge"><i class="fa-solid fa-diagram-project"></i> LangChain</span>
+                    <span class="proj-badge"><i class="fa-solid fa-database"></i> FAISS</span>
+                    <span class="proj-badge"><i class="fa-solid fa-brain"></i> OpenAI API</span>
+                    <span class="proj-badge"><i class="fa-solid fa-magnifying-glass"></i> RetrievalQA</span>
+                    <span class="proj-badge"><i class="fa-solid fa-layer-group"></i> Embeddings</span>
+                    <span class="proj-badge"><i class="fa-solid fa-link"></i> Sources</span>
+                    <span class="proj-badge"><i class="fa-solid fa-shield-halved"></i> dotenv</span>
+                  </div>
+                  <button class="proj-btn proj-btn--primary" data-open="#modal-insightbot">Read More</button>
+                </div>
+              </article>
+
                 <!-- STEM Success Prediction App -->
                 <article class="proj-card">
                   <div class="proj-thumb">
@@ -535,6 +564,17 @@
   </div>
 
   <!-- ====== MODALS ====== -->
+   <!-- Drunk Driving ML Benchmark -->
+  <div class="proj-modal" id="modal-dui-ml" aria-hidden="true">
+    <div class="overlay" data-close></div>
+    <div class="dialog">
+      <button class="close" data-close aria-label="Close">&times;</button>
+      <h3>Benchmarking ML for Drunk‑Driving Detection</h3>
+      <p>Compared classical and deep models on multi‑sensor time‑series for impairment detection under latency constraints.</p>
+      <p>Reported ROC‑AUC, precision/recall, and drift robustness; identified optimal models per deployment context.</p>
+      <p>Informs on‑device vs. edge inference choices for real‑time road safety systems.</p>
+    </div>
+  </div>
   <!-- STEM Success Prediction App -->
   <div class="proj-modal" id="modal-stem-predict" aria-hidden="true">
     <div class="overlay" data-close></div>
@@ -717,17 +757,7 @@
     </div>
   </div>
 
-  <!-- STEM Success Prediction App 
-  <div class="proj-modal" id="modal-stem-predict" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Cloud‑Based STEM Success Prediction</h3>
-      <p>Deployed a privacy‑aware web app that ingests academic/behavioral signals to forecast student outcomes and risk levels.</p>
-      <p>MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads.</p>
-      <p>Improves early intervention decisions and program resource allocation.</p>
-    </div>
-  </div> -->
+
 
   <!-- Workforce Diversity ARIMA -->
   <div class="proj-modal" id="modal-workforce-arima" aria-hidden="true">
@@ -742,7 +772,7 @@
   </div>
 
   <!-- Drunk Driving ML Benchmark -->
-  <div class="proj-modal" id="modal-dui-ml" aria-hidden="true">
+   <!--<div class="proj-modal" id="modal-dui-ml" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
