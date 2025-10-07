@@ -544,7 +544,7 @@
 
   <!-- ====== MODALS ====== -->
    <!-- Drunk Driving ML Benchmark -->
-  <div class="proj-modal" id="modal-dui-ml" aria-hidden="true">
+  <div class="proj-modal" id="modal-insightbot" aria-hidden="true">
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
@@ -559,17 +559,37 @@
     <div class="overlay" data-close></div>
     <div class="dialog">
       <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Student Academic Success Prediction App</h3>
+      <h3>InsightBot: AI-Powered Research Tool</h3>
+
       <h3>Problem Statement</h3>
-      <p>Educational institutions often lack real-time tools to identify students at risk of underperforming. This project builds an ML-powered solution to help identify such students early using interpretable features — enabling proactive interventions..</p>
+      <p>Researchers, analysts, and students face information overload when processing multiple online articles or reports. 
+         Traditional reading and summarization methods are time-consuming and prone to cognitive fatigue, making it difficult 
+         to synthesize key insights across sources.</p>
+  
       <h3>Solution</h3>
-      <p>The Student Academic Success Prediction App is a machine learning model that predicts the academic success of a student based on their personal, academic, and socio-economic data. The app is designed to support: Early warning systems for educators, Resource planning for school administrators,Data-driven research in educational performance.</p>
-      <h3>MLOps Pipeline</h3>
-      <p>The app uses a machine learning model to make predictions based on the input data. The app is built using Streamlit and Python. The app is deployed and hosted on Streamlit Cloud. The app is monitored using Streamlit Metrics. The app is optimized for performance and scalability. The app is secure and compliant with GDPR and HIPAA.</p>
+      <p>InsightBot automates research synthesis by fetching, parsing, and embedding online articles into AI-readable vectors. 
+         Users can query the aggregated knowledge base and instantly receive concise, citation-supported answers. 
+         The app bridges human curiosity and machine reasoning, transforming raw data into structured insight.</p>
+  
+      <h3>Pipeline</h3>
+      <p>Built with <b>Streamlit</b> and <b>LangChain</b>, the system integrates the following components:</p>
+      <ul>
+        <li><b>WebBaseLoader</b> – Extracts and cleans text from provided URLs.</li>
+        <li><b>RecursiveCharacterTextSplitter</b> – Segments long documents into manageable chunks.</li>
+        <li><b>OpenAIEmbeddings</b> – Converts text chunks into high-dimensional numerical vectors.</li>
+        <li><b>FAISS</b> – Stores embeddings locally for efficient semantic retrieval.</li>
+        <li><b>RetrievalQAWithSourcesChain</b> – Uses OpenAI’s LLM to answer queries with contextual citations.</li>
+      </ul>
+  
+      <h3>Deployment</h3>
+      <p>The application is deployed on <b>Streamlit Cloud</b> with secure API key handling via <b>python-dotenv</b>. 
+         It features a dark-mode user interface and interactive sidebar for multi-URL input and querying.</p>
+  
       <h3>Results</h3>
-      <p>The app has been tested and validated with a dataset of 1000 students. The app has an accuracy of 90%.</p>
-      <p>MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads.</p>
-      <p>Improves early intervention decisions and program resource allocation.</p>
+      <p>InsightBot efficiently extracts insights from up to three online articles within seconds, 
+         providing verifiable and concise answers supported by direct source links. 
+         It demonstrates an end-to-end LLM retrieval-augmented generation (RAG) workflow in a 
+         user-friendly research environment.</p>
     </div>
   </div>
 
