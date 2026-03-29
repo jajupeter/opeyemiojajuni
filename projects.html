@@ -1,890 +1,571 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Opeyemi Peter Ojajuni, Ph.D. — Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Projects - Opeyemi Ojajuni" />
-  <meta name="keywords" content="portfolio projects ai ml vr networking research" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Opeyemi Ojajuni, Ph.D.</title>
+  <meta name="description" content="Projects by Dr. Opeyemi Ojajuni — AI, Data Science, and XR Solutions." />
   <link rel="shortcut icon" href="favicon.ico">
-
-  <!-- Your existing site styles -->
-  <link rel="stylesheet" href="css/normalize.css" type="text/css">
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-  <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-  <link rel="stylesheet" href="css/main.css" type="text/css">
-
-  <!-- Icons for badges -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Project Card + Modal + Carousel Styles -->
-  <style>
-    :root{
-      --card-bg:#ffffff;
-      --card-border:#e6eef5;
-      --title:#0b1220;
-      --text:#1f2a37;
-      --muted:#475569;
-      --accent1:#0ea5e9;
-    }
-
-    .proj-wrap{ max-width:1200px; margin: 0 auto; padding: 0 16px 48px; }
-    .proj-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
-    @media (min-width:768px){ .proj-grid{ grid-template-columns: repeat(2,1fr); } }
-    @media (min-width:1200px){ .proj-grid{ grid-template-columns: repeat(3,1fr); } }
-
-    /* WHITE CARD */
-    .proj-card{
-      background: var(--card-bg);
-      color: var(--text);
-      border:1px solid var(--card-border);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow: 0 8px 22px rgba(2,6,23,.06);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    }
-    .proj-card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 14px 36px rgba(2,6,23,.12);
-      border-color:#d7e4f0;
-    }
-
-    .proj-thumb{ position:relative; aspect-ratio:16/9; background:#eef4fb; overflow:hidden; }
-    .proj-thumb img{ width:100%; height:100%; object-fit:cover; transform: scale(1.02); transition: transform .5s ease; }
-    .proj-card:hover .proj-thumb img{ transform: scale(1.06); }
-
-    .proj-badges{ position:absolute; left:10px; bottom:10px; display:flex; gap:6px; flex-wrap:wrap; }
-    .proj-badge{
-      font-size:12px; padding:4px 8px; border-radius:999px;
-      background:#f3f4f6; color:#0b1220; border:1px solid rgba(2,6,23,.06);
-      display:inline-flex; align-items:center; gap:6px;
-      box-shadow:0 6px 14px rgba(2,6,23,.08);
-    }
-    .proj-badge i{ color: var(--accent1); }
-
-    .proj-body{ padding:16px 16px 18px; }
-    .proj-title{ margin:4px 0 6px; font-size:18px; line-height:1.35; color:var(--title); font-weight:800; }
-    .proj-summary{ margin:0 0 12px; font-size:14px; color: var(--muted); min-height: 60px; }
-    .proj-tags{ font-size:12px; color:#0f172a; margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap; opacity:.8; }
-    .proj-tags i{ margin-right:4px; color:#64748b; }
-
-    .proj-btn{
-      appearance:none; border:1px solid #dbe7f3;
-      background: #f8fafc; color:#0b1220;
-      padding:8px 12px; border-radius:10px; font-size:14px; cursor:pointer;
-      transition: all .2s ease;
-    }
-    .proj-btn--primary{
-      background: #0ea5e9; color:#ffffff; border-color:#0ea5e9; font-weight:700;
-    }
-    .proj-btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-
-    /* Modal (popup) */
-    .proj-modal{ position:fixed; inset:0; display:none; }
-    .proj-modal[aria-hidden="false"]{ display:block; }
-    .proj-modal .overlay{ position:absolute; inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(3px); }
-    .proj-modal .dialog{
-      position:relative; z-index:1; margin:6vh auto; max-width:900px;
-      background:#ffffff; color:#0b1220; border:1px solid #e6eef5;
-      border-radius:16px; padding:22px; box-shadow:0 18px 45px rgba(2,6,23,.25);
-    }
-    .proj-modal .close{ position:absolute; right:10px; top:6px; font-size:28px; line-height:1;
-      background:transparent; border:none; color:#334155; cursor:pointer; }
-    .proj-modal h3{ margin:0 0 6px; font-weight:800; }
-    .proj-modal p{ color:#334155; }
-    .proj-modal h4{ margin:16px 0 8px; font-weight:800; color:#0b1220; }
-    .proj-modal a{ color:#0369a1; text-decoration: underline; }
-
-    /* Carousel inside modal */
-    .modal-gallery{ margin-top:14px; }
-    .modal-gallery .igv-slide{
-      border-radius:12px; overflow:hidden;
-      border:1px solid #e6eef5; background:#f8fafc;
-      box-shadow:0 8px 18px rgba(2,6,23,.06);
-    }
-    .modal-gallery img,
-    .modal-gallery video{ width:100%; height:auto; display:block; }
-
-    /* Small inline Prev/Next buttons */
-    .owl-theme .owl-nav{
-      display:flex !important;
-      justify-content:flex-end;
-      gap:8px;
-      margin-top:10px;
-    }
-    .owl-theme .owl-nav [class*='owl-']{
-      background:#0ea5e9;
-      color:#fff !important;
-      border-radius:8px;
-      padding:4px 8px !important;
-      margin:0 !important;
-      font-size:12px;
-      line-height:1;
-      width:auto !important;
-      display:inline-flex !important;
-      align-items:center;
-      justify-content:center;
-      min-width:32px;
-      height:28px;
-    }
-    .owl-theme .owl-dots{
-      display:flex; justify-content:center; gap:6px; margin-top:6px;
-    }
-    .owl-theme .owl-dots .owl-dot span{
-      width:10px; height:10px; background:#cbd5e1;
-    }
-    .owl-theme .owl-dots .owl-dot.active span{ background:#0ea5e9; }
-  </style>
-
-  <script src="js/modernizr.custom.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
 </head>
+<body>
 
-<body class="page">
-  <div class="lm-animated-bg"></div>
-
-  <!-- Loading animation -->
-  <div class="preloader">
-    <div class="preloader-animation"><div class="preloader-spinner"></div></div>
+<!-- ================================================================
+     NAVIGATION
+     ================================================================ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-symbol">OO</div>
+      <div class="nav-logo-text">Opeyemi <span>Ojajuni</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">About Me</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="research.html">Research</a>
+      <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank" class="btn btn-primary btn-sm">Download CV</a>
+    </div>
+    <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">About Me</a>
+  <a href="projects.html">Projects</a>
+  <a href="research.html">Research</a>
+  <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank">Download CV</a>
+</div>
 
-  <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
+<!-- ================================================================
+     PAGE HEADER
+     ================================================================ -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Portfolio</span>
+    <h1 class="section-title">Projects</h1>
+    <p class="section-sub">Applied AI, Data Science, and XR research — from federally funded research platforms to deployed Streamlit apps.</p>
+  </div>
+</div>
 
-  <div class="page-scroll">
-    <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+<!-- ================================================================
+     PROJECT GRID
+     ================================================================ -->
+<section class="section">
+  <div class="container">
 
-      <!-- Header -->
-      <header id="site_header" class="header">
-        <div class="header-content clearfix">
-          <div class="text-logo">
-            <a href="index.html">
-              <div class="logo-symbol">OO</div>
-              <div class="logo-text">Opeyemi <span>Ojajuni</span></div>
-            </a>
-          </div>
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="ai">🤖 AI</button>
+      <button class="filter-btn" data-filter="ds">📊 Data Science</button>
+      <button class="filter-btn" data-filter="xr">🥽 XR Solutions</button>
+    </div>
 
-          <div class="site-nav mobile-menu-hide">
-            <ul class="leven-classic-menu site-main-menu">
-              <li class="menu-item"><a href="index.html">About Me</a></li>
-              <li class="menu-item"><a href="publications.html">Publications</a></li>
-              <li class="menu-item current-menu-item"><a href="projects.html">Projects</a></li>
-              <li class="menu-item"><a href="awards.html">Awards</a></li>
-            </ul>
-          </div>
+    <!-- Grid -->
+    <div class="proj-grid">
 
-          <a class="menu-toggle mobile-visible"><i class="fa fa-bars"></i></a>
+      <!-- InsightBot -->
+      <article class="proj-card reveal" data-category="ai">
+        <div class="proj-thumb">
+          <img src="./Projects_files/InsightBot.png" alt="InsightBot: AI-Powered Research Tool" style="object-fit:contain; background:#111827;">
+          <span class="proj-cat proj-cat-ai">AI</span>
+          <span class="proj-live">Live Demo</span>
         </div>
-      </header>
-      <!-- /Header -->
-
-      <div id="main" class="site-main">
-        <div id="main-content" class="single-page-content">
-          <div id="primary" class="content-area">
-
-            <div class="page-title" style="text-align: center; padding: 40px 70px;">
-              <h1>Projects</h1>
-              <div class="page-subtitle"></div>
-            </div>
-
-            <!-- ============ PROJECT CARD GRID (WHITE CARDS) ============ -->
-            <section class="proj-wrap">
-              <div class="proj-grid">
-                                <!-- InsightBot: Research Tool -->
-                <article class="proj-card">
-                  <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                    <img src="./Projects_files/InsightBot.png" alt="InsightBot: AI-Powered Research Tool"
-                                     style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                    <div class="proj-badges">
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">InsightBot: AI-Powered Research Tool</h3>
-                    <p class="proj-summary">  GenAI-powered research assistant that processes up to three online articles, applies RecursiveCharacterTextSplitter for semantic chunking, 
-                      and encodes text into vector embeddings using OpenAIEmbeddings. 
-                      These are indexed in FAISS for fast retrieval and queried through a Retrieval-Augmented Generation (RAG) pipeline via RetrievalQAWithSourcesChain, 
-                      delivering concise, citation-backed insights. Optimized for rapid literature and news synthesis within a sleek dark-mode Streamlit interface.</p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-code"></i> Python 3.11</span>
-                      <span class="proj-badge"><i class="fa-solid fa-window-maximize"></i> Streamlit</span>
-                      <span class="proj-badge"><i class="fa-solid fa-diagram-project"></i> LangChain</span>
-                      <span class="proj-badge"><i class="fa-solid fa-database"></i> Vector Database</span>
-                      <span class="proj-badge"><i class="fa-solid fa-brain"></i> OpenAI API</span>
-                      <span class="proj-badge"><i class="fa-solid fa-magnifying-glass"></i> RetrievalQA</span>
-                      <span class="proj-badge"><i class="fa-solid fa-layer-group"></i> Embeddings</span>
-                    </div>
-                     <!-- Buttons -->
-                     <div class="proj-actions">
-                      <button class="proj-btn proj-btn--primary" data-open="#modal-insightbot">Read More</button>
-                      <a href="https://insightbotnewsresearch.streamlit.app/" target="_blank" class="proj-btn proj-btn--secondary">Launch App</a>
-                      <a href="https://github.com/jajupeter/insightBot" target="_blank" class="proj-btn proj-btn--secondary">GitHub Code</a>
-                    </div>
-                  </div>
-                </article>
-
-  
-                <!-- STEM Success Prediction App -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/PredictML0.png" alt="STEM Success Prediction">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Student Academic Success Prediction App</h3>
-                    <p class="proj-summary">This interactive AI app predicts whether a student in a STEM program will be academically successful (above average) or not successful (below average), based on 15 personal, academic, and socio-economic parameters.
-                      The App is designed to support: Early warning systems for educators, Resource planning for school administrators,Data-driven research in educational performance. </p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-database"></i> MLOps</span>
-                      <span class="proj-badge"><i class="fa-solid fa-stream"></i> Streamlit</span>
-                      <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Predictive Analytics</span>
-                      <span class="proj-badge"><i class="fa-solid fa-layer-group"></i> Classification</span>
-                      <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Random Forest</span>
-                    </div>
-                     <!-- Buttons -->
-                    <div class="proj-actions">
-                      <button class="proj-btn proj-btn--primary" data-open="#modal-stem-predict">Read More</button>
-                      <a href="https://student-academic-success-prediction.streamlit.app/" target="_blank" class="proj-btn proj-btn--secondary">Launch App</a>
-                      <a href="https://github.com/jajupeter/student_academic_success_prediction-" target="_blank" class="proj-btn proj-btn--secondary">GitHub Code</a>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- House Price Prediction App -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/PredictML1.png" alt="House Price Prediction">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">House Price Prediction App</h3>
-                    <p class="proj-summary">The House Price Prediction App is an interactive AI-driven platform built with Streamlit, designed to estimate residential property values in King County, Washington, using housing data from 2014–2015.
-                      Powered by a trained Deep Learning regression model, the app showcases how machine learning can bring accuracy and accessibility to real-estate valuation through a simple, user-friendly web interface.. </p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-database"></i> MLOps</span>
-                      <span class="proj-badge"><i class="fa-solid fa-stream"></i> Streamlit</span>
-                      <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Predictive Analytics</span>
-                      <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Deep Learning</span>
-                    </div>
-                     <!-- Buttons -->
-                    <div class="proj-actions">
-                      <button class="proj-btn proj-btn--primary" data-open="#modal-house-predict">Read More</button>
-                      <a href="https://real-estate-house-price-prediction-app.streamlit.app/" target="_blank" class="proj-btn proj-btn--secondary">Launch App</a>
-                      <a href="https://github.com/jajupeter/House-Price-prediction-app" target="_blank" class="proj-btn proj-btn--secondary">GitHub Code</a>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- ICLERT -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/ICLERT1.jpg" alt="ICLERT VR Training">
-                    <div class="proj-badges"></div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
-                    <p class="proj-summary">Applied research initiative integrating AI-driven Virtual Reality (VR) to translate crisis-leadership theory into a scalable training platform. 
-                      Using LiDAR/GIS digital twins and immersive hazard simulations, ICLERT enhances decision-making, confidence, and resilience among emergency leaders across Louisiana.</p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
-                      <span class="proj-badge"><i class="fa-solid fa-brain"></i> AI</span>
-                      <span class="proj-badge"><i class="fa-solid fa-cubes"></i> Digital Twin</span>
-                      <span class="proj-badge"><i class="fa-solid fa-handshake"></i> Univ–Agency</span>
-                      <span class="proj-badge"><i class="fa-solid fa-triangle-exclamation"></i> Emergency Response</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-iclert">Read More</button>
-                  </div>
-                </article>
-
-                <!-- Immersive Geospatial Visualization -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/viz1.png" alt="Immersive Geospatial Visualization">
-                    <div class="proj-badges"></div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Immersive Geospatial Visualization in VR Systems</h3>
-                    <p class="proj-summary">Applied research project developing a data-driven pipeline that transforms GIS datasets into interactive 3D digital twins for Virtual Reality (VR) and CAVE environments. 
-                      The system enables urban planners, engineers, and policymakers to visualize terrain, infrastructure, and environmental data spatially—enhancing decision-making for smart-city planning, 
-                      disaster resilience, and sustainable infrastructure design.</p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
-                      <span class="proj-badge"><i class="fa-solid fa-map"></i> Geospatial</span>
-                      <span class="proj-badge"><i class="fa-solid fa-globe"></i> Visualization</span>
-                      <span class="proj-badge"><i class="fa-solid fa-city"></i> Urban Planning</span>
-                      <span class="proj-badge"><i class="fa-solid fa-globe"></i> Spatial Computing</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-geo">Read More</button>
-                  </div>
-                </article>
-
-                <!-- SafeGuide Campus: Generative AI for Safer Campus -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/SafeCam.png" alt="SafeGuide Campus: Generative AI for Safer Campus">
-                    <div class="proj-badges"></div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">SafeGuide Campus: Generative AI for Safer Campus</h3>
-                    <p class="proj-summary">SafeGuide Campus is a Generative AI safety assistant built in PartyRock that empowers students and staff with real-time guidance, awareness, and decision support for safer campus living.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-language"></i> LLM</span>
-                        <span class="proj-badge"><i class="fa-solid fa-robot"></i> Generative AI</span>
-                        <span class="proj-badge"><i class="fa-brands fa-aws"></i> AWS</span>
-                        <span class="proj-badge"><i class="fa-solid fa-flask"></i> Responsible AI Research</span>
-                    </div>
-                     <!-- Buttons -->
-                     <div class="proj-actions">
-                      <button class="proj-btn proj-btn--primary" data-open="#modal-amxr">Read More</button>
-                      <a href="https://partyrock.aws/u/Jaju009/o-DwUIR0J/SafeGuide-Campus" target="_blank" class="proj-btn proj-btn--secondary">Launch App</a>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- SURADD -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/Suraad.png" alt="SURADD Digital Divide">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">SURADD: Reaching Across the Digital Divide</h3>
-                    <p class="proj-summary">Applied research initiative focused on expanding equitable access to immersive learning through the development of prototype multi-user VR science modules. 
-                      Designed for deployment across HMDs, CAVE, and Mobile CAVE systems, SURADD integrates evidence-based VR pedagogy with professional development for middle-school STEM educators. 
-                      The project advances workforce readiness and digital inclusion by bridging gaps in access to advanced immersive technologies for underrepresented communities.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR/AR</span>
-                        <span class="proj-badge"><i class="fa-solid fa-graduation-cap"></i> STEM</span>
-                        <span class="proj-badge"><i class="fa-solid fa-child"></i> K-12</span>
-                        <span class="proj-badge"><i class="fa-solid fa-chalkboard-teacher"></i> Professional Development</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-suradd">Read More</button>
-                  </div>
-                </article>
-
-                <!-- UX of VR Learning -->
-                <article class="proj-card">
-                  <div class="proj-thumb">
-                    <img src="./Projects_files/AM1.JPG" alt="UX of VR Learning">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Evaluating User Experience of VR‑Based Learning</h3>
-                    <p class="proj-summary">A cohort study using focus groups, surveys, interviews, and classroom observation to evaluate usability, presence, behavioral perception, and engagement in immersive VR learning environments.</p>
-                    <div class="proj-tags">
-                      <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR</span>
-                      <span class="proj-badge"><i class="fa-solid fa-user-check"></i> UX Research</span>
-                      <span class="proj-badge"><i class="fa-solid fa-eye"></i> User Perception</span>
-                      <span class="proj-badge"><i class="fa-solid fa-people-group"></i> Focus Groups</span>
-                      <span class="proj-badge"><i class="fa-solid fa-chalkboard-user"></i> Classroom Observation</span>
-                      <span class="proj-badge"><i class="fa-solid fa-list-check"></i> Usability Testing</span>
-
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-uxvr">Read More</button>
-                  </div>
-                </article>
-
-                <!-- Experimental Study on Cognitive Skills -->
-                <article class="proj-card">
-                  <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                    <img src="./Projects_files/impact.png" alt="VR Cognitive Skills Study"
-                             style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                
-                    <div class="proj-badges">
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Immersive VR Learning: Cognitive Skill Impact</h3>
-                    <p class="proj-summary">Controlled experimental study evaluating how VR-based learning enhances computational thinking. 
-                        Measured significant gains in algorithmic reasoning, creative problem-solving, and overall 
-                        cognitive skill development through pre/post assessments.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-flask-vial"></i> Experimental Research</span>
-                        <span class="proj-badge"><i class="fa-solid fa-clipboard-check"></i> Pre/Post-Test Design</span>
-                        <span class="proj-badge"><i class="fa-solid fa-chart-bar"></i> Descriptive Statistics</span>
-                        <span class="proj-badge"><i class="fa-solid fa-square-root-variable"></i> Shapiro-Wilk Test</span>
-                        <span class="proj-badge"><i class="fa-solid fa-scale-unbalanced"></i> Mann-Whitney U</span>
-                        <span class="proj-badge"><i class="fa-solid fa-square-poll-vertical"></i> T-Tests</span>
-                        <span class="proj-badge"><i class="fa-solid fa-equals"></i> Wilcoxon Signed-Rank</span>
-                      
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-vr-cog">Read More</button>
-                  </div>
-                </article>
-
-                <!-- Predicting CT with ML -->
-                <article class="proj-card">
-                    <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                        <img src="./Projects_files/CT_.png" alt="Predicting CT with ML" 
-                             style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Predicting Computational Thinking with ML</h3>
-                    <p class="proj-summary">Applied supervised ML on survey data to forecast CT skill levels, uncovering key cognitive constructs 
-                        that drive problem-solving. Benchmarked multiple models to improve predictive accuracy and 
-                        guide personalized learning strategies.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-brain"></i> Supervised ML</span>
-                        <span class="proj-badge"><i class="fa-solid fa-code"></i> SVM</span>
-                        <span class="proj-badge"><i class="fa-solid fa-shapes"></i> KNN</span>
-                        <span class="proj-badge"><i class="fa-solid fa-tree"></i> Random Forest</span>
-                        <span class="proj-badge"><i class="fa-solid fa-bolt"></i> XGBoost</span>
-                        <span class="proj-badge"><i class="fa-solid fa-gears"></i> Feature Engineering</span>
-                        <span class="proj-badge"><i class="fa-solid fa-database"></i> Data Wrangling</span>
-                        <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Exploratory Data Analysis</span>
-                        <span class="proj-badge"><i class="fa-solid fa-microscope"></i> Cognitive Analytics</span>
-                        <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR Learning Research</span>
-                        
-                        
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-ct-ml">Read More</button>
-                  </div>
-                </article>
-
-                <!-- CT Scale Validation -->
-                <article class="proj-card">
-                  <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                    <img src="./Projects_files/CFA.png" alt="CT Scale Validation"
-                             style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                    <div class="proj-badges">
-
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Validating a Computational Thinking survey scale  with Factor analysis, PCA & SEM</h3>
-                    <p class="proj-summary">Reduced 29 observed survey items into 5 latent constructs using EFA, PCA, and SEM—establishing a 
-                        reliable, research-grade instrument for assessing CT skills in VR-based learning contexts.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-chart-pie"></i> Dimensionality Reduction</span>
-                        <span class="proj-badge"><i class="fa-solid fa-diagram-project"></i> Structural Equation Modeling (SEM)</span>
-                        <span class="proj-badge"><i class="fa-solid fa-cubes"></i> Factor Analysis</span>
-                        <span class="proj-badge"><i class="fa-solid fa-code-branch"></i> PCA</span>
-                        <span class="proj-badge"><i class="fa-solid fa-check-double"></i> Construct Validity</span>
-                        <span class="proj-badge"><i class="fa-solid fa-microscope"></i> Validated Scales</span>
-                        <span class="proj-badge"><i class="fa-solid fa-brain"></i> Cognitive Analytics</span>
-                        <span class="proj-badge"><i class="fa-solid fa-vr-cardboard"></i> VR Learning Research</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-ct-scale">Read More</button>
-                  </div>
-                </article>
-
-                <!-- Workforce Diversity ARIMA -->
-                <article class="proj-card">
-                  <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                    <img src="./Projects_files/ARIMA.png" alt="Workforce Diversity Forecasting"
-                                 style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                    <div class="proj-badges">
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Forecasting Workforce Diversity in Construction (ARIMA)</h3>
-                    <p class="proj-summary"> Applied ARIMA modeling on education-to-industry pipelines to forecast minority graduate supply versus construction workforce demand. Generates insights to guide policy, academic programs, 
-                        and industry hiring for equity-driven workforce planning..</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-chart-bar"></i> EDA</span>
-                        <span class="proj-badge"><i class="fa-solid fa-database"></i> Data Virtualization</span>
-                        <span class="proj-badge"><i class="fa-solid fa-gears"></i> Feature Engineering</span>
-                        <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> ARIMA Forecasting</span>
-                        <span class="proj-badge"><i class="fa-solid fa-signal"></i> Trend Analysis</span>
-                        <span class="proj-badge"><i class="fa-solid fa-users"></i> Workforce Diversity</span>
-                        <span class="proj-badge"><i class="fa-solid fa-industry"></i> Construction Industry</span>
-                        <span class="proj-badge"><i class="fa-solid fa-lightbulb"></i> Policy Insight</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-workforce-arima">Read More</button>
-                  </div>
-                </article>
-
-                <!-- Drunk Driving ML Benchmark -->
-                <!--<article class="proj-card">
-                  <div class="proj-thumb" style="aspect-ratio:auto; background:#fff;">
-                    <img src="./Projects_files/CNN_Drunk.png" alt="Drunk Driving ML Benchmark"
-                                     style="width:100%; height:auto; object-fit:contain; display:block; background:#fff;">
-                    <div class="proj-badges">
-                    </div>
-                  </div>
-                  <div class="proj-body">
-                    <h3 class="proj-title">Benchmarking ML models for Drunk‑Driving Detection</h3>
-                    <p class="proj-summary"> Compared deep learning and classical ML models on multi-modal signals (facial cues, eye tracking, and telemetry) to detect early impairment. The project advances AI-driven road safety with 
-                        faster, more reliable impairment alerts.</p>
-                    <div class="proj-tags">
-                        <span class="proj-badge"><i class="fa-solid fa-brain"></i> CNN</span> 
-                        <span class="proj-badge"><i class="fa-solid fa-camera"></i> OpenCV</span>
-                        <span class="proj-badge"><i class="fa-solid fa-eye"></i> Dlib</span>
-                        <span class="proj-badge"><i class="fa-solid fa-brain"></i> Supervised ML</span>
-                        <span class="proj-badge"><i class="fa-solid fa-code"></i> SVM</span>
-                        <span class="proj-badge"><i class="fa-solid fa-car"></i> Road Safety</span>
-                        <span class="proj-badge"><i class="fa-solid fa-chart-line"></i> Model Benchmarking</span>
-                    </div>
-                    <button class="proj-btn proj-btn--primary" data-open="#modal-dui-ml">Read More</button>
-                  </div>
-                </article>-->
-
-              </div>
-            </section>
-            <!-- ============ /GRID ============ -->
-
+        <div class="proj-body">
+          <h3 class="proj-title">InsightBot: AI-Powered Research Tool</h3>
+          <p class="proj-summary">GenAI-powered research assistant using RAG pipelines — processes online articles, encodes into FAISS vector embeddings, and delivers citation-backed answers via LangChain + OpenAI.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Python 3.11</span>
+            <span class="proj-badge">LangChain</span>
+            <span class="proj-badge">FAISS</span>
+            <span class="proj-badge">OpenAI API</span>
+            <span class="proj-badge">Streamlit</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-insightbot">Read More</button>
+            <a href="https://insightbotnewsresearch.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+            <a href="https://github.com/jajupeter/insightBot" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Footer -->
-      <footer class="site-footer clearfix">
-        <div class="footer-social">
-          <ul class="footer-social-links">
-            <li><a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-            <li><a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank">ResearchGate</a></li>
-            <li><a href="https://github.com/jajupeter" target="_blank">GitHub</a></li>
-          </ul>
+      <!-- SafeGuide Campus -->
+      <article class="proj-card reveal reveal-delay-1" data-category="ai">
+        <div class="proj-thumb">
+          <img src="./Projects_files/SafeCam.png" alt="SafeGuide Campus">
+          <span class="proj-cat proj-cat-ai">AI</span>
+          <span class="proj-live">Live Demo</span>
         </div>
-      </footer>
-
-    </div>
-  </div>
-
-  <!-- ====== MODALS ====== -->
-   <!-- InsightBot -->
-  <div class="proj-modal" id="modal-insightbot" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>InsightBot: AI-Powered Research Tool</h3>
-
-      <h3>Problem Statement</h3>
-      <p>Researchers, analysts, and students face information overload when processing multiple online articles or reports. 
-         Traditional reading and summarization methods are time-consuming and prone to cognitive fatigue, making it difficult 
-         to synthesize key insights across sources.</p>
-  
-      <h3>Solution</h3>
-      <p>InsightBot automates research synthesis by fetching, parsing, and embedding online articles into AI-readable vectors. 
-         Users can query the aggregated knowledge base and instantly receive concise, citation-supported answers. 
-         The app bridges human curiosity and machine reasoning, transforming raw data into structured insight.</p>
-  
-      <h3>Pipeline</h3>
-      <p>Built with <b>Streamlit</b> and <b>LangChain</b>, the system integrates the following components:</p>
-      <ul>
-        <li><b>WebBaseLoader</b> – Extracts and cleans text from provided URLs.</li>
-        <li><b>RecursiveCharacterTextSplitter</b> – Segments long documents into manageable chunks.</li>
-        <li><b>OpenAIEmbeddings</b> – Converts text chunks into high-dimensional numerical vectors.</li>
-        <li><b>FAISS</b> – Stores embeddings locally for efficient semantic retrieval.</li>
-        <li><b>RetrievalQAWithSourcesChain</b> – Uses OpenAI’s LLM to answer queries with contextual citations.</li>
-      </ul>
-  
-      <h3>Deployment</h3>
-      <p>The application is deployed on <b>Streamlit Cloud</b> with secure API key handling via <b>python-dotenv</b>. 
-         It features a dark-mode user interface and interactive sidebar for multi-URL input and querying.</p>
-  
-      <h3>Results</h3>
-      <p>InsightBot efficiently extracts insights from up to three online articles within seconds, 
-         providing verifiable and concise answers supported by direct source links. 
-         It demonstrates an end-to-end LLM retrieval-augmented generation (RAG) workflow in a 
-         user-friendly research environment.</p>
-    </div>
-  </div>
-  
-  
-  <!-- STEM Success Prediction App -->
-  <div class="proj-modal" id="modal-stem-predict" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Student Academic Success Prediction App</h3>
-      <h3>Problem Statement</h3>
-      <p>Educational institutions often lack real-time tools to identify students at risk of underperforming. This project builds an ML-powered solution to help identify such students early using interpretable features — enabling proactive interventions..</p>
-      <h3>Solution</h3>
-      <p>The Student Academic Success Prediction App is a machine learning model that predicts the academic success of a student based on their personal, academic, and socio-economic data. The app is designed to support: Early warning systems for educators, Resource planning for school administrators,Data-driven research in educational performance.</p>
-      <h3>MLOps Pipeline</h3>
-      <p>The app uses a machine learning model to make predictions based on the input data. The app is built using Streamlit and Python. The app is deployed and hosted on Streamlit Cloud. The app is monitored using Streamlit Metrics. The app is optimized for performance and scalability. The app is secure and compliant with GDPR and HIPAA.</p>
-      <h3>Results</h3>
-      <p>The app has been tested and validated with a dataset of 1000 students. The app has an accuracy of 90%.</p>
-      <p>MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads.</p>
-      <p>Improves early intervention decisions and program resource allocation.</p>
-    </div>
-  </div>
-
-  <!-- House Price Prediction App -->
-  <div class="proj-modal" id="modal-house-predict" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>House Price Prediction App</h3>
-      <h3>Problem Statement</h3>
-      <p>Accurately pricing residential properties is one of the most critical steps in real estate. 
-        Traditional valuation methods rely heavily on manual appraisals or simplistic statistical models, 
-        which are often time-consuming, subjective, and unable to capture complex non-linear relationships 
-        in housing features.</p>
-      <h3>Solution</h3>
-      <p>TThe House Price Prediction App is an AI-powered interactive tool built with <b>Streamlit</b>. 
-        Using a trained <b>Deep Learning regression model</b> on the 
-        <i>King County Housing Dataset (2014–2015)</i>, it estimates house prices based on 
-        <b>18 key features</b> such as square footage, number of bedrooms/bathrooms, year built, 
-        renovation status, and geolocation. 
-        The app provides a simple and user-friendly web interface for real-estate stakeholders, 
-        buyers, and sellers to obtain instant, data-driven price predictions.</p>
-        <h3>🔄 MLOps Pipeline</h3>
-        <p>
-          <ul>
-            <li><b>Data Collection & Preprocessing:</b> Cleaned dataset, removed non-essential fields (<code>id</code>, <code>date</code>, <code>view</code>), and normalized features using <code>MinMaxScaler</code>.</li>
-            <li><b>Modeling:</b> Built and trained an <b>Artificial Neural Network (ANN)</b> with TensorFlow/Keras, optimized for regression tasks.</li>
-            <li><b>Deployment:</b> Packaged into a Streamlit app and deployed on <b>Streamlit Cloud</b> for real-time access.</li>
-            <li><b>Version Control:</b> Managed with GitHub for collaboration and reproducibility.</li>
-          </ul>
-        </p>
-    
-        <h3>📊 Results</h3>
-        <p>
-          The app successfully demonstrates the use of deep learning in real-estate valuation. 
-          Users can interactively test scenarios by adjusting property features, 
-          instantly receiving predicted prices. The model delivers robust predictions, 
-          and the streamlined interface improves accessibility for non-technical users. 
-        </p>
-        <p>
-          Overall, the app highlights how AI can enable faster, more objective, 
-          and scalable property valuation compared to traditional methods.
-        </p>
-      </div>
-    </div>
-
-  <!-- ICLERT -->
-  <div class="proj-modal" id="modal-iclert" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
-      <p>ICLERT closes the gap left by traditional drills with AI‑driven VR that captures the chaos of real incidents. Leaders practice split‑second judgment in lifelike scenarios to measurably improve readiness.</p>
-      <p>We engineered a LiDAR/GIS digital twin of campus (shelter + EOC), then built a modular curriculum—10 crisis courses + 2 hazard scenarios (gas leaks, electrical failures)—for Meta Quest 3 and CAVE.</p>
-      <p>35+ leaders trained; 10+ modules deployed. In partnership with the Louisiana Department of Health, the program scales statewide to strengthen workforce resilience and compliance.</p>
-      <div class="modal-gallery owl-carousel owl-theme igv-carousel">
-        <div class="igv-slide">
-          <video controls playsinline preload="metadata">
-            <source src="Projects_files/ICLERT2.mp4" type="video/mp4">
-          </video>
+        <div class="proj-body">
+          <h3 class="proj-title">SafeGuide Campus: Generative AI for Safer Campus</h3>
+          <p class="proj-summary">Generative AI safety assistant built in AWS PartyRock that empowers students and staff with real-time guidance and decision support for safer campus living.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">LLM</span>
+            <span class="proj-badge">Generative AI</span>
+            <span class="proj-badge">AWS PartyRock</span>
+            <span class="proj-badge">Responsible AI</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-amxr">Read More</button>
+            <a href="https://partyrock.aws/u/Jaju009/o-DwUIR0J/SafeGuide-Campus" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+          </div>
         </div>
-        <div class="igv-slide">
-          <video controls playsinline preload="metadata">
-            <source src="Projects_files/ICLERT5.mp4" type="video/mp4">
-          </video>
+      </article>
+
+      <!-- ICLERT -->
+      <article class="proj-card reveal reveal-delay-2" data-category="xr">
+        <div class="proj-thumb">
+          <img src="./Projects_files/ICLERT1.jpg" alt="ICLERT VR Training">
+          <span class="proj-cat proj-cat-xr">XR Solutions</span>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Geospatial Visualization -->
-  <div class="proj-modal" id="modal-geo" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Immersive Geospatial Visualization in VR Systems</h3>
-      <p>Static 2D maps limit spatial reasoning. We transform OSM/ArcGIS data into procedural 3D city scenes in CityEngine and deploy to VR/CAVE for deep, interactive exploration.</p>
-      <p>Unity deployment with local‑origin georeferencing ensures precision on Meta Quest 3 and multi‑user CAVE displays. Usability studies validated realism and value for planning, education, and engagement.</p>
-      <p>The result: a city‑agnostic framework ready for real‑time feeds (traffic, weather) to evolve into dynamic urban digital twins.</p>
-      <div class="modal-gallery owl-carousel owl-theme igv-carousel">
-        <div class="igv-slide">
-          <video controls playsinline preload="metadata">
-            <source src="Projects_files/subr_tour.mp4" type="video/mp4">
-          </video>
+        <div class="proj-body">
+          <h3 class="proj-title">Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
+          <p class="proj-summary">AI-driven Virtual Reality  crisis-management simulator using LiDAR/GIS digital twins. 35+ leaders trained; 10+ modules deployed in partnership with the Louisiana Department of Health.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">VR / CAVE</span>
+            <span class="proj-badge">AI</span>
+            <span class="proj-badge">Digital Twin</span>
+            <span class="proj-badge">LiDAR/GIS</span>
+            <span class="proj-badge">Meta Quest 3</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-iclert">Read More</button>
+          </div>
         </div>
-        <div class="igv-slide">
-          <video controls playsinline preload="metadata">
-            <source src="Projects_files/Viz2.MOV" type="video/mp4">
-          </video>
+      </article>
+
+      <!-- Geospatial Visualization -->
+      <article class="proj-card reveal" data-category="xr">
+        <div class="proj-thumb">
+          <img src="./Projects_files/viz1.png" alt="Immersive Geospatial Visualization">
+          <span class="proj-cat proj-cat-xr">XR Solutions</span>
         </div>
-      </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Immersive Geospatial Visualization in Extended Reality (XR) Systems</h3>
+          <p class="proj-summary">Data-driven pipeline transforming GIS datasets into interactive 3D digital twins for Computer Automated Virtual Environments (CAVE) — enabling smart-city planning and disaster resilience decisions.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Unity</span>
+            <span class="proj-badge">GIS / ArcGIS</span>
+            <span class="proj-badge">CityEngine</span>
+            <span class="proj-badge">Spatial Computing</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-geo">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- SURADD -->
+      <article class="proj-card reveal reveal-delay-1" data-category="xr">
+        <div class="proj-thumb">
+          <img src="./Projects_files/Suraad.png" alt="SURADD Digital Divide">
+          <span class="proj-cat proj-cat-xr">XR Solutions</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">SURADD: Reaching Across the Digital Divide</h3>
+          <p class="proj-summary">Multi-user VR science modules for HMDs, CAVE, and Mobile CAVE systems — 500+ students reached, 100+ STEM educators trained. Student engagement up 47%, retention up 32%.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">VR / CAVE</span>
+            <span class="proj-badge">Unity</span>
+            <span class="proj-badge">STEM Education</span>
+            <span class="proj-badge">K-12</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-suradd">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- UX of VR Learning -->
+      <article class="proj-card reveal reveal-delay-2" data-category="xr">
+        <div class="proj-thumb">
+          <img src="./Projects_files/AM1.JPG" alt="UX of VR Learning">
+          <span class="proj-cat proj-cat-xr">XR Solutions</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Evaluating User Experience of Virtual Reality (VR)-Based Learning</h3>
+          <p class="proj-summary">Cohort study using focus groups, surveys, interviews, and classroom observation to evaluate usability, presence, and engagement in immersive VR learning environments.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">UX Research</span>
+            <span class="proj-badge">Focus Groups</span>
+            <span class="proj-badge">Usability Testing</span>
+            <span class="proj-badge">VR</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-uxvr">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEM Success Prediction -->
+      <article class="proj-card reveal" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/PredictML0.png" alt="STEM Success Prediction">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+          <span class="proj-live">Live Demo</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Student Academic Success Prediction App</h3>
+          <p class="proj-summary">ML app predicting STEM student academic outcomes from 15 personal, academic, and socio-economic parameters. Supports early warning systems and resource planning for educators.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Random Forest</span>
+            <span class="proj-badge">MLOps</span>
+            <span class="proj-badge">Streamlit</span>
+            <span class="proj-badge">Classification</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-stem-predict">Read More</button>
+            <a href="https://student-academic-success-prediction.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+            <a href="https://github.com/jajupeter/student_academic_success_prediction-" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- House Price Prediction -->
+      <article class="proj-card reveal reveal-delay-1" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/PredictML1.png" alt="House Price Prediction">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+          <span class="proj-live">Live Demo</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">House Price Prediction App</h3>
+          <p class="proj-summary">Deep Learning regression model estimating residential property values in King County, WA using 18 features. Interactive Streamlit interface for real-estate stakeholders.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Deep Learning</span>
+            <span class="proj-badge">TensorFlow/Keras</span>
+            <span class="proj-badge">MLOps</span>
+            <span class="proj-badge">Streamlit</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-house-predict">Read More</button>
+            <a href="https://real-estate-house-price-prediction-app.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+            <a href="https://github.com/jajupeter/House-Price-prediction-app" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Predicting CT with ML -->
+      <article class="proj-card reveal reveal-delay-2" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/CT_.png" alt="Predicting CT with ML" style="object-fit:contain; background:#111827;">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Predicting Computational Thinking with ML</h3>
+          <p class="proj-summary">Applied supervised ML (SVM, KNN, Random Forest, XGBoost) on survey data to forecast CT skill levels. Algorithmic and creative thinking emerged as dominant predictors.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">XGBoost</span>
+            <span class="proj-badge">Random Forest</span>
+            <span class="proj-badge">SVM</span>
+            <span class="proj-badge">Feature Engineering</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-ct-ml">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CT Scale Validation -->
+      <article class="proj-card reveal" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/CFA.png" alt="CT Scale Validation" style="object-fit:contain; background:#111827;">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Validating a Computational Thinking (CT) Survey Scale with EFA, PCA &amp; SEM</h3>
+          <p class="proj-summary">Reduced 29 survey items into 5 latent constructs using EFA, PCA, and SEM — establishing a research-grade instrument for assessing CT skills in VR-based learning contexts.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">SEM</span>
+            <span class="proj-badge">PCA</span>
+            <span class="proj-badge">Factor Analysis</span>
+            <span class="proj-badge">Construct Validity</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-ct-scale">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- VR Cognitive Skill Impact -->
+      <article class="proj-card reveal reveal-delay-1" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/impact.png" alt="VR Cognitive Skills Study" style="object-fit:contain; background:#111827;">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Immersive Virtual Reality Learning: Cognitive Skill Impact</h3>
+          <p class="proj-summary">Controlled experimental study measuring VR-driven gains in computational thinking. Pre/post assessments with Mann-Whitney U, Wilcoxon Signed-Rank, and T-tests.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Experimental Design</span>
+            <span class="proj-badge">Mann-Whitney U</span>
+            <span class="proj-badge">T-Tests</span>
+            <span class="proj-badge">Shapiro-Wilk</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-vr-cog">Read More</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Workforce Diversity ARIMA -->
+      <article class="proj-card reveal reveal-delay-2" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/ARIMA.png" alt="Workforce Diversity Forecasting" style="object-fit:contain; background:#111827;">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Time-Series Analysis on Workforce Diversity in Construction </h3>
+          <p class="proj-summary">ARIMA modeling on education-to-industry pipelines to forecast minority graduate supply vs. construction workforce demand — guiding equity-driven workforce policy.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">ARIMA</span>
+            <span class="proj-badge">EDA</span>
+            <span class="proj-badge">Trend Analysis</span>
+            <span class="proj-badge">Policy Insight</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-workforce-arima">Read More</button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /proj-grid -->
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">© 2025 Opeyemi Ojajuni, Ph.D. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank">LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank">ResearchGate</a>
+      <a href="https://github.com/jajupeter" target="_blank">GitHub</a>
     </div>
   </div>
+</footer>
 
-  <!-- SafeGuide Campus: Generative AI for Safer Campus -->
-  <div class="proj-modal" id="modal-amxr" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>SafeGuide Campus: Generative AI for Safer Campus</h3>
-      <p>Universities face rising safety and preparedness challenges, while traditional tools lack personalization and immediacy. SafeGuide Campus fills this gap with an interactive Generative AI assistant that helps students, faculty and staff navigate risky situations like intoxication, harassment, and unsafe environments.</p>
-      <p>Built in PartyRock, the platform uses large language models to simulate real-time risk scenarios, provide tailored guidance, and link people to resources. It also serves as a research sandbox for exploring responsible GenAI deployment with future VR integrations.</p>
-      <p>SafeGuide Campus demonstrates how applied AI research can drive real-world impact by improving student, faculty and staff well-being, readiness, and safety culture. It highlights scalable GenAI solutions that strengthen campus resilience and enable safer learning environments.</p>
+<!-- ================================================================
+     MODALS
+     ================================================================ -->
+
+<!-- InsightBot -->
+<div class="modal" id="modal-insightbot">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>InsightBot: AI-Powered Research Tool</h3>
+    <h4>Problem Statement</h4>
+    <p>Researchers, analysts, and students face information overload when processing multiple online articles. Traditional reading and summarization methods are time-consuming and prone to cognitive fatigue, making it difficult to synthesize key insights across sources.</p>
+    <h4>Solution</h4>
+    <p>InsightBot automates research synthesis by fetching, parsing, and embedding online articles into AI-readable vectors. Users query the aggregated knowledge base and instantly receive concise, citation-supported answers.</p>
+    <h4>Pipeline</h4>
+    <ul>
+      <li><strong>WebBaseLoader</strong> — Extracts and cleans text from provided URLs.</li>
+      <li><strong>RecursiveCharacterTextSplitter</strong> — Segments long documents into manageable chunks.</li>
+      <li><strong>OpenAIEmbeddings</strong> — Converts text chunks into high-dimensional numerical vectors.</li>
+      <li><strong>FAISS</strong> — Stores embeddings locally for efficient semantic retrieval.</li>
+      <li><strong>RetrievalQAWithSourcesChain</strong> — Uses OpenAI's LLM to answer queries with contextual citations.</li>
+    </ul>
+    <h4>Results</h4>
+    <p>InsightBot extracts insights from up to three online articles within seconds, providing verifiable, concise answers supported by direct source links — demonstrating an end-to-end RAG workflow in a user-friendly research environment.</p>
+  </div>
+</div>
+
+<!-- SafeGuide Campus -->
+<div class="modal" id="modal-amxr">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>SafeGuide Campus: Generative AI for Safer Campus</h3>
+    <h4>Problem Statement</h4>
+    <p>Universities face rising safety and preparedness challenges, while traditional tools lack personalization and immediacy.</p>
+    <h4>Solution</h4>
+    <p>SafeGuide Campus is an interactive Generative AI assistant helping students, faculty, and staff navigate risky situations — intoxication, harassment, unsafe environments. Built in AWS PartyRock using LLMs, it serves as both a real-time safety tool and a research sandbox for responsible GenAI deployment with future VR integrations.</p>
+    <h4>Results</h4>
+    <p>Demonstrates how applied AI research can drive real-world campus impact — improving student, faculty, and staff well-being, readiness, and safety culture through scalable GenAI solutions.</p>
+  </div>
+</div>
+
+<!-- ICLERT -->
+<div class="modal" id="modal-iclert">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
+    <p>ICLERT closes the gap left by traditional drills with AI-driven VR that captures the chaos of real incidents. Leaders practice split-second judgment in lifelike scenarios to measurably improve readiness.</p>
+    <h4>Solution</h4>
+    <p>Engineered a LiDAR/GIS digital twin of campus (shelter + EOC), then built a modular curriculum — 10 crisis courses + 2 hazard scenarios (gas leaks, electrical failures) — for Meta Quest 3 and CAVE. ML pipelines in Python achieved 95.18% accuracy in cognitive skill classification.</p>
+    <h4>Results</h4>
+    <p>35+ leaders trained; 10+ modules deployed. In partnership with the Louisiana Department of Health, the program scales statewide to strengthen workforce resilience and compliance.</p>
+    <div class="modal-gallery">
+      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
+        <source src="Projects_files/ICLERT2.mp4" type="video/mp4">
+      </video>
+      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
+        <source src="Projects_files/ICLERT5.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
+</div>
 
-  <!-- SURADD -->
-  <div class="proj-modal" id="modal-suradd" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>SURADD: Reaching Across the Digital Divide</h3>
-      <h3>Problem Statement</h3>
-      <p>Significant inequities in access to immersive technologies continue to limit opportunities for students and educators in underserved communities. 
-         Traditional STEM professional development models lack hands-on, design-centered engagement with Virtual Reality (VR), leaving educators underprepared 
-         to integrate immersive tools effectively in classrooms and widening the digital divide.</p>
-  
-      <h3>Solution Approach</h3>
-      <p>The <b>SURADD</b> project applies an <b>applied research methodology</b> that blends <b>technical VR development</b> with <b>UX research and educational design</b> 
-         to create equitable, scalable immersive learning experiences. Using <b>Unity 3D</b> and <b>Meta SDKs</b>, the team developed 
-         <b>multi-user VR science modules</b> compatible with <b>HMDs, CAVE, and Mobile CAVE systems</b>. These modules were informed by 
-         <b>user-centered design studies</b>, <b>heuristic evaluations</b>, and <b>usability testing</b> to ensure accessibility and engagement. 
-         The program also provided <b>professional development</b> for middle school STEM educators, combining pedagogical training 
-         with practical VR integration strategies to extend immersive learning beyond the lab.</p>
-  
-      <h3>Results</h3>
-      <p>Through its applied research framework, SURADD reached over <b>500 students</b> within a <b>15-mile radius of Southern University (SUBR)</b> 
-         and trained more than <b>100 STEM educators</b> in immersive teaching practices. The project produced a series of 
-         <b>multi-user science modules</b> and <b>Mobile CAVE simulations</b> that enhanced student engagement, improved STEM concept retention, 
-         and increased teacher self-efficacy in technology integration. SURADD demonstrates how <b>AI-assisted VR design</b> and <b>UX-informed curriculum development</b> 
-         can drive digital equity and expand access to high-impact STEM learning experiences.</p>
-  
-      <p><b>Empirical evaluation showed measurable gains in:</b></p>
-      <ul>
-        <li>Student engagement <b>(+47%)</b></li>
-        <li>STEM conceptual retention <b>(+32%)</b></li>
-        <li>Teacher self-efficacy in technology integration <b>(+41%)</b></li>
-      </ul>
-  
-      <p>Additionally, SURADD created a <b>replicable framework for applied research in immersive education</b>—linking 
-         <b>VR development, UX design, and pedagogical assessment</b> to advance <b>digital equity</b> and <b>STEM workforce readiness</b>.</p>
-  
+<!-- Geospatial Visualization -->
+<div class="modal" id="modal-geo">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Immersive Geospatial Visualization in VR Systems</h3>
+    <h4>Approach</h4>
+    <p>Static 2D maps limit spatial reasoning. We transform OSM/ArcGIS data into procedural 3D city scenes in CityEngine and deploy to VR/CAVE for deep, interactive exploration.</p>
+    <h4>Implementation</h4>
+    <p>Unity deployment with local-origin georeferencing ensures precision on Meta Quest 3 and multi-user CAVE displays. Usability studies validated realism and value for planning, education, and engagement.</p>
+    <h4>Results</h4>
+    <p>A city-agnostic framework ready for real-time feeds (traffic, weather) to evolve into dynamic urban digital twins for smart-city planning, disaster resilience, and sustainable infrastructure design.</p>
+    <div class="modal-gallery">
+      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
+        <source src="Projects_files/Viz2.MOV" type="video/mp4">
+      </video>
     </div>
   </div>
+</div>
 
-  <!-- UX of VR Learning -->
-  <div class="proj-modal" id="modal-uxvr" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Evaluating User Experience of VR‑Based Learning</h3>
-      <p>Cohort observational study with focus groups and in‑class observation to quantify presence, usability, workload, and satisfaction in VR learning.</p>
-      <p>We triangulated surveys, behavioral metrics, and interviews to link UX factors to learning outcomes.</p>
-      <p>Findings inform headset setup, interaction patterns, and instructional design for higher impact VR courses.</p>
-    </div>
+<!-- SURADD -->
+<div class="modal" id="modal-suradd">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>SURADD: Reaching Across the Digital Divide</h3>
+    <h4>Problem Statement</h4>
+    <p>Significant inequities in access to immersive technologies limit opportunities for students and educators in underserved communities. Traditional STEM professional development models lack hands-on engagement with VR, leaving educators underprepared and widening the digital divide.</p>
+    <h4>Solution</h4>
+    <p>Applied research blending technical VR development with UX research and educational design. Developed multi-user VR science modules using Unity 3D and Meta SDKs — compatible with HMDs, CAVE, and Mobile CAVE systems — informed by heuristic evaluations and usability testing. Paired with professional development training for middle school STEM educators.</p>
+    <h4>Results</h4>
+    <ul>
+      <li>500+ students reached within a 15-mile radius of Southern University (SUBR)</li>
+      <li>100+ STEM educators trained in immersive teaching practices</li>
+      <li>Student engagement <strong>+47%</strong></li>
+      <li>STEM conceptual retention <strong>+32%</strong></li>
+      <li>Teacher self-efficacy in technology integration <strong>+41%</strong></li>
+    </ul>
   </div>
+</div>
 
-  <!-- VR Cognitive Skills Study -->
-  <div class="proj-modal" id="modal-vr-cog" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Immersive VR Learning: Cognitive Skill Impact</h3>
-      <p>Randomized, controlled exposure to VR learning modules with pre/post testing using validated CT instruments.</p>
-      <p>Measured gains in algorithmic thinking, creativity, and problem solving; analyzed effect sizes and subgroup differences.</p>
-      <p>Results guide where VR delivers the strongest cognitive returns and how to structure sessions for maximal gain.</p>
-    </div>
+<!-- UX of VR Learning -->
+<div class="modal" id="modal-uxvr">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Evaluating User Experience of VR-Based Learning</h3>
+    <h4>Methodology</h4>
+    <p>Cohort observational study with focus groups and in-class observation to quantify presence, usability, workload, and satisfaction in VR learning environments.</p>
+    <h4>Analysis</h4>
+    <p>Triangulated surveys, behavioral metrics, and interviews to link UX factors to learning outcomes — measuring cognitive load, presence, and behavioral perception across cohorts.</p>
+    <h4>Application</h4>
+    <p>Findings inform headset setup, interaction patterns, and instructional design for higher-impact VR courses and guide where immersive technologies deliver the strongest educational returns.</p>
   </div>
+</div>
 
-  <!-- Predicting CT with ML -->
-  <div class="proj-modal" id="modal-ct-ml" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Predicting Computational Thinking with ML</h3>
-      <p>Built ML classifiers on survey items and performance tasks to predict CT proficiency levels.</p>
-      <p>Feature importance surfaced algorithmic and creative thinking as dominant predictors; ablation studies confirmed robustness.</p>
-      <p>Delivers early‑signal analytics to personalize instruction and target support.</p>
-    </div>
+<!-- STEM Success Prediction -->
+<div class="modal" id="modal-stem-predict">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Student Academic Success Prediction App</h3>
+    <h4>Problem Statement</h4>
+    <p>Educational institutions often lack real-time tools to identify students at risk of underperforming. This project builds an ML-powered solution to help identify such students early using interpretable features — enabling proactive interventions.</p>
+    <h4>Solution</h4>
+    <p>ML model predicting academic success from 15 personal, academic, and socio-economic parameters. Supports early warning systems for educators, resource planning for administrators, and data-driven educational research.</p>
+    <h4>Results</h4>
+    <p>Validated on a dataset of 1,000+ students with 90% accuracy. MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads. Improves early intervention decisions and program resource allocation.</p>
   </div>
+</div>
 
-  <!-- CT Scale Validation -->
-  <div class="proj-modal" id="modal-ct-scale" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Validating a CT Survey with EFA, PCA & SEM</h3>
-      <p>Dimensionality reduction trimmed 29 observed variables to 5 latent constructs using EFA/PCA; SEM confirmed factor structure and fit.</p>
-      <p>Reliability and validity established for VR‑learning contexts with cross‑validation across cohorts.</p>
-      <p>Provides a rigorous instrument for future CT studies and program evaluation.</p>
-    </div>
+<!-- House Price Prediction -->
+<div class="modal" id="modal-house-predict">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>House Price Prediction App</h3>
+    <h4>Problem Statement</h4>
+    <p>Accurately pricing residential properties is challenging. Traditional valuation methods rely on manual appraisals that are time-consuming, subjective, and unable to capture complex non-linear relationships in housing features.</p>
+    <h4>Solution</h4>
+    <p>AI-powered Streamlit app using a trained Deep Learning regression model on the King County Housing Dataset (2014–2015). Estimates house prices based on 18 key features: square footage, bedrooms, bathrooms, year built, renovation status, and geolocation.</p>
+    <h4>MLOps Pipeline</h4>
+    <ul>
+      <li><strong>Data Preprocessing:</strong> Cleaned dataset, removed non-essential fields, normalized features using MinMaxScaler.</li>
+      <li><strong>Modeling:</strong> Artificial Neural Network (ANN) with TensorFlow/Keras, optimized for regression.</li>
+      <li><strong>Deployment:</strong> Streamlit Cloud with GitHub version control.</li>
+    </ul>
+    <h4>Results</h4>
+    <p>Users can interactively test scenarios by adjusting property features, instantly receiving predicted prices. The model delivers robust predictions with a streamlined interface accessible to non-technical users.</p>
   </div>
+</div>
 
-
-
-  <!-- Workforce Diversity ARIMA -->
-  <div class="proj-modal" id="modal-workforce-arima" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Forecasting Workforce Diversity in Construction (ARIMA)</h3>
-      <p>Time‑series analyses of graduation pipelines vs. industry demand to project minority workforce supply.</p>
-      <p>Model diagnostics, scenario testing, and confidence intervals inform recruitment and scholarship strategies.</p>
-      <p>Actionable forecasts for universities and employers to close representation gaps.</p>
-    </div>
+<!-- Predicting CT with ML -->
+<div class="modal" id="modal-ct-ml">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Predicting Computational Thinking with ML</h3>
+    <h4>Approach</h4>
+    <p>Built ML classifiers (SVM, KNN, Random Forest, XGBoost) on survey items and performance tasks to predict CT proficiency levels among engineering students.</p>
+    <h4>Key Findings</h4>
+    <p>Feature importance analysis surfaced algorithmic and creative thinking as dominant predictors. Ablation studies confirmed model robustness across different cohort compositions.</p>
+    <h4>Application</h4>
+    <p>Delivers early-signal analytics to personalize instruction, target support resources, and guide educators toward high-impact cognitive interventions in VR-based learning environments.</p>
   </div>
+</div>
 
-  <!-- Drunk Driving ML Benchmark -->
-   <!--<div class="proj-modal" id="modal-dui-ml" aria-hidden="true">
-    <div class="overlay" data-close></div>
-    <div class="dialog">
-      <button class="close" data-close aria-label="Close">&times;</button>
-      <h3>Benchmarking ML for Drunk‑Driving Detection</h3>
-      <p>Compared classical and deep models on multi‑sensor time‑series for impairment detection under latency constraints.</p>
-      <p>Reported ROC‑AUC, precision/recall, and drift robustness; identified optimal models per deployment context.</p>
-      <p>Informs on‑device vs. edge inference choices for real‑time road safety systems.</p>
-    </div>
+<!-- CT Scale Validation -->
+<div class="modal" id="modal-ct-scale">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Validating a CT Survey Scale with EFA, PCA &amp; SEM</h3>
+    <h4>Methodology</h4>
+    <p>Dimensionality reduction trimmed 29 observed survey variables to 5 latent constructs using Exploratory Factor Analysis (EFA) and Principal Component Analysis (PCA). Structural Equation Modeling (SEM) confirmed the factor structure and model fit.</p>
+    <h4>Results</h4>
+    <p>Reliability and validity established for VR-learning contexts with cross-validation across cohorts — providing a research-grade instrument for assessing computational thinking skills.</p>
+    <h4>Application</h4>
+    <p>Provides a rigorous, validated instrument for future CT studies, program evaluation, and cognitive analytics in immersive learning research.</p>
   </div>
-  <!-- ====== /MODALS ====== -->
+</div>
 
-  <!-- Tiny JS to open/close modals + init/refresh carousels -->
-  <script>
-    // Open/close modals
-    document.addEventListener('click', (e) => {
-      const opener = e.target.closest('[data-open]');
-      const closer = e.target.closest('[data-close]');
-      if (opener){
-        const sel = opener.getAttribute('data-open');
-        const modal = document.querySelector(sel);
-        if (modal){
-          modal.setAttribute('aria-hidden','false');
-          initModalCarousels(modal);
-        }
-      }
-      if (closer || e.target.classList.contains('overlay')){
-        const modal = e.target.closest('.proj-modal') || document.querySelector('.proj-modal[aria-hidden="false"]');
-        if (modal){ modal.setAttribute('aria-hidden','true'); }
-      }
-    });
+<!-- VR Cognitive Study -->
+<div class="modal" id="modal-vr-cog">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Immersive VR Learning: Cognitive Skill Impact</h3>
+    <h4>Methodology</h4>
+    <p>Randomized, controlled exposure to VR learning modules with pre/post testing using validated Computational Thinking instruments. Statistical tests included Shapiro-Wilk normality checks, Mann-Whitney U, Wilcoxon Signed-Rank, and independent samples T-tests.</p>
+    <h4>Results</h4>
+    <p>Measured significant gains in algorithmic reasoning, creative problem-solving, and overall cognitive skill development. Effect sizes and subgroup differences analyzed across demographic variables.</p>
+    <h4>Application</h4>
+    <p>Results guide where VR delivers the strongest cognitive returns, how to structure sessions for maximal gain, and which student populations benefit most from immersive interventions.</p>
+  </div>
+</div>
 
-    // Initialize or refresh Owl Carousels inside a given modal
-    function initModalCarousels(root){
-      const $carousels = $(root).find('.igv-carousel');
-      $carousels.each(function(){
-        const $c = $(this);
-        if ($c.hasClass('owl-loaded')) {
-          $c.trigger('refresh.owl.carousel');
-        } else {
-          $c.owlCarousel({
-            items:1,
-            margin:10,
-            loop:true,
-            nav:true,
-            navText:[
-              "<i class='fa fa-chevron-left' aria-hidden='true'></i>",
-              "<i class='fa fa-chevron-right' aria-hidden='true'></i>"
-            ],
-            dots:true,
-            autoplay:false,
-            autoplayHoverPause:true,
-            video:true
-          });
-        }
-      });
-    }
-  </script>
+<!-- Workforce Diversity ARIMA -->
+<div class="modal" id="modal-workforce-arima">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>Forecasting Workforce Diversity in Construction (ARIMA)</h3>
+    <h4>Methodology</h4>
+    <p>Time-series analyses of graduation pipelines vs. industry demand using ARIMA modeling to project minority workforce supply. Included model diagnostics, scenario testing, and confidence interval analysis.</p>
+    <h4>Application</h4>
+    <p>Actionable forecasts for universities and employers to close representation gaps — informing recruitment strategies, scholarship programs, and hiring practices for equity-driven workforce planning in the construction industry.</p>
+  </div>
+</div>
 
-  <!-- Your existing scripts -->
-  <script src="js/jquery-2.1.3.min.js"></script>
-  <script src="js/imagesloaded.pkgd.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src='js/jquery.shuffle.min.js'></script>
-  <script src='js/masonry.pkgd.min.js'></script>
-  <script src='js/owl.carousel.min.js'></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/validator.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
