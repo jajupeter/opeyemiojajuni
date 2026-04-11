@@ -333,6 +333,30 @@
         </div>
       </article>
 
+      <article class="proj-card reveal" data-category="ds">
+        <div class="proj-thumb">
+          <img src="./Projects_files/HIV_AIDS_Dashboard.png" alt="HIV/AIDS Global Dashboard" style="object-fit:cover;">
+          <span class="proj-cat proj-cat-ds">Data Science</span>
+          <span class="proj-live">Live Demo</span>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">HIV/AIDS Global Dashboard: 25-Year Trends</h3>
+          <p class="proj-summary">Interactive Streamlit dashboard exploring 25 years (2000–2024) of global HIV/AIDS data across 150+ countries — tracking infections, ART coverage, demographics, and the 95-95-95 treatment cascade.</p>
+          <div class="proj-badges">
+            <span class="proj-badge">Python</span>
+            <span class="proj-badge">Streamlit</span>
+            <span class="proj-badge">Plotly</span>
+            <span class="proj-badge">pandas</span>
+            <span class="proj-badge">scipy</span>
+          </div>
+          <div class="proj-actions">
+            <button class="btn btn-primary btn-sm" data-open="#modal-hiv-aids">Read More</button>
+            <a href="https://hiv-aidsdashboard.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+            <a href="https://github.com/jajupeter/HIV-AIDS_Dashboard" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+          </div>
+        </div>
+      </article>
+
     </div><!-- /proj-grid -->
   </div>
 </section>
@@ -563,6 +587,29 @@
     <p>Time-series analyses of graduation pipelines vs. industry demand using ARIMA modeling to project minority workforce supply. Included model diagnostics, scenario testing, and confidence interval analysis.</p>
     <h4>Application</h4>
     <p>Actionable forecasts for universities and employers to close representation gaps — informing recruitment strategies, scholarship programs, and hiring practices for equity-driven workforce planning in the construction industry.</p>
+  </div>
+</div>
+
+<div class="modal" id="modal-hiv-aids">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close">&times;</button>
+    <h3>HIV/AIDS Global Dashboard: 25-Year Trends (2000–2024)</h3>
+    <h4>Problem Statement</h4>
+    <p>Despite 40+ years of research, HIV/AIDS remains a major global health challenge. Decision-makers and public health researchers lacked an accessible, interactive tool to explore 25 years of global HIV/AIDS data across regions, demographics, and treatment progress in a unified view.</p>
+    <h4>Solution</h4>
+    <p>Built a production-ready Streamlit dashboard integrating data from UNAIDS AIDSinfo, WHO Global Health Observatory, CDC HIV Surveillance, and World Bank. The dashboard features 6 interactive pages with animated visualizations, regional filters, and auto-generated insights.</p>
+    <h4>Key Features</h4>
+    <ul>
+      <li><strong>Overview:</strong> Headline metrics — 40.6M PLHIV, 59% reduction in new infections since 2000</li>
+      <li><strong>Global Trends:</strong> Time-series analysis of infections, deaths, and ART coverage over 25 years</li>
+      <li><strong>Geographic View:</strong> World map with regional comparisons across 150+ countries</li>
+      <li><strong>Treatment Cascade:</strong> Tracks progress toward the UNAIDS 95-95-95 targets</li>
+      <li><strong>Demographics:</strong> Age, gender, and key population breakdowns</li>
+      <li><strong>Country Rankings:</strong> Top 10 comparisons with CSV export</li>
+    </ul>
+    <h4>Results</h4>
+    <p>Dashboard reveals that ART coverage grew from &lt;2% to 78%, AIDS-related deaths fell 65% since the 2004 peak, yet Sub-Saharan Africa still bears 65% of the global HIV burden — highlighting persistent equity gaps despite global progress.</p>
   </div>
 </div>
 
