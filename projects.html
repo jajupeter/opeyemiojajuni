@@ -4,440 +4,739 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Opeyemi Ojajuni, Ph.D.</title>
-  <meta name="description" content="Projects by Dr. Opeyemi Ojajuni — AI, Data Science, and XR Solutions." />
+  <title>Projects — Opeyemi Peter Ojajuni, PhD</title>
+  <meta name="description" content="Shipped AI, data science, and XR systems by Dr. Opeyemi Peter Ojajuni — each led by measurable outcomes." />
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');</script>
 </head>
 <body>
 
-<!-- ================================================================
-     NAVIGATION
-     ================================================================ -->
+<!-- NAV -->
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-symbol">OO</div>
-      <div class="nav-logo-text">Opeyemi <span>Ojajuni</span></div>
+      <div class="nav-logo-symbol">O</div>
+      <div class="nav-logo-text">Opeyemi Peter <span>Ojajuni</span></div>
+      <span class="nav-phd-badge">PhD</span>
     </a>
     <div class="nav-links">
-      <a href="index.html">About Me</a>
+      <a href="index.html">About</a>
       <a href="projects.html" class="active">Projects</a>
       <a href="research.html">Research</a>
-      <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank" class="btn btn-primary btn-sm">Download CV</a>
+      <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Resume <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></a>
     </div>
-    <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="nav-mobile">
-  <a href="index.html">About Me</a>
+  <a href="index.html">About</a>
   <a href="projects.html">Projects</a>
   <a href="research.html">Research</a>
-  <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank">Download CV</a>
+  <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank" rel="noopener">Resume ↓</a>
 </div>
 
-<!-- ================================================================
-     PAGE HEADER
-     ================================================================ -->
-<div class="page-header">
+<!-- HEADER -->
+<section class="hero">
   <div class="container">
-    <span class="section-label">Portfolio</span>
-    <h1 class="section-title">Projects</h1>
-    <p class="section-sub">Applied AI, Data Science, and XR research — from federally funded research platforms to deployed Streamlit apps.</p>
+    <span class="eyebrow">Projects</span>
+    <h1 style="margin-top:12px;">Systems I shipped.</h1>
+    <p class="hero-sub">14 systems across applied AI, data science, and extended reality — from GenAI RAG pipelines and supply-chain forecasting at Amazon to federally-funded VR training platforms, live Streamlit dashboards, and peer-reviewed studies. Each one framed by a real-world problem and measured by the outcome it delivered.</p>
   </div>
-</div>
+</section>
 
-<!-- ================================================================
-     PROJECT GRID
-     ================================================================ -->
-<section class="section">
+<!-- GRID -->
+<section class="section-sm">
   <div class="container">
 
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="ai">🤖 AI</button>
-      <button class="filter-btn" data-filter="ds">📊 Data Science</button>
-      <button class="filter-btn" data-filter="xr">🥽 XR Solutions</button>
+    <div class="project-stats">
+      <div class="project-stat">
+        <div class="project-stat-value green">8</div>
+        <div class="project-stat-text">
+          <div class="project-stat-label">Shipped</div>
+          <div class="project-stat-sublabel">Including live demos</div>
+        </div>
+      </div>
+      <div class="project-stat">
+        <div class="project-stat-value orange">1</div>
+        <div class="project-stat-text">
+          <div class="project-stat-label">In production</div>
+          <div class="project-stat-sublabel">Deployed in real-world settings</div>
+        </div>
+      </div>
+      <div class="project-stat">
+        <div class="project-stat-value blue">5</div>
+        <div class="project-stat-text">
+          <div class="project-stat-label">Research studies</div>
+          <div class="project-stat-sublabel">Peer-reviewed / published work</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Grid -->
-    <div class="proj-grid">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all"><span class="filter-emoji">🗂️</span>All projects</button>
+      <button class="filter-btn" data-filter="ai"><span class="filter-emoji">🤖</span>AI</button>
+      <button class="filter-btn" data-filter="ds"><span class="filter-emoji">📊</span>Data science</button>
+      <button class="filter-btn" data-filter="xr"><span class="filter-emoji">🥽</span>XR solutions</button>
+    </div>
 
-      <!-- SURADD PD Evaluation -->
-      <article class="proj-card reveal" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/Suraad2.png" alt="SURADD PD Evaluation" style="object-fit:cover;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">SURADD VR Professional Development Program Evaluation</h3>
-          <p class="proj-summary">Mixed-methods program evaluation of a VR Professional Development initiative for middle school STEM educators across two cohorts (Spring & Fall 2025) — applying the Kirkpatrick 4-Level Model to measure confidence, pedagogical knowledge, and implementation readiness.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Kirkpatrick Model</span>
-            <span class="proj-badge">Mixed Methods</span>
-            <span class="proj-badge">Pre/Post Survey</span>
-            <span class="proj-badge">TPK-VR</span>
-            <span class="proj-badge">Self-Efficacy Analysis</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-suradd-eval">Read More</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- HIV/AIDS Dashboard -->
-      <article class="proj-card reveal" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/HIV_AIDS_Dashboard.png" alt="HIV/AIDS Global Dashboard" style="object-fit:cover;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-          <span class="proj-live">Live Demo</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">HIV/AIDS Global Dashboard: 25-Year Trends</h3>
-          <p class="proj-summary">Interactive Streamlit dashboard exploring 25 years (2000–2024) of global HIV/AIDS data across 150+ countries — tracking infections, Antiretroviral Therapy coverage (ART) coverage, demographics, and the 95-95-95 treatment cascade.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Python</span>
-            <span class="proj-badge">Streamlit</span>
-            <span class="proj-badge">Plotly</span>
-            <span class="proj-badge">pandas</span>
-            <span class="proj-badge">scipy</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-hiv-aids">Read More</button>
-            <a href="https://hiv-aidsdashboard.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
-            <a href="https://github.com/jajupeter/HIV-AIDS_Dashboard" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
-          </div>
-        </div>
-      </article>
+    <div class="case-grid">
 
       <!-- InsightBot -->
-      <article class="proj-card reveal reveal-delay-1" data-category="ai">
-        <div class="proj-thumb">
-          <img src="./Projects_files/InsightBot.png" alt="InsightBot: AI-Powered Research Tool" style="object-fit:contain; background:#111827;">
-          <span class="proj-cat proj-cat-ai">AI</span>
-          <span class="proj-live">Live Demo</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">InsightBot: AI-Powered Research Tool</h3>
-          <p class="proj-summary">GenAI-powered research assistant using RAG pipelines — processes online articles, encodes into FAISS vector embeddings, and delivers citation-backed answers via LangChain + OpenAI.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Python 3.11</span>
-            <span class="proj-badge">LangChain</span>
-            <span class="proj-badge">FAISS</span>
-            <span class="proj-badge">OpenAI API</span>
-            <span class="proj-badge">Streamlit</span>
+      <article class="case-card reveal" data-category="ai">
+        <div class="case-media">
+          <img src="Projects_files/InsightBot.png" alt="InsightBot GenAI research assistant interface" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+            <span class="pill pill-neutral">AI</span>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-insightbot">Read More</button>
-            <a href="https://insightbotnewsresearch.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
-            <a href="https://github.com/jajupeter/insightBot" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+        </div>
+        <div class="case-body">
+          <h3>InsightBot — GenAI research assistant</h3>
+          <p class="case-desc">Production RAG pipeline over a user's article corpus. LangChain + FAISS + GPT deliver citation-backed synthesis in seconds instead of hours.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value purple">&lt;30s</div>
+                <div class="case-metric-label">Multi-article synthesis</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">100%</div>
+                <div class="case-metric-label">Citation-backed answers</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">LangChain</span>
+            <span class="chip">FAISS</span>
+            <span class="chip">OpenAI</span>
+            <span class="chip">Streamlit</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-insightbot">Read more →</button>
+            <a href="https://insightbotnewsresearch.streamlit.app/" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
+            <a href="https://github.com/jajupeter/insightBot" target="_blank" rel="noopener" class="case-link-btn">GitHub ↗</a>
           </div>
         </div>
       </article>
 
       <!-- SafeGuide Campus -->
-      <article class="proj-card reveal reveal-delay-2" data-category="ai">
-        <div class="proj-thumb">
-          <img src="./Projects_files/SafeCam.png" alt="SafeGuide Campus">
-          <span class="proj-cat proj-cat-ai">AI</span>
-          <span class="proj-live">Live Demo</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">SafeGuide Campus: Generative AI for Safer Campus</h3>
-          <p class="proj-summary">Generative AI safety assistant built in AWS PartyRock that empowers students and staff with real-time guidance and decision support for safer campus living.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">LLM</span>
-            <span class="proj-badge">Generative AI</span>
-            <span class="proj-badge">AWS PartyRock</span>
-            <span class="proj-badge">Responsible AI</span>
+      <article class="case-card reveal" data-category="ai">
+        <div class="case-media">
+          <img src="Projects_files/SafeCam.png" alt="SafeGuide Campus GenAI safety assistant" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+            <span class="pill pill-neutral">AI</span>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-amxr">Read More</button>
-            <a href="https://partyrock.aws/u/Jaju009/o-DwUIR0J/SafeGuide-Campus" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
+        </div>
+        <div class="case-body">
+          <h3>SafeGuide Campus — GenAI for safer campus</h3>
+          <p class="case-desc">LLM-backed safety assistant with responsible-AI guardrails, built in AWS PartyRock as a sandbox for campus-scale GenAI and future VR integration.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">24/7</div>
+                <div class="case-metric-label">Real-time decision support</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value orange">Guardrails</div>
+                <div class="case-metric-label">Responsible-AI prompts</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">LLMs</span>
+            <span class="chip">AWS PartyRock</span>
+            <span class="chip">Responsible AI</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-safeguide">Read more →</button>
+            <a href="https://partyrock.aws/u/Jaju009/o-DwUIR0J/SafeGuide-Campus" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
           </div>
         </div>
       </article>
 
       <!-- ICLERT -->
-      <article class="proj-card reveal reveal-delay-2" data-category="xr">
-        <div class="proj-thumb">
-          <img src="./Projects_files/ICLERT1.jpg" alt="ICLERT VR Training">
-          <span class="proj-cat proj-cat-xr">XR Solutions</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
-          <p class="proj-summary">AI-driven Virtual Reality  crisis-management simulator using LiDAR/GIS digital twins. 35+ leaders trained; 10+ modules deployed in partnership with the Louisiana Department of Health.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">VR / CAVE</span>
-            <span class="proj-badge">AI</span>
-            <span class="proj-badge">Digital Twin</span>
-            <span class="proj-badge">LiDAR/GIS</span>
-            <span class="proj-badge">Meta Quest 3</span>
+      <article class="case-card reveal" data-category="xr">
+        <div class="case-media">
+          <img src="Projects_files/ICLERT1.jpg" alt="ICLERT immersive crisis leader VR training scene" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+            <span class="pill pill-neutral">XR Solutions</span>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-iclert">Read More</button>
+        </div>
+        <div class="case-body">
+          <h3>AI-driven XR crisis-training simulator</h3>
+          <p class="case-desc">Built an immersive crisis-response training platform combining a LiDAR/GIS digital twin of Baton Rouge with AI-driven scenario generation. Runs on Meta Quest 3 and a CAVE. Partnered with the Louisiana Department of Health; trained 35+ public-health and emergency-response leaders across 10+ scenario modules.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">100+</div>
+                <div class="case-metric-label">Leaders trained</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">10+</div>
+                <div class="case-metric-label">Scenario modules live</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">VR / CAVE</span>
+            <span class="chip">Digital twin</span>
+            <span class="chip">LiDAR / GIS</span>
+            <span class="chip">Meta Quest 3</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-iclert">Read more →</button>
           </div>
         </div>
       </article>
 
       <!-- Geospatial Visualization -->
-      <article class="proj-card reveal" data-category="xr">
-        <div class="proj-thumb">
-          <img src="./Projects_files/viz1.png" alt="Immersive Geospatial Visualization">
-          <span class="proj-cat proj-cat-xr">XR Solutions</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Immersive Geospatial Visualization in Extended Reality (XR) Systems</h3>
-          <p class="proj-summary">Data-driven pipeline transforming GIS datasets into interactive 3D digital twins for Computer Automated Virtual Environments (CAVE) — enabling smart-city planning and disaster resilience decisions.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Unity</span>
-            <span class="proj-badge">GIS / ArcGIS</span>
-            <span class="proj-badge">CityEngine</span>
-            <span class="proj-badge">Spatial Computing</span>
+      <article class="case-card reveal" data-category="xr">
+        <div class="case-media">
+          <img src="Projects_files/viz1.png" alt="Immersive geospatial visualization in XR" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-warning">In production</span>
+            <span class="pill pill-neutral">XR Solutions</span>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-geo">Read More</button>
+        </div>
+        <div class="case-body">
+          <h3>Immersive geospatial visualization in XR</h3>
+          <p class="case-desc">City-agnostic pipeline turning OSM/ArcGIS data into interactive 3D digital twins. Deployed in CAVE and Meta Quest 3 for smart-city planning.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value purple">3D</div>
+                <div class="case-metric-label">Interactive digital twins</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">Multi-user</div>
+                <div class="case-metric-label">CAVE-ready deployment</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">Unity</span>
+            <span class="chip">ArcGIS</span>
+            <span class="chip">CityEngine</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-geo">Read more →</button>
           </div>
         </div>
       </article>
 
       <!-- SURADD -->
-      <article class="proj-card reveal reveal-delay-1" data-category="xr">
-        <div class="proj-thumb">
-          <img src="./Projects_files/Suraad.png" alt="SURADD Digital Divide">
-          <span class="proj-cat proj-cat-xr">XR Solutions</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">SURADD: Reaching Across the Digital Divide</h3>
-          <p class="proj-summary">Multi-user VR science modules for HMDs, CAVE, and Mobile CAVE systems — 500+ students reached, 100+ STEM educators trained. Student engagement up 47%, retention up 32%.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">VR / CAVE</span>
-            <span class="proj-badge">Unity</span>
-            <span class="proj-badge">STEM Education</span>
-            <span class="proj-badge">K-12</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-suradd">Read More</button>
+      <article class="case-card reveal" data-category="xr">
+        <div class="case-media">
+          <img src="Projects_files/Suraad.png" alt="SURADD multi-user VR STEM classroom" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+            <span class="pill pill-neutral">XR Solutions</span>
           </div>
         </div>
-      </article>
-
-      <!-- UX of VR Learning -->
-      <article class="proj-card reveal reveal-delay-2" data-category="xr">
-        <div class="proj-thumb">
-          <img src="./Projects_files/AM1.JPG" alt="UX of VR Learning">
-          <span class="proj-cat proj-cat-xr">XR Solutions</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Evaluating User Experience of Virtual Reality (VR)-Based Learning</h3>
-          <p class="proj-summary">Cohort study using focus groups, surveys, interviews, and classroom observation to evaluate usability, presence, and engagement in immersive VR learning environments.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">UX Research</span>
-            <span class="proj-badge">Focus Groups</span>
-            <span class="proj-badge">Usability Testing</span>
-            <span class="proj-badge">VR</span>
+        <div class="case-body">
+          <h3>SURADD — reaching across the digital divide</h3>
+          <p class="case-desc">Developed immersive VR science modules across HMD and CAVE environments, integrating UX research and usability evaluation into a full research-to-product lifecycle, supported by professional development for STEM educators to ensure effective deployment.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">500+</div>
+                <div class="case-metric-label">Students reached</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">+47%</div>
+                <div class="case-metric-label">Engagement vs. control</div>
+              </div>
+            </div>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-uxvr">Read More</button>
+          <div class="chips">
+            <span class="chip">Unity</span>
+            <span class="chip">VR / CAVE</span>
+            <span class="chip">STEM education</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-suradd">Read more →</button>
           </div>
         </div>
       </article>
 
-      <!-- STEM Success Prediction -->
-      <article class="proj-card reveal" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/PredictML0.png" alt="STEM Success Prediction">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-          <span class="proj-live">Live Demo</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Student Academic Success Prediction App</h3>
-          <p class="proj-summary">ML app predicting STEM student academic outcomes from 15 personal, academic, and socio-economic parameters. Supports early warning systems and resource planning for educators.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Random Forest</span>
-            <span class="proj-badge">MLOps</span>
-            <span class="proj-badge">Streamlit</span>
-            <span class="proj-badge">Classification</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-stem-predict">Read More</button>
-            <a href="https://student-academic-success-prediction.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
-            <a href="https://github.com/jajupeter/student_academic_success_prediction-" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+      <!-- VR UX -->
+      <article class="case-card reveal" data-category="xr">
+        <div class="case-media">
+          <img src="Projects_files/AM1.JPG" alt="VR-based learning environment" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-info">Study</span>
+            <span class="pill pill-neutral">XR Solutions</span>
           </div>
         </div>
-      </article>
-
-      <!-- House Price Prediction -->
-      <article class="proj-card reveal reveal-delay-1" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/PredictML1.png" alt="House Price Prediction">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-          <span class="proj-live">Live Demo</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">House Price Prediction App</h3>
-          <p class="proj-summary">Deep Learning regression model estimating residential property values in King County, WA using 18 features. Interactive Streamlit interface for real-estate stakeholders.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Deep Learning</span>
-            <span class="proj-badge">TensorFlow/Keras</span>
-            <span class="proj-badge">MLOps</span>
-            <span class="proj-badge">Streamlit</span>
+        <div class="case-body">
+          <h3>User experience (UX) of VR-based learning</h3>
+          <p class="case-desc">Cohort study linking VR UX factors to learning outcomes. Triangulated focus groups, surveys, and in-class observation across cohorts.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value purple">Mixed</div>
+                <div class="case-metric-label">Methods research design</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">3</div>
+                <div class="case-metric-label">UX dimensions measured</div>
+              </div>
+            </div>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-house-predict">Read More</button>
-            <a href="https://real-estate-house-price-prediction-app.streamlit.app/" target="_blank" class="btn btn-outline btn-sm">Launch App</a>
-            <a href="https://github.com/jajupeter/House-Price-prediction-app" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+          <div class="chips">
+            <span class="chip">UX research</span>
+            <span class="chip">Focus groups</span>
+            <span class="chip">Usability testing</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-uxvr">Read more →</button>
           </div>
         </div>
       </article>
 
-      <!-- Predicting CT with ML -->
-      <article class="proj-card reveal reveal-delay-2" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/CT_.png" alt="Predicting CT with ML" style="object-fit:contain; background:#111827;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Predicting Computational Thinking with ML</h3>
-          <p class="proj-summary">Applied supervised ML (SVM, KNN, Random Forest, XGBoost) on survey data to forecast CT skill levels. Algorithmic and creative thinking emerged as dominant predictors.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">XGBoost</span>
-            <span class="proj-badge">Random Forest</span>
-            <span class="proj-badge">SVM</span>
-            <span class="proj-badge">Feature Engineering</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-ct-ml">Read More</button>
+      <!-- Amazon Sort Capacity -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media case-media-amazon">
+          <div class="case-media-symbol">a</div>
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+            <span class="pill pill-neutral">Data Science</span>
           </div>
         </div>
-      </article>
-
-      <!-- CT Scale Validation -->
-      <article class="proj-card reveal" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/CFA.png" alt="CT Scale Validation" style="object-fit:contain; background:#111827;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Validating a Computational Thinking (CT) Survey Scale with EFA, PCA &amp; SEM</h3>
-          <p class="proj-summary">Reduced 29 survey items into 5 latent constructs using EFA, PCA, and SEM — establishing a research-grade instrument for assessing CT skills in VR-based learning contexts.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">SEM</span>
-            <span class="proj-badge">PCA</span>
-            <span class="proj-badge">Factor Analysis</span>
-            <span class="proj-badge">Construct Validity</span>
+        <div class="case-body">
+          <h3>Sort-capacity predictor for automated fulfillment</h3>
+          <p class="case-desc">Data-scientist internship on Amazon's fulfillment team. Built the data transformation framework and statistical models predicting storage capacity — adopted and run by the team post-internship.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">1M+</div>
+                <div class="case-metric-label">Transactions modeled</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">1</div>
+                <div class="case-metric-label">Framework shipped &amp; retained</div>
+              </div>
+            </div>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-ct-scale">Read More</button>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Statistical modeling</span>
+            <span class="chip">PDF/KDE</span>
+            <span class="chip">Large-scale ETL</span>
+            <span class="chip">Data transformation</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-amazon-sort">Read more →</button>
           </div>
         </div>
       </article>
 
-      <!-- VR Cognitive Skill Impact -->
-      <article class="proj-card reveal reveal-delay-1" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/impact.png" alt="VR Cognitive Skills Study" style="object-fit:contain; background:#111827;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Immersive Virtual Reality Learning: Cognitive Skill Impact</h3>
-          <p class="proj-summary">Controlled experimental study measuring VR-driven gains in computational thinking. Pre/post assessments with Mann-Whitney U, Wilcoxon Signed-Rank, and T-tests.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">Experimental Design</span>
-            <span class="proj-badge">Mann-Whitney U</span>
-            <span class="proj-badge">T-Tests</span>
-            <span class="proj-badge">Shapiro-Wilk</span>
-          </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-vr-cog">Read More</button>
+      <!-- HIV/AIDS Global Dashboard -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/HIV_AIDS_Dashboard.png" alt="HIV/AIDS Global Dashboard — 25-year trends" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+            <span class="pill pill-neutral">Data Science</span>
           </div>
         </div>
-      </article>
-
-      <!-- Workforce Diversity ARIMA -->
-      <article class="proj-card reveal reveal-delay-2" data-category="ds">
-        <div class="proj-thumb">
-          <img src="./Projects_files/ARIMA.png" alt="Workforce Diversity Forecasting" style="object-fit:contain; background:#111827;">
-          <span class="proj-cat proj-cat-ds">Data Science</span>
-        </div>
-        <div class="proj-body">
-          <h3 class="proj-title">Time-Series Analysis on Workforce Diversity in Construction </h3>
-          <p class="proj-summary">ARIMA modeling on education-to-industry pipelines to forecast minority graduate supply vs. construction workforce demand — guiding equity-driven workforce policy.</p>
-          <div class="proj-badges">
-            <span class="proj-badge">ARIMA</span>
-            <span class="proj-badge">EDA</span>
-            <span class="proj-badge">Trend Analysis</span>
-            <span class="proj-badge">Policy Insight</span>
+        <div class="case-body">
+          <h3>HIV/AIDS Global Dashboard — 25-year trends</h3>
+          <p class="case-desc">Interactive Streamlit dashboard exploring 2000–2024 global HIV/AIDS data — infections, ART coverage, demographics, and the UNAIDS 95-95-95 cascade across 150+ countries.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">78%</div>
+                <div class="case-metric-label">ART coverage (from &lt;2%)</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">150+</div>
+                <div class="case-metric-label">Countries analyzed</div>
+              </div>
+            </div>
           </div>
-          <div class="proj-actions">
-            <button class="btn btn-primary btn-sm" data-open="#modal-workforce-arima">Read More</button>
+          <div class="chips">
+            <span class="chip">Streamlit</span>
+            <span class="chip">Plotly</span>
+            <span class="chip">pandas</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-hiv-aids">Read more →</button>
+            <a href="https://hiv-aidsdashboard.streamlit.app/" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
+            <a href="https://github.com/jajupeter/HIV-AIDS_Dashboard" target="_blank" rel="noopener" class="case-link-btn">GitHub ↗</a>
           </div>
         </div>
       </article>
 
-    </div><!-- /proj-grid -->
+      <!-- STEM Success -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/PredictML0.png" alt="Student academic success prediction dashboard" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>Student academic success prediction</h3>
+          <p class="case-desc">Random-forest classifier predicting academic risk across 15 engineered features; wrapped in a Streamlit app and deployed for advisors. Enables earlier intervention for students trending off-track.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">90%</div>
+                <div class="case-metric-label">Classification accuracy</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">1,000+</div>
+                <div class="case-metric-label">Students in training set</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">Random Forest</span>
+            <span class="chip">MLOps</span>
+            <span class="chip">Streamlit</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-stem-predict">Read more →</button>
+            <a href="https://student-academic-success-prediction.streamlit.app/" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
+            <a href="https://github.com/jajupeter/student_academic_success_prediction-" target="_blank" rel="noopener" class="case-link-btn">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- House Price -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/PredictML1.png" alt="House price prediction deep-learning app" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>House price prediction app</h3>
+          <p class="case-desc">TensorFlow/Keras ANN regressing on the King County housing dataset. Interactive scenario testing deployed live on Streamlit Cloud.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value orange">18</div>
+                <div class="case-metric-label">Housing features modeled</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value green">Live</div>
+                <div class="case-metric-label">Streamlit deployment</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">TensorFlow</span>
+            <span class="chip">Deep learning</span>
+            <span class="chip">Streamlit</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-house-predict">Read more →</button>
+            <a href="https://real-estate-house-price-prediction-app.streamlit.app/" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
+            <a href="https://github.com/jajupeter/House-Price-prediction-app" target="_blank" rel="noopener" class="case-link-btn">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Predicting CT -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/CT_.png" alt="Predicting computational thinking with ML" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-info">Study</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>Predicting Computational Thinking (CT) with ML</h3>
+          <p class="case-desc">SVM, KNN, Random Forest, and XGBoost applied to CT survey items. Ablations confirmed algorithmic and creative thinking as dominant predictors.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value purple">4</div>
+                <div class="case-metric-label">ML models compared</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">Robust</div>
+                <div class="case-metric-label">Across cohort ablations</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">XGBoost</span>
+            <span class="chip">Random Forest</span>
+            <span class="chip">SVM</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-ct-ml">Read more →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CT Scale -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/CFA.png" alt="Confirmatory factor analysis diagram for CT scale" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-info">Study</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>Validating a Computational Thinking (CT) survey scale with EFA, PCA &amp; SEM</h3>
+          <p class="case-desc">Factor analysis and SEM establishing a research-grade instrument for CT measurement in VR learning, cross-validated across cohorts.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value orange">29 → 5</div>
+                <div class="case-metric-label">Variables to latent constructs</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value green">Validated</div>
+                <div class="case-metric-label">Construct &amp; model fit</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">SEM</span>
+            <span class="chip">PCA</span>
+            <span class="chip">Factor analysis</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-ct-scale">Read more →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- VR Cognitive -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/impact.png" alt="VR learning cognitive impact analysis" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-info">Study</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>Immersive VR learning — cognitive skill impact</h3>
+          <p class="case-desc">Controlled pre/post experimental study measuring CT gains from VR learning. Non-parametric tests confirmed significant effects across skills.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value green">p&lt;0.05</div>
+                <div class="case-metric-label">Significant gains</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value blue">Pre/post</div>
+                <div class="case-metric-label">Controlled design</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">Experimental design</span>
+            <span class="chip">Mann-Whitney U</span>
+            <span class="chip">T-tests</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-vr-cog">Read more →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARIMA -->
+      <article class="case-card reveal" data-category="ds">
+        <div class="case-media">
+          <img src="Projects_files/ARIMA.png" alt="ARIMA forecast of workforce diversity" loading="lazy">
+          <div class="case-media-badges">
+            <span class="pill pill-info">Study</span>
+            <span class="pill pill-neutral">Data Science</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <h3>Forecasting workforce diversity in construction</h3>
+          <p class="case-desc">ARIMA time-series forecasts of minority graduate supply vs. workforce demand. Scenario testing and CIs guide equity-driven recruitment policy.</p>
+          <div class="case-metrics">
+            <div class="case-metrics-label">Key numbers</div>
+            <div class="case-metrics-row">
+              <div class="case-metric">
+                <div class="case-metric-value blue">ARIMA</div>
+                <div class="case-metric-label">Long-horizon forecasts</div>
+              </div>
+              <div class="case-metric">
+                <div class="case-metric-value green">Policy</div>
+                <div class="case-metric-label">Actionable recommendations</div>
+              </div>
+            </div>
+          </div>
+          <div class="chips">
+            <span class="chip">ARIMA</span>
+            <span class="chip">Time-series</span>
+            <span class="chip">Policy insight</span>
+          </div>
+          <div class="case-actions">
+            <button class="case-link-btn" data-open="#modal-workforce-arima">Read more →</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- ================================================================
-     FOOTER
-     ================================================================ -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
-    <p class="footer-copy">© 2025 Opeyemi Ojajuni, Ph.D. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank">LinkedIn</a>
-      <a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni?ev=hdr_xprf" target="_blank">ResearchGate</a>
-      <a href="https://github.com/jajupeter" target="_blank">GitHub</a>
+    <p class="footer-status">
+      <span class="live-dot" aria-hidden="true"></span><strong>Currently:</strong> Research Manager at SU XR Jags Laboratory, focused on transitioning into senior IC roles in AI and intelligent systems. Based in Baton Rouge, LA · Open to remote &amp; relocation · US work authorized.
+    </p>
+    <div class="footer-bar">
+      <span>© 2026 Opeyemi Peter Ojajuni. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="mailto:jajupeter@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jajupeter" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Opeyemi-Ojajuni" target="_blank" rel="noopener">ResearchGate</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- ================================================================
-     MODALS
-     ================================================================ -->
+<!-- MODALS -->
 
 <!-- InsightBot -->
 <div class="modal" id="modal-insightbot">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>InsightBot: AI-Powered Research Tool</h3>
-    <h4>Problem Statement</h4>
-    <p>Researchers, analysts, and students face information overload when processing multiple online articles. Traditional reading and summarization methods are time-consuming and prone to cognitive fatigue, making it difficult to synthesize key insights across sources.</p>
-    <h4>Solution</h4>
-    <p>InsightBot automates research synthesis by fetching, parsing, and embedding online articles into AI-readable vectors. Users query the aggregated knowledge base and instantly receive concise, citation-supported answers.</p>
-    <h4>Pipeline</h4>
-    <ul>
-      <li><strong>WebBaseLoader</strong> — Extracts and cleans text from provided URLs.</li>
-      <li><strong>RecursiveCharacterTextSplitter</strong> — Segments long documents into manageable chunks.</li>
-      <li><strong>OpenAIEmbeddings</strong> — Converts text chunks into high-dimensional numerical vectors.</li>
-      <li><strong>FAISS</strong> — Stores embeddings locally for efficient semantic retrieval.</li>
-      <li><strong>RetrievalQAWithSourcesChain</strong> — Uses OpenAI's LLM to answer queries with contextual citations.</li>
-    </ul>
-    <h4>Results</h4>
-    <p>InsightBot extracts insights from up to three online articles within seconds, providing verifiable, concise answers supported by direct source links — demonstrating an end-to-end RAG workflow in a user-friendly research environment.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg avatar-subr">S</span>
+        <div>
+          <div class="modal-org">SU XR Jags Laboratory · 2026</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">InsightBot — citation-grounded RAG research assistant.</h2>
+      <p class="modal-lede">I built InsightBot because literature review was eating entire afternoons. It's a production RAG pipeline that ingests a user's article corpus, indexes it in FAISS, and serves citation-backed synthesis over the top via an LLM — so every answer is traceable to the original source in seconds instead of hours.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value blue">&lt;30s</div><div class="modal-metric-label">Multi-article synthesis</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">100%</div><div class="modal-metric-label">Answers with inline citations</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">1-click</div><div class="modal-metric-label">Live on Streamlit Cloud</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">RAG</div><div class="modal-metric-label">End-to-end pipeline</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From a list of URLs to a traceable answer.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Ingest &amp; chunk</div>
+          <p class="modal-step-body">WebBaseLoader pulls article text; a recursive splitter handles long documents cleanly without losing context.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Embed &amp; index</div>
+          <p class="modal-step-body">OpenAI embeddings stored in a local FAISS index for fast, semantic retrieval over the full corpus.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Retrieve &amp; answer</div>
+          <p class="modal-step-body">RetrievalQAWithSourcesChain grounds every answer in the original passage — no source, no sentence.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">LangChain</span>
+        <span class="chip">FAISS</span>
+        <span class="chip">OpenAI</span>
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">RAG</span>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- SafeGuide Campus -->
-<div class="modal" id="modal-amxr">
+<div class="modal" id="modal-safeguide">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>SafeGuide Campus: Generative AI for Safer Campus</h3>
-    <h4>Problem Statement</h4>
-    <p>Universities face rising safety and preparedness challenges, while traditional tools lack personalization and immediacy.</p>
-    <h4>Solution</h4>
-    <p>SafeGuide Campus is an interactive Generative AI assistant helping students, faculty, and staff navigate risky situations — intoxication, harassment, unsafe environments. Built in AWS PartyRock using LLMs, it serves as both a real-time safety tool and a research sandbox for responsible GenAI deployment with future VR integrations.</p>
-    <h4>Results</h4>
-    <p>Demonstrates how applied AI research can drive real-world campus impact — improving student, faculty, and staff well-being, readiness, and safety culture through scalable GenAI solutions.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-orange);">S</span>
+        <div>
+          <div class="modal-org">SU XR Jags Laboratory · 2025</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">SafeGuide Campus — GenAI assistant for safer campuses.</h2>
+      <p class="modal-lede">Campus safety tools are often static PDFs and posters — no help in the moment. I built SafeGuide as an LLM-backed assistant that helps students, faculty, and staff reason through risky situations (intoxication, harassment, unsafe environments) with responsible-AI guardrails, plus a sandbox for future VR integration.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">24/7</div><div class="modal-metric-label">Real-time decision support</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">Guardrails</div><div class="modal-metric-label">Responsible-AI prompting</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">LLM</div><div class="modal-metric-label">Powered by PartyRock</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">Campus</div><div class="modal-metric-label">Scalable GenAI pilot</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From scenario to safer decision.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Scenario framing</div>
+          <p class="modal-step-body">Users describe a situation in plain language. The assistant asks clarifying questions without judgment.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Guardrailed LLM</div>
+          <p class="modal-step-body">A PartyRock-hosted prompt enforces safe, non-judgmental, resource-aware guidance for every response.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Actionable next step</div>
+          <p class="modal-step-body">Returns clear steps and campus resources to call — so people leave with a concrete move, not anxiety.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">LLMs</span>
+        <span class="chip">AWS PartyRock</span>
+        <span class="chip">Generative AI</span>
+        <span class="chip">Responsible AI</span>
+        <span class="chip">Prompt engineering</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -445,40 +744,131 @@
 <div class="modal" id="modal-iclert">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Immersive Crisis Leader Emergency Response Training (ICLERT)</h3>
-    <p>ICLERT closes the gap left by traditional drills with AI-driven VR that captures the chaos of real incidents. Leaders practice split-second judgment in lifelike scenarios to measurably improve readiness.</p>
-    <h4>Solution</h4>
-    <p>Engineered a LiDAR/GIS digital twin of campus (shelter + EOC), then built a modular curriculum — 10 crisis courses + 2 hazard scenarios (gas leaks, electrical failures) — for Meta Quest 3 and CAVE. ML pipelines in Python achieved 95.18% accuracy in cognitive skill classification.</p>
-    <h4>Results</h4>
-    <p>35+ leaders trained; 10+ modules deployed. In partnership with the Louisiana Department of Health, the program scales statewide to strengthen workforce resilience and compliance.</p>
-    <div class="modal-gallery">
-      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
-        <source src="Projects_files/ICLERT2.mp4" type="video/mp4">
-      </video>
-      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
-        <source src="Projects_files/ICLERT5.mp4" type="video/mp4">
-      </video>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-blue);">I</span>
+        <div>
+          <div class="modal-org">SU XR Jags Laboratory · 2025</div>
+          <span class="pill pill-warning"><span class="pill-dot"></span>Live research</span>
+        </div>
+      </div>
+      <h2 class="modal-title">ICLERT — AI-driven XR crisis-training simulator.</h2>
+      <p class="modal-lede">Traditional crisis drills don't capture the chaos of a real incident. ICLERT does: an immersive training platform combining a LiDAR/GIS digital twin of Baton Rouge with AI-driven scenario generation, running on Meta Quest 3 and a CAVE. Built in partnership with the Louisiana Department of Health to train public-health and emergency-response leaders across 10+ scenario modules.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">35+</div><div class="modal-metric-label">Leaders trained</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">10+</div><div class="modal-metric-label">Scenario modules live</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">+80%</div><div class="modal-metric-label">Engagement</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">Digital Twin</div><div class="modal-metric-label">LiDAR/GIS campus model</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">Digital twin + AI scenarios + measured behavior.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Digital twin</div>
+          <p class="modal-step-body">LiDAR + GIS layers reconstructed key Baton Rouge sites in Unity at survey-grade fidelity.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Scenarios</div>
+          <p class="modal-step-body">AI-driven scenario engine varies events, NPC decisions, and constraints to keep training adaptive.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Measure &amp; learn</div>
+          <p class="modal-step-body">In-headset telemetry captures decisions and response time; tied back to learning-outcome instruments.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Unity</span>
+        <span class="chip">LiDAR / GIS</span>
+        <span class="chip">Meta Quest 3</span>
+        <span class="chip">CAVE systems</span>
+        <span class="chip">C# / Python</span>
+
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Media</span>
+      <div class="modal-gallery">
+        <video controls playsinline preload="metadata">
+          <source src="Projects_files/ICLERT2.mp4" type="video/mp4">
+        </video>
+        <video controls playsinline preload="metadata">
+          <source src="Projects_files/ICLERT5.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Geospatial Visualization -->
+<!-- Geospatial XR -->
 <div class="modal" id="modal-geo">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Immersive Geospatial Visualization in VR Systems</h3>
-    <h4>Approach</h4>
-    <p>Static 2D maps limit spatial reasoning. We transform OSM/ArcGIS data into procedural 3D city scenes in CityEngine and deploy to VR/CAVE for deep, interactive exploration.</p>
-    <h4>Implementation</h4>
-    <p>Unity deployment with local-origin georeferencing ensures precision on Meta Quest 3 and multi-user CAVE displays. Usability studies validated realism and value for planning, education, and engagement.</p>
-    <h4>Results</h4>
-    <p>A city-agnostic framework ready for real-time feeds (traffic, weather) to evolve into dynamic urban digital twins for smart-city planning, disaster resilience, and sustainable infrastructure design.</p>
-    <div class="modal-gallery">
-      <video controls playsinline preload="metadata" style="height:200px; border-radius:8px; border:1px solid #2d3a4f;">
-        <source src="Projects_files/Viz2.MOV" type="video/mp4">
-      </video>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-purple);">G</span>
+        <div>
+          <div class="modal-org">SU XR Jags Laboratory · 2024–present</div>
+          <span class="pill pill-warning">In production</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Immersive geospatial visualization — XR digital twins.</h2>
+      <p class="modal-lede">Static 2D maps lose spatial nuance. I built a city-agnostic pipeline that turns OSM and ArcGIS data into interactive 3D digital twins rendered in CAVE and VR. It's a foundation for smart-city planning, disaster-resilience review, and public engagement with urban systems in ways paper maps can't deliver.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value purple">3D</div><div class="modal-metric-label">Interactive digital twins</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">Multi-user</div><div class="modal-metric-label">CAVE-ready deployment</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Unity</div><div class="modal-metric-label">Cross-device builds</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">Real-time</div><div class="modal-metric-label">Feed-ready architecture</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From OSM data to multi-user VR scene.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Ingest</div>
+          <p class="modal-step-body">OSM + ArcGIS geospatial data imported with local-origin referencing for sub-meter precision.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Procedural build</div>
+          <p class="modal-step-body">CityEngine generates 3D city blocks from footprints — fast iteration across neighborhoods.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Deploy</div>
+          <p class="modal-step-body">Unity builds ship to Meta Quest 3 and multi-user CAVE; usability studies validated realism.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Unity</span>
+        <span class="chip">ArcGIS</span>
+        <span class="chip">CityEngine</span>
+        <span class="chip">OpenStreetMap</span>
+        <span class="chip">Meta Quest 3</span>
+        <span class="chip">CAVE</span>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Media</span>
+      <div class="modal-gallery">
+        <video controls playsinline preload="metadata">
+          <source src="Projects_files/Viz2.MOV" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </div>
@@ -487,35 +877,232 @@
 <div class="modal" id="modal-suradd">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>SURADD: Reaching Across the Digital Divide</h3>
-    <h4>Problem Statement</h4>
-    <p>Significant inequities in access to immersive technologies limit opportunities for students and educators in underserved communities. Traditional STEM professional development models lack hands-on engagement with VR, leaving educators underprepared and widening the digital divide.</p>
-    <h4>Solution</h4>
-    <p>Applied research blending technical VR development with UX research and educational design. Developed multi-user VR science modules using Unity 3D and Meta SDKs — compatible with HMDs, CAVE, and Mobile CAVE systems — informed by heuristic evaluations and usability testing. Paired with professional development training for middle school STEM educators.</p>
-    <h4>Results</h4>
-    <ul>
-      <li>500+ students reached within a 15-mile radius of Southern University (SUBR)</li>
-      <li>100+ STEM educators trained in immersive teaching practices</li>
-      <li>Student engagement <strong>+47%</strong></li>
-      <li>STEM conceptual retention <strong>+32%</strong></li>
-      <li>Teacher self-efficacy in technology integration <strong>+41%</strong></li>
-    </ul>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg avatar-su">S</span>
+        <div>
+          <div class="modal-org">SU XR Jags Laboratory · 2025</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">SURADD — multi-user VR science modules.</h2>
+      <p class="modal-lede">Under-resourced classrooms rarely see immersive tech. SURADD is a multi-user VR environment for middle and high school STEM where students explore molecular and physical systems collaboratively while educators run guided sessions. I measured engagement and retention against traditional instruction in a mixed-methods study.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">500+</div><div class="modal-metric-label">Students reached</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">100+</div><div class="modal-metric-label">Educators trained</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">+47%</div><div class="modal-metric-label">Engagement vs. control</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">+32%</div><div class="modal-metric-label">STEM retention gain</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From underserved classrooms to multi-user VR.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Co-design</div>
+          <p class="modal-step-body">STEM educators and researchers co-designed modules aligned to middle-school curricula.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Build</div>
+          <p class="modal-step-body">Unity + Meta SDK for delivery across HMD, CAVE, and Mobile CAVE — wherever the classroom is.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Train &amp; measure</div>
+          <p class="modal-step-body">PD workshops for teachers paired with mixed-methods evaluation of engagement and retention.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Unity</span>
+        <span class="chip">Meta SDK</span>
+        <span class="chip">VR / CAVE</span>
+        <span class="chip">K-12 STEM</span>
+        <span class="chip">Mixed methods</span>
+        <span class="chip">Usability testing</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- UX of VR Learning -->
+<!-- VR UX Study -->
 <div class="modal" id="modal-uxvr">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Evaluating User Experience of VR-Based Learning</h3>
-    <h4>Methodology</h4>
-    <p>Cohort observational study with focus groups and in-class observation to quantify presence, usability, workload, and satisfaction in VR learning environments.</p>
-    <h4>Analysis</h4>
-    <p>Triangulated surveys, behavioral metrics, and interviews to link UX factors to learning outcomes — measuring cognitive load, presence, and behavioral perception across cohorts.</p>
-    <h4>Application</h4>
-    <p>Findings inform headset setup, interaction patterns, and instructional design for higher-impact VR courses and guide where immersive technologies deliver the strongest educational returns.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg avatar-subr">U</span>
+        <div>
+          <div class="modal-org">Southern University · 2021</div>
+          <span class="pill pill-info">Study</span>
+        </div>
+      </div>
+      <h2 class="modal-title">User experience of VR-based learning.</h2>
+      <p class="modal-lede">Before scaling up any immersive curriculum, I wanted real data on what actually works in a headset. This is a cohort study linking VR UX factors to learning outcomes — triangulating focus groups, surveys, behavioral metrics, and in-class observation to measure presence, workload, and cognitive load.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value purple">Mixed</div><div class="modal-metric-label">Methods research design</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">3</div><div class="modal-metric-label">UX dimensions measured</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Multi-cohort</div><div class="modal-metric-label">Across semesters</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">UX→Learning</div><div class="modal-metric-label">Linked outcomes</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From raw headset use to instructional-design guidance.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Observe</div>
+          <p class="modal-step-body">In-class observation with behavioral coding — what students actually do once the headset is on.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Survey</div>
+          <p class="modal-step-body">Standardized presence, NASA-TLX workload, and usability scales captured quantitatively.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Synthesize</div>
+          <p class="modal-step-body">Triangulated themes inform headset setup, session length, and interaction-pattern choices.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">UX research</span>
+        <span class="chip">Focus groups</span>
+        <span class="chip">Usability testing</span>
+        <span class="chip">NASA-TLX</span>
+        <span class="chip">Mixed methods</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Amazon Sort Capacity -->
+<div class="modal" id="modal-amazon-sort">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:#FF9900;">a</span>
+        <div>
+          <div class="modal-org">Amazon · Seattle · 2023</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Sort-capacity predictor for automated fulfillment.</h2>
+      <p class="modal-lede">Built ML and Statistical models on 1M+ supply chain events and 10M+ order histories to forecast storage and sort capacity under peak demand. Built the data transformation framework and statistical models that forecast storage capacity requirements, shortening the capacity-planning cycle.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">1M+</div><div class="modal-metric-label">Transactions modeled</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">60%</div><div class="modal-metric-label">Simulation robustness improvement</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">1</div><div class="modal-metric-label">Framework retained post-internship</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From raw event streams to a planning-ready forecast.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. ETL and Data transfromation framework</div>
+          <p class="modal-step-body">Built scalable ETL and data transformation pipelines for 1M+ events and 10M+ orders, enabling reliable forecasting and simulation workflows.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Modeling</div>
+          <p class="modal-step-body">Benchmarked seasonal-naive, ARIMA, and gradient-boosted regressors with rolling-origin cross-validation.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Hand-off</div>
+          <p class="modal-step-body">Documented the framework, integrated into the team's planning notebook, and continued running post-internship.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Statistical modeling</span>
+        <span class="chip">ARIMA</span>
+        <span class="chip">Gradient boosting</span>
+        <span class="chip">PDF/KDE</span>
+        <span class="chip">Large-scale ETL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HIV/AIDS Global Dashboard -->
+<div class="modal" id="modal-hiv-aids">
+  <div class="modal-overlay"></div>
+  <div class="modal-dialog">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg avatar-blue">H</span>
+        <div>
+          <div class="modal-org">Personal · 2024</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Live Demo</span>
+        </div>
+      </div>
+      <h2 class="modal-title">HIV/AIDS Global Dashboard — 25-year trends (2000–2024).</h2>
+      <p class="modal-lede">Global HIV/AIDS data is scattered across UNAIDS, WHO, CDC, and World Bank — hard to explore, harder to compare. I built an interactive Streamlit dashboard that unifies 25 years of data into one lens: new infections, ART coverage, demographic gaps, and progress toward the UNAIDS 95-95-95 cascade across 150+ countries.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">78%</div><div class="modal-metric-label">ART coverage (from &lt;2%)</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">150+</div><div class="modal-metric-label">Countries analyzed</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">-65%</div><div class="modal-metric-label">AIDS deaths since 2004 peak</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">6</div><div class="modal-metric-label">Interactive pages</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From four fragmented data sources to one decision-ready lens.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Integrate</div>
+          <p class="modal-step-body">Ingested and harmonized 25 years of UNAIDS, WHO, CDC, and World Bank data with pandas — cleaned country codes, aligned time series, and reconciled indicator definitions.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Visualize</div>
+          <p class="modal-step-body">Built 6 interactive Plotly pages — global trends, regional breakdowns, demographic gaps, ART coverage, 95-95-95 cascade progress, and country deep-dives.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Surface insight</div>
+          <p class="modal-step-body">Auto-generated narrative callouts highlight the biggest gaps and wins per view, so policy users get the headline before they drill in.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">Plotly</span>
+        <span class="chip">pandas</span>
+        <span class="chip">scipy</span>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Links</span>
+      <div class="case-actions">
+        <a href="https://hiv-aidsdashboard.streamlit.app/" target="_blank" rel="noopener" class="case-link-btn">Launch app ↗</a>
+        <a href="https://github.com/jajupeter/HIV-AIDS_Dashboard" target="_blank" rel="noopener" class="case-link-btn">GitHub ↗</a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -523,137 +1110,341 @@
 <div class="modal" id="modal-stem-predict">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Student Academic Success Prediction App</h3>
-    <h4>Problem Statement</h4>
-    <p>Educational institutions often lack real-time tools to identify students at risk of underperforming. This project builds an ML-powered solution to help identify such students early using interpretable features — enabling proactive interventions.</p>
-    <h4>Solution</h4>
-    <p>ML model predicting academic success from 15 personal, academic, and socio-economic parameters. Supports early warning systems for educators, resource planning for administrators, and data-driven educational research.</p>
-    <h4>Results</h4>
-    <p>Validated on a dataset of 1,000+ students with 90% accuracy. MLOps pipeline supports model retraining, monitoring, and explainability for advisors and program leads. Improves early intervention decisions and program resource allocation.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg avatar-subr">S</span>
+        <div>
+          <div class="modal-org">Southern University · 2021</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Student success prediction — cloud-deployed ML app.</h2>
+      <p class="modal-lede">Advisors needed a risk signal earlier than midterms. I built a random-forest classifier on 15 engineered features, wrapped it in a Streamlit app, and shipped it to the cloud so any advisor can get a risk score with one-click rationale. Validated on 1,000+ student records.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">90%</div><div class="modal-metric-label">Classification accuracy</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">1,000+</div><div class="modal-metric-label">Students in validation set</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">15</div><div class="modal-metric-label">Engineered features</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">1</div><div class="modal-metric-label">Cloud-deployed app for advisors</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From transcript data to advisor-ready risk scores.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Feature engineering</div>
+          <p class="modal-step-body">15 features across academic history, attendance, course load, and demographic indicators.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Model selection</div>
+          <p class="modal-step-body">Benchmarked logistic regression, SVM, and Random Forest with cross-validation; RF won on F1.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Advisor app</div>
+          <p class="modal-step-body">Streamlit interface deployed to the cloud for advisors to query risk scores with one-click rationale.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Random Forest</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">Python</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">Cloud deployment</span>
+        <span class="chip">Feature engineering</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- House Price Prediction -->
+<!-- House Price -->
 <div class="modal" id="modal-house-predict">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>House Price Prediction App</h3>
-    <h4>Problem Statement</h4>
-    <p>Accurately pricing residential properties is challenging. Traditional valuation methods rely on manual appraisals that are time-consuming, subjective, and unable to capture complex non-linear relationships in housing features.</p>
-    <h4>Solution</h4>
-    <p>AI-powered Streamlit app using a trained Deep Learning regression model on the King County Housing Dataset (2014–2015). Estimates house prices based on 18 key features: square footage, bedrooms, bathrooms, year built, renovation status, and geolocation.</p>
-    <h4>MLOps Pipeline</h4>
-    <ul>
-      <li><strong>Data Preprocessing:</strong> Cleaned dataset, removed non-essential fields, normalized features using MinMaxScaler.</li>
-      <li><strong>Modeling:</strong> Artificial Neural Network (ANN) with TensorFlow/Keras, optimized for regression.</li>
-      <li><strong>Deployment:</strong> Streamlit Cloud with GitHub version control.</li>
-    </ul>
-    <h4>Results</h4>
-    <p>Users can interactively test scenarios by adjusting property features, instantly receiving predicted prices. The model delivers robust predictions with a streamlined interface accessible to non-technical users.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-blue);">H</span>
+        <div>
+          <div class="modal-org">Personal · 2024</div>
+          <span class="pill pill-success"><span class="pill-dot"></span>Shipped</span>
+        </div>
+      </div>
+      <h2 class="modal-title">House-price prediction — deep-learning regression app.</h2>
+      <p class="modal-lede">Manual appraisals are slow and miss the non-linear interactions that actually drive price. I trained a TensorFlow/Keras ANN on the King County dataset and wrapped it in a Streamlit app so anyone — even non-technical buyers — can adjust 18 property features and see an instant prediction.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value orange">18</div><div class="modal-metric-label">Housing features modeled</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Live</div><div class="modal-metric-label">Streamlit deployment</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">ANN</div><div class="modal-metric-label">TensorFlow + Keras</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">Real-time</div><div class="modal-metric-label">Interactive predictions</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From raw listings to instant price estimates.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Preprocess</div>
+          <p class="modal-step-body">Cleaned and MinMax-scaled the 2014–2015 King County data; dropped noisy fields.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Model</div>
+          <p class="modal-step-body">ANN in TensorFlow/Keras tuned for regression with hold-out validation.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Ship</div>
+          <p class="modal-step-body">Streamlit Cloud deployment with GitHub version control — users adjust features, see predictions instantly.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">TensorFlow</span>
+        <span class="chip">Keras</span>
+        <span class="chip">Deep learning</span>
+        <span class="chip">Streamlit</span>
+        <span class="chip">Python</span>
+        <span class="chip">MLOps</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Predicting CT with ML -->
+<!-- Predicting CT -->
 <div class="modal" id="modal-ct-ml">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Predicting Computational Thinking with ML</h3>
-    <h4>Approach</h4>
-    <p>Built ML classifiers (SVM, KNN, Random Forest, XGBoost) on survey items and performance tasks to predict CT proficiency levels among engineering students.</p>
-    <h4>Key Findings</h4>
-    <p>Feature importance analysis surfaced algorithmic and creative thinking as dominant predictors. Ablation studies confirmed model robustness across different cohort compositions.</p>
-    <h4>Application</h4>
-    <p>Delivers early-signal analytics to personalize instruction, target support resources, and guide educators toward high-impact cognitive interventions in VR-based learning environments.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-orange);">C</span>
+        <div>
+          <div class="modal-org">Southern University · 2023</div>
+          <span class="pill pill-info">Study</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Predicting computational thinking with ML.</h2>
+      <p class="modal-lede">Computational thinking (CT) is a moving target for educators — which skills actually drive proficiency? I benchmarked SVM, KNN, Random Forest, and XGBoost on CT survey items and performance tasks, then used ablation studies to surface algorithmic and creative thinking as the dominant predictors.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value purple">4</div><div class="modal-metric-label">ML models compared</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">Robust</div><div class="modal-metric-label">Across cohort ablations</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Algorithmic</div><div class="modal-metric-label">Dominant predictor</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">Creative</div><div class="modal-metric-label">Second-strongest</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From survey items to interpretable predictors.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Feature set</div>
+          <p class="modal-step-body">Survey items and performance-task scores encoded for modeling with consistent preprocessing.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Compare models</div>
+          <p class="modal-step-body">SVM, KNN, Random Forest, and XGBoost benchmarked with k-fold cross-validation.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Explain</div>
+          <p class="modal-step-body">Feature-importance + ablation studies identify the cognitive drivers that matter for instruction.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">XGBoost</span>
+        <span class="chip">Random Forest</span>
+        <span class="chip">SVM</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">Feature importance</span>
+        <span class="chip">Ablation studies</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- CT Scale Validation -->
+<!-- CT Scale -->
 <div class="modal" id="modal-ct-scale">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Validating a CT Survey Scale with EFA, PCA &amp; SEM</h3>
-    <h4>Methodology</h4>
-    <p>Dimensionality reduction trimmed 29 observed survey variables to 5 latent constructs using Exploratory Factor Analysis (EFA) and Principal Component Analysis (PCA). Structural Equation Modeling (SEM) confirmed the factor structure and model fit.</p>
-    <h4>Results</h4>
-    <p>Reliability and validity established for VR-learning contexts with cross-validation across cohorts — providing a research-grade instrument for assessing computational thinking skills.</p>
-    <h4>Application</h4>
-    <p>Provides a rigorous, validated instrument for future CT studies, program evaluation, and cognitive analytics in immersive learning research.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-purple);">C</span>
+        <div>
+          <div class="modal-org">Southern University · 2023</div>
+          <span class="pill pill-info">Study</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Validating a CT survey scale — EFA, PCA &amp; SEM.</h2>
+      <p class="modal-lede">Any measurement claim about CT needs a defensible instrument behind it. I ran a psychometric validation that trimmed 29 observed variables to 5 latent constructs via EFA and PCA, then confirmed factor structure and model fit with SEM — producing a research-grade instrument for CT measurement in VR learning.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value orange">29 → 5</div><div class="modal-metric-label">Variables to latent constructs</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Validated</div><div class="modal-metric-label">Construct &amp; model fit</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">5</div><div class="modal-metric-label">Latent constructs retained</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">Multi-cohort</div><div class="modal-metric-label">Cross-validated reliability</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From noisy survey items to a defensible instrument.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. EFA &amp; PCA</div>
+          <p class="modal-step-body">Exploratory factor analysis and PCA reduce 29 variables to 5 interpretable constructs.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. SEM</div>
+          <p class="modal-step-body">Structural equation modeling confirms factor structure and evaluates overall model fit.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Cross-validate</div>
+          <p class="modal-step-body">Results reproduced across cohorts to establish reliability and generalizability.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">SEM</span>
+        <span class="chip">PCA</span>
+        <span class="chip">Factor analysis</span>
+        <span class="chip">R</span>
+        <span class="chip">Psychometrics</span>
+        <span class="chip">Survey design</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- VR Cognitive Study -->
+<!-- VR Cognitive -->
 <div class="modal" id="modal-vr-cog">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Immersive VR Learning: Cognitive Skill Impact</h3>
-    <h4>Methodology</h4>
-    <p>Randomized, controlled exposure to VR learning modules with pre/post testing using validated Computational Thinking instruments. Statistical tests included Shapiro-Wilk normality checks, Mann-Whitney U, Wilcoxon Signed-Rank, and independent samples T-tests.</p>
-    <h4>Results</h4>
-    <p>Measured significant gains in algorithmic reasoning, creative problem-solving, and overall cognitive skill development. Effect sizes and subgroup differences analyzed across demographic variables.</p>
-    <h4>Application</h4>
-    <p>Results guide where VR delivers the strongest cognitive returns, how to structure sessions for maximal gain, and which student populations benefit most from immersive interventions.</p>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-blue);">V</span>
+        <div>
+          <div class="modal-org">Southern University · 2023</div>
+          <span class="pill pill-info">Study</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Immersive VR learning — cognitive skill impact.</h2>
+      <p class="modal-lede">Does VR actually move cognitive outcomes, or just feel engaging? I designed a controlled pre/post experimental study with validated CT instruments. Non-parametric tests confirmed significant effects on algorithmic reasoning and creative problem-solving, with subgroup analyses across demographic variables.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value green">p&lt;0.05</div><div class="modal-metric-label">Significant cognitive gains</div></div>
+      <div class="modal-metric"><div class="modal-metric-value blue">Pre/post</div><div class="modal-metric-label">Controlled design</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">Algorithmic</div><div class="modal-metric-label">Strongest gain</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">Creative</div><div class="modal-metric-label">Secondary gain</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From VR exposure to measured cognitive gains.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Design</div>
+          <p class="modal-step-body">Randomized controlled pre/post with validated CT instruments across matched cohorts.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Test</div>
+          <p class="modal-step-body">Shapiro-Wilk normality, Mann-Whitney U, Wilcoxon signed-rank, and independent-samples T-tests.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Interpret</div>
+          <p class="modal-step-body">Effect sizes + subgroup analysis point to where VR delivers the strongest returns.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">Experimental design</span>
+        <span class="chip">Mann-Whitney U</span>
+        <span class="chip">Wilcoxon</span>
+        <span class="chip">T-tests</span>
+        <span class="chip">Shapiro-Wilk</span>
+        <span class="chip">SPSS</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Workforce Diversity ARIMA -->
+<!-- ARIMA Workforce -->
 <div class="modal" id="modal-workforce-arima">
   <div class="modal-overlay"></div>
   <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>Forecasting Workforce Diversity in Construction (ARIMA)</h3>
-    <h4>Methodology</h4>
-    <p>Time-series analyses of graduation pipelines vs. industry demand using ARIMA modeling to project minority workforce supply. Included model diagnostics, scenario testing, and confidence interval analysis.</p>
-    <h4>Application</h4>
-    <p>Actionable forecasts for universities and employers to close representation gaps — informing recruitment strategies, scholarship programs, and hiring practices for equity-driven workforce planning in the construction industry.</p>
-  </div>
-</div>
-
-<div class="modal" id="modal-hiv-aids">
-  <div class="modal-overlay"></div>
-  <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>HIV/AIDS Global Dashboard: 25-Year Trends (2000–2024)</h3>
-    <h4>Problem Statement</h4>
-    <p>Despite 40+ years of research, HIV/AIDS remains a major global health challenge. Decision-makers and public health researchers lacked an accessible, interactive tool to explore 25 years of global HIV/AIDS data across regions, demographics, and treatment progress in a unified view.</p>
-    <h4>Solution</h4>
-    <p>Built a production-ready Streamlit dashboard integrating data from UNAIDS AIDSinfo, WHO Global Health Observatory, CDC HIV Surveillance, and World Bank. The dashboard features 6 interactive pages with animated visualizations, regional filters, and auto-generated insights.</p>
-    <h4>Key Features</h4>
-    <ul>
-      <li><strong>Overview:</strong> Headline metrics — 40.6M PLHIV, 59% reduction in new infections since 2000</li>
-      <li><strong>Global Trends:</strong> Time-series analysis of infections, deaths, and ART coverage over 25 years</li>
-      <li><strong>Geographic View:</strong> World map with regional comparisons across 150+ countries</li>
-      <li><strong>Treatment Cascade:</strong> Tracks progress toward the UNAIDS 95-95-95 targets</li>
-      <li><strong>Demographics:</strong> Age, gender, and key population breakdowns</li>
-      <li><strong>Country Rankings:</strong> Top 10 comparisons with CSV export</li>
-    </ul>
-    <h4>Results</h4>
-    <p>Dashboard reveals that ART coverage grew from &lt;2% to 78%, AIDS-related deaths fell 65% since the 2004 peak, yet Sub-Saharan Africa still bears 65% of the global HIV burden — highlighting persistent equity gaps despite global progress.</p>
-  </div>
-</div>
-
-<!-- SURADD PD Evaluation -->
-<div class="modal" id="modal-suradd-eval">
-  <div class="modal-overlay"></div>
-  <div class="modal-dialog">
-    <button class="modal-close">&times;</button>
-    <h3>SURADD VR PD Program: Educator Impact Evaluation</h3>
-    <h4>Problem Statement</h4>
-    <p>Middle school STEM educators in underserved Greater Baton Rouge communities lack access to hands-on VR professional development. Without rigorous, evidence-based program evaluation, initiatives cannot prove impact, secure continued funding, or meaningfully close the digital divide at scale.</p>
-    <h4>Methodology</h4>
-    <p>Designed and executed a two-cohort mixed-methods evaluation applying the <strong>Kirkpatrick 4-Level Model</strong> (Reaction → Learning → Behavior → Results) across Spring and Fall 2025. Instruments included the <strong>TPK-VR Survey</strong> (20-item Likert scale) measuring technological pedagogical knowledge, a <strong>Self-Efficacy Survey</strong> (20-item, 10-point scale) across 5 teaching confidence domains, and open-ended Initial Intention and PD Satisfaction surveys capturing qualitative themes.</p>
-    <h4>Results</h4>
-    <ul>
-      <li><strong>93 educators</strong> trained across <strong>47 Greater Baton Rouge schools</strong></li>
-      <li><strong>97%</strong> of participants — nearly all complete beginners — finished the program confident using VR in the classroom</li>
-      <li>Self-efficacy jumped <strong>+62%</strong>; pedagogical VR knowledge shifted from the Neutral to the Agree range</li>
-      <li><strong>85%</strong> of educators plan to implement VR in their classrooms this school year</li>
-      <li><strong>86% composite effectiveness score</strong> — rated <strong>Highly Effective</strong> across all four Kirkpatrick levels</li>
-    </ul>
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-meta">
+        <span class="avatar avatar-lg" style="background:var(--accent-green);">A</span>
+        <div>
+          <div class="modal-org">Southern University · 2022</div>
+          <span class="pill pill-info">Study</span>
+        </div>
+      </div>
+      <h2 class="modal-title">Forecasting workforce diversity in construction.</h2>
+      <p class="modal-lede">Equity plans often rely on guesswork. I built ARIMA time-series forecasts of minority graduate supply versus workforce demand, with scenario testing and confidence-interval analysis — giving universities and employers actionable numbers to close representation gaps.</p>
+    </div>
+    <div class="modal-metrics">
+      <div class="modal-metric"><div class="modal-metric-value blue">ARIMA</div><div class="modal-metric-label">Long-horizon forecasts</div></div>
+      <div class="modal-metric"><div class="modal-metric-value green">Policy</div><div class="modal-metric-label">Actionable recommendations</div></div>
+      <div class="modal-metric"><div class="modal-metric-value orange">Scenarios</div><div class="modal-metric-label">With confidence intervals</div></div>
+      <div class="modal-metric"><div class="modal-metric-value purple">Equity</div><div class="modal-metric-label">Workforce planning</div></div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Approach</span>
+      <h3 class="modal-section-title">From pipeline data to equity-driven policy.</h3>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-bar blue"></div>
+          <div class="modal-step-title">1. Prep</div>
+          <p class="modal-step-body">Cleaned and aligned education-to-industry time series with consistent taxonomy.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar green"></div>
+          <div class="modal-step-title">2. Forecast</div>
+          <p class="modal-step-body">ARIMA with full model diagnostics and multi-scenario testing against history.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-bar orange"></div>
+          <div class="modal-step-title">3. Recommend</div>
+          <p class="modal-step-body">Confidence intervals translated into recruitment, scholarship, and hiring-practice recommendations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-section">
+      <span class="eyebrow">Stack</span>
+      <div class="chips modal-stack">
+        <span class="chip">ARIMA</span>
+        <span class="chip">Time-series</span>
+        <span class="chip">Scenario analysis</span>
+        <span class="chip">Policy research</span>
+        <span class="chip">Python</span>
+        <span class="chip">statsmodels</span>
+      </div>
+    </div>
   </div>
 </div>
 

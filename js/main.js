@@ -1,33 +1,52 @@
 /* ============================================================
-   Portfolio — Dr. Opeyemi Ojajuni
-   Vanilla JS: nav, scroll animations, stats counter, filter, modals
+   Opeyemi Ojajuni — portfolio JS
+   Nav, theme, reveal, filters, modals
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ── Helpers ── */
-  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-  /* ================================================================
-     STICKY NAV — highlight active link + mobile toggle
-     ================================================================ */
+  const SUN_SVG  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+  const MOON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  /* ── Theme (default light) ── */
+  function initTheme() {
+    const saved = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', saved);
+    updateToggleIcon(saved);
+
+    $$('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next    = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateToggleIcon(next);
+      });
+    });
+  }
+  function updateToggleIcon(theme) {
+    $$('.theme-toggle').forEach(btn => {
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.innerHTML = theme === 'dark' ? SUN_SVG : MOON_SVG;
+    });
+  }
+
+  /* ── Nav ── */
   function initNav() {
     const toggle = $('.nav-toggle');
     const mobile = $('.nav-mobile');
     const links  = $$('.nav-links a, .nav-mobile a');
 
-    // Set active link based on current page filename
     const page = location.pathname.split('/').pop() || 'index.html';
     links.forEach(a => {
       const href = a.getAttribute('href');
-      if (href === page || (page === '' && href === 'index.html')) {
-        a.classList.add('active');
-      }
+      if (href === page || (page === '' && href === 'index.html')) a.classList.add('active');
     });
 
-    // Mobile toggle
     if (toggle && mobile) {
       toggle.addEventListener('click', () => {
         toggle.classList.toggle('open');
@@ -44,98 +63,28 @@
     }
   }
 
-  /* ================================================================
-     SCROLL REVEAL — fade/slide elements in on viewport entry
-     ================================================================ */
+  /* ── Reveal ── */
   function initReveal() {
     const items = $$('.reveal');
     if (!items.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    items.forEach(el => observer.observe(el));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(el => io.observe(el));
   }
 
-  /* ================================================================
-     STATS COUNTER — animated count-up on first viewport entry
-     ================================================================ */
-  function initCounters() {
-    const counters = $$('[data-count]');
-    if (!counters.length) return;
-
-    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-
-    function animateCounter(el) {
-      const raw    = el.dataset.count;         // e.g. "1M", "20", "10"
-      const suffix = el.dataset.suffix || '';  // e.g. "+"
-      const prefix = el.dataset.prefix || '';
-
-      let multiplier = 1;
-      let numStr = raw;
-      if (raw.endsWith('M')) { multiplier = 1000000; numStr = raw.slice(0, -1); }
-      else if (raw.endsWith('K')) { multiplier = 1000; numStr = raw.slice(0, -1); }
-
-      const target   = parseFloat(numStr) * multiplier;
-      const duration = 1800;
-      const start    = performance.now();
-
-      function format(val) {
-        if (multiplier === 1000000) return (val / 1000000 < 1 ? (val / 1000000).toFixed(1) : Math.round(val / 1000000)) + 'M';
-        if (multiplier === 1000)    return (val / 1000).toFixed(1) + 'K';
-        return Math.round(val).toString();
-      }
-
-      function step(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const current  = target * easeOut(progress);
-        el.textContent = prefix + format(current) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = prefix + format(target) + suffix;
-      }
-
-      requestAnimationFrame(step);
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    counters.forEach(el => observer.observe(el));
-  }
-
-  /* ================================================================
-     PROJECT FILTER — show/hide cards by category
-     ================================================================ */
+  /* ── Project filter ── */
   function initFilter() {
     const buttons = $$('.filter-btn');
-    const cards   = $$('.proj-card[data-category]');
+    const cards   = $$('.case-card[data-category]');
     if (!buttons.length) return;
-
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const cat = btn.dataset.filter;
-
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         cards.forEach(card => {
           card.hidden = !(cat === 'all' || card.dataset.category === cat);
         });
@@ -143,11 +92,8 @@
     });
   }
 
-  /* ================================================================
-     MODALS — open/close project detail panels
-     ================================================================ */
+  /* ── Modals ── */
   function initModals() {
-    // Open
     $$('[data-open]').forEach(trigger => {
       trigger.addEventListener('click', () => {
         const modal = $(trigger.dataset.open);
@@ -157,61 +103,25 @@
         }
       });
     });
-
-    // Close
     $$('.modal').forEach(modal => {
-      function close() {
+      const close = () => {
         modal.classList.remove('open');
         document.body.style.overflow = '';
-      }
+      };
       const closeBtn = $('.modal-close', modal);
       const overlay  = $('.modal-overlay', modal);
       if (closeBtn) closeBtn.addEventListener('click', close);
       if (overlay)  overlay.addEventListener('click', close);
     });
-
-    // Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        $$('.modal.open').forEach(m => {
-          m.classList.remove('open');
-          document.body.style.overflow = '';
-        });
-      }
-    });
-  }
-
-  /* ================================================================
-     CONTACT FORM — client-side validation before Formspree submit
-     ================================================================ */
-  function initContactForm() {
-    const form = $('.contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-      let valid = true;
-
-      $$('[required]', form).forEach(field => {
-        field.style.borderColor = '';
-        if (!field.value.trim()) {
-          field.style.borderColor = '#f87171';
-          valid = false;
-        }
+      if (e.key === 'Escape') $$('.modal.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
       });
-
-      const emailField = form.querySelector('[type="email"]');
-      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-        emailField.style.borderColor = '#f87171';
-        valid = false;
-      }
-
-      if (!valid) e.preventDefault();
     });
   }
 
-  /* ================================================================
-     SMOOTH SCROLL for same-page anchor links
-     ================================================================ */
+  /* ── Smooth scroll ── */
   function initSmoothScroll() {
     $$('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
@@ -219,50 +129,80 @@
         const target = document.getElementById(id);
         if (target) {
           e.preventDefault();
-          const navH = 64;
-          const top = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+          const top = target.getBoundingClientRect().top + window.scrollY - 80;
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
   }
 
-  /* ================================================================
-     THEME TOGGLE — dark / light with localStorage persistence
-     ================================================================ */
-  function initTheme() {
-    const saved = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', saved);
-    updateToggleIcon(saved);
+  /* ── Metric count-up (plays when value scrolls into view) ── */
+  function initCounters() {
+    const vals = $$('.metric-value');
+    if (!vals.length) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
-    $$('.theme-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const next    = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateToggleIcon(next);
+    const animate = (el) => {
+      const original = el.textContent.trim();
+      // Matches: optional sign (+, -, −), number (with optional decimals), suffix (%, B+, M, etc.)
+      const match = original.match(/^([+\-−]?)(\d+(?:\.\d+)?)(.*)$/);
+      if (!match) return;
+      const [, prefix, numStr, suffix] = match;
+      const target = parseFloat(numStr);
+      const decimals = (numStr.split('.')[1] || '').length;
+
+      if (reduce) { el.textContent = original; return; }
+
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const t = Math.min(1, (now - start) / duration);
+        const v = target * easeOut(t);
+        const display = decimals ? v.toFixed(decimals) : Math.round(v);
+        el.textContent = `${prefix}${display}${suffix}`;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = original; // snap to exact original text (preserves "1B+", "−40%", etc.)
+      };
+      el.textContent = `${prefix}0${suffix}`;
+      requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    vals.forEach(el => io.observe(el));
+  }
+
+  /* ── Mouse-tracking glow on capability cards ── */
+  function initCardGlow() {
+    const cards = $$('.capability-card');
+    if (!cards.length) return;
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width) * 100;
+        const y = ((e.clientY - r.top) / r.height) * 100;
+        card.style.setProperty('--mx', x + '%');
+        card.style.setProperty('--my', y + '%');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
       });
     });
   }
 
-  function updateToggleIcon(theme) {
-    $$('.theme-toggle').forEach(btn => {
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    });
-  }
-
-  /* ── Boot ── */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initNav();
     initReveal();
-    initCounters();
     initFilter();
     initModals();
-    initContactForm();
     initSmoothScroll();
+    initCounters();
+    initCardGlow();
   });
-
 })();
