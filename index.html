@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" aria-hidden="true"></div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="container nav-inner">
@@ -21,8 +23,8 @@
       <span class="nav-phd-badge">PhD</span>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">About</a>
-      <a href="projects.html">Projects</a>
+      <a href="#about" class="active" data-section-link>About</a>
+      <a href="#featured-projects" data-section-link>Projects</a>
       <a href="research.html">Research</a>
       <a href="Opeyemi_Ojajuni_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Resume <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></a>
     </div>
@@ -33,14 +35,16 @@
   </div>
 </nav>
 <div class="nav-mobile">
-  <a href="index.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="#about" data-section-link>About</a>
+  <a href="#featured-projects" data-section-link>Projects</a>
+  <a href="#timeline" data-section-link>Timeline</a>
+  <a href="#stack" data-section-link>Stack</a>
   <a href="research.html">Research</a>
   <a href="Opeyemi_Ojajuni_Resume_Short.pdf" target="_blank" rel="noopener">Resume ↓</a>
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="about">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-photo reveal">
@@ -53,11 +57,16 @@
         </div>
         <h1 class="reveal">I ship AI systems that move business metrics.</h1>
         <p class="hero-sub reveal">
-          Welcome! I’m Peter—an applied scientist specializing in human–machine interaction and intelligent systems. I design and deploy end-to-end Artificial Intellegence (AI), Extended Reality (XR), and data-driven solutions that translate research into scalable, real-world impact.
+          Welcome! I’m Peter—an applied scientist specializing in human–machine interaction and intelligent systems. I design and deploy end-to-end Artificial Intelligence (AI), Extended Reality (XR), and data-driven solutions that translate research into scalable, real-world impact.
         </p>
         <div class="hero-actions reveal">
           <a href="projects.html" class="btn btn-primary">See projects →</a>
           <a href="mailto:jajupeter@gmail.com?subject=Quick%20chat" class="btn btn-outline">Book 15 min chat</a>
+        </div>
+        <div class="hero-routing reveal" aria-label="Explore by focus">
+          <a href="#featured-projects" data-route="AI/ML">AI/ML</a>
+          <a href="#featured-projects" data-route="XR">XR systems</a>
+          <a href="#featured-projects" data-route="Product">Product impact</a>
         </div>
       </div>
     </div>
@@ -65,7 +74,7 @@
 </section>
 
 <!-- IMPACT METRICS -->
-<section class="section-sm">
+<section class="section-sm" id="impact">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Impact at a glance</span>
@@ -92,7 +101,7 @@
 </section>
 
 <!-- WHAT I DO -->
-<section class="section">
+<section class="section" id="capabilities">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">What I do</span>
@@ -105,6 +114,10 @@
         </div>
         <h3>AI &amp; Data-Driven Decision Making</h3>
         <p>Building ML and GenAI systems deployed in real-world and immersive environments</p>
+        <button class="capability-toggle" type="button" aria-expanded="false">See examples</button>
+        <div class="capability-more">
+          <p>Predictive modeling, RAG/LLM workflows, learning analytics, and applied experimentation that connect model output to decisions people can use.</p>
+        </div>
       </div>
       <div class="capability-card reveal">
         <div class="capability-icon" aria-hidden="true">
@@ -112,21 +125,146 @@
         </div>
         <h3>XR &amp; Spatial Computing</h3>
         <p>Designing immersive systems to support computational thinking and spatial reasoning development.</p>
+        <button class="capability-toggle" type="button" aria-expanded="false">See examples</button>
+        <div class="capability-more">
+          <p>CAVE VR research, Meta Quest prototyping, digital twins, LiDAR/GIS workflows, and adaptive immersive learning environments.</p>
+        </div>
       </div>
       <div class="capability-card reveal">
         <div class="capability-icon" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M12 10v8"/><path d="M17 6v12"/></svg>
         </div>
         <h3>Supply Chain Analytics &amp; Operational Efficiency</h3>
-        <p>Building scalable Risk Modeling & Predictive Analytics models to identify, forecast, and mitigate operational and business risks.</p>
+        <p>Building scalable Risk Modeling &amp; Predictive Analytics models to identify, forecast, and mitigate operational and business risks.</p>
+        <button class="capability-toggle" type="button" aria-expanded="false">See examples</button>
+        <div class="capability-more">
+          <p>Large-scale risk scoring, capacity forecasting, scenario planning, dashboarding, and infrastructure decisions backed by statistical evidence.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FEATURED PROJECTS -->
+<section class="section interactive-band" id="featured-projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured work</span>
+      <h2>Explore selected AI, XR, and Data Science projects.</h2>
+      <p>Use the controls to browse the work by focus area without leaving the landing page.</p>
+    </div>
+
+    <div class="project-tabs reveal" role="tablist" aria-label="Featured projects">
+      <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="0">AI</button>
+      <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="1">XR</button>
+      <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="2">Data Science</button>
+    </div>
+
+    <div class="project-showcase reveal" data-project-showcase>
+      <button class="project-arrow project-prev" type="button" aria-label="Previous project">&lsaquo;</button>
+      <article class="project-panel active" data-project-panel="0" data-tags="AI/ML XR Product">
+        <div class="project-media">
+          <img src="img/ch06-postdoc.jpg" alt="Immersive crisis-management simulation project preview" loading="lazy">
+        </div>
+        <div class="project-copy">
+          <span class="eyebrow">AI + XR training</span>
+          <h3>AI-driven XR crisis-training simulator</h3>
+          <p>Product architecture for an AI/VR crisis-management simulator that turns cognitive training data into adaptive decision-support insights.</p>
+          <div class="project-kpis">
+            <span><strong>95.18%</strong> cognitive skill classification</span>
+            <span><strong>$10M+</strong> federally funded XR ecosystem</span>
+          </div>
+          <a class="case-link-btn" href="projects.html">Open project page</a>
+        </div>
+      </article>
+      <article class="project-panel" data-project-panel="1" data-tags="XR Product">
+        <div class="project-media">
+          <img src="img/ch04-research.jpg" alt="XR learning research preview" loading="lazy">
+        </div>
+        <div class="project-copy">
+          <span class="eyebrow">Immersive Engineering</span>
+          <h3>VR Jags Computer Automatic Virtual Environment research platform</h3>
+          <p>High-fidelity immersive Engineering systems for rapid prototyping, studying computational thinking development, spatial reasoning, engagement, and workforce training experience.</p>
+          <div class="project-kpis">
+            <span><strong>CAVE</strong> VR research lab</span>
+            <span><strong>UX</strong> learning analytics</span>
+          </div>
+          <a class="case-link-btn" href="research.html">View research</a>
+        </div>
+      </article>
+      <article class="project-panel" data-project-panel="2" data-tags="AI/ML Product">
+        <div class="project-media">
+          <img src="img/ch05-amazon.jpg" alt="Supply chain analytics project preview" loading="lazy">
+        </div>
+        <div class="project-copy">
+          <span class="eyebrow">Operational analytics</span>
+          <h3>Amazon packaging risk modeling</h3>
+          <p>Large-scale statistical modeling and ML workflows for logistics risk detection, cost variability simulation, and storage capacity planning.</p>
+          <div class="project-kpis">
+            <span><strong>1M+</strong> transactions analyzed</span>
+            <span><strong>30%</strong> CapEx reduction signal</span>
+          </div>
+          <a class="case-link-btn" href="projects.html">See case studies</a>
+        </div>
+      </article>
+      <article class="project-panel" data-project-panel="3" data-tags="AI/ML Product">
+        <div class="project-media">
+          <img src="img/ch03-health.jpg" alt="Public health analytics project preview" loading="lazy">
+        </div>
+        <div class="project-copy">
+          <span class="eyebrow">Health analytics</span>
+          <h3>Public health predictive dashboards</h3>
+          <p>AI-informed public health planning and decision dashboards designed for program managers operating in underserved communities.</p>
+          <div class="project-kpis">
+            <span><strong>Power BI</strong> dashboards</span>
+            <span><strong>Cloud</strong> resilient systems</span>
+          </div>
+          <a class="case-link-btn" href="projects.html">Explore details</a>
+        </div>
+      </article>
+      <button class="project-arrow project-next" type="button" aria-label="Next project">&rsaquo;</button>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section" id="timeline">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Career timeline</span>
+      <h2>A product-minded research path across infrastructure, analytics, AI, and XR.</h2>
+    </div>
+    <div class="timeline reveal">
+      <button class="timeline-item active" type="button" data-year="2024-Present">
+        <span>2024-Present</span>
+        <strong>Research Manager, Southern University XR Jags</strong>
+      </button>
+      <button class="timeline-item" type="button" data-year="2023">
+        <span>2023</span>
+        <strong>Data Scientist Intern, Amazon</strong>
+      </button>
+      <button class="timeline-item" type="button" data-year="2018-2023">
+        <span>2018-2023</span>
+        <strong>Graduate Research Assistant</strong>
+      </button>
+      <button class="timeline-item" type="button" data-year="2015-2018">
+        <span>2015-2018</span>
+        <strong>Network &amp; Security Engineer</strong>
+      </button>
+      <div class="timeline-detail" aria-live="polite">
+        <span class="eyebrow" data-timeline-year>2024-Present</span>
+        <h3 data-timeline-title>Research Manager, Southern University XR Jags</h3>
+        <p data-timeline-copy>Leading AI/VR product architecture, immersive systems, ML pipelines, and cross-functional research delivery for federally funded projects.</p>
+        <div class="chips" data-timeline-tags>
+          <span class="chip">AI/VR</span><span class="chip">Product strategy</span><span class="chip">ML pipelines</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- TECHNOLOGY STACK -->
-<section class="section">
+<section class="section" id="stack">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Technology stack</span>
@@ -173,6 +311,25 @@
         <span class="chip">LiDAR / GIS</span>
         <span class="chip">CityEngine</span>
         <span class="chip">Digital twins</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDED EXPLORER -->
+<section class="section-sm" id="explorer">
+  <div class="container">
+    <div class="guided-explorer reveal">
+      <div>
+        <span class="eyebrow">Quick explorer</span>
+        <h2>Find the most relevant evidence fast.</h2>
+        <p data-explorer-output>Select a focus area to surface the strongest proof points from this portfolio.</p>
+      </div>
+      <div class="explorer-actions" aria-label="Portfolio explorer">
+        <button type="button" data-explorer="AI">AI/ML</button>
+        <button type="button" data-explorer="XR">XR</button>
+        <button type="button" data-explorer="Product">Product</button>
+        <button type="button" data-explorer="Research">Research</button>
       </div>
     </div>
   </div>
