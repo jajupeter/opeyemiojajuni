@@ -195,6 +195,146 @@
     });
   }
 
+  /* ── Featured projects (tabs + prev/next + hero routing) ── */
+  function initProjectShowcase() {
+    const showcase = $('[data-project-showcase]');
+    const tabs     = $$('.project-tab');
+    const panels   = $$('.project-panel');
+    if (!showcase || !panels.length) return;
+
+    const setActive = (idx) => {
+      tabs.forEach(t => {
+        const on = Number(t.dataset.project) === idx;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(p => {
+        p.classList.toggle('active', Number(p.dataset.projectPanel) === idx);
+      });
+    };
+
+    const currentIndex = () => {
+      const active = panels.find(p => p.classList.contains('active'));
+      return active ? Number(active.dataset.projectPanel) : 0;
+    };
+
+    tabs.forEach(t => t.addEventListener('click', () => setActive(Number(t.dataset.project))));
+
+    const prev = $('.project-prev', showcase);
+    const next = $('.project-next', showcase);
+    if (prev) prev.addEventListener('click', () => {
+      setActive((currentIndex() - 1 + panels.length) % panels.length);
+    });
+    if (next) next.addEventListener('click', () => {
+      setActive((currentIndex() + 1) % panels.length);
+    });
+
+    // Hero routing chips: pre-select panel that matches the route
+    $$('.hero-routing a[data-route]').forEach(link => {
+      link.addEventListener('click', () => {
+        const route = link.dataset.route;
+        const match = panels.findIndex(p => (p.dataset.tags || '').split(/\s+/).includes(route));
+        if (match !== -1) setActive(match);
+      });
+    });
+  }
+
+  /* ── Scroll progress bar ── */
+  function initScrollProgress() {
+    const bar = $('.scroll-progress');
+    if (!bar) return;
+    const update = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      bar.style.width = pct + '%';
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  }
+
+  /* ── Scroll-spy for in-page nav links ── */
+  function initSectionLinks() {
+    const links = $$('a[data-section-link]');
+    if (!links.length) return;
+    const targets = links
+      .map(a => ({ link: a, el: document.querySelector(a.getAttribute('href')) }))
+      .filter(t => t.el);
+    if (!targets.length) return;
+
+    const setActive = (id) => {
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) setActive(e.target.id);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    targets.forEach(t => io.observe(t.el));
+  }
+
+  /* ── Capability "See examples" toggles ── */
+  function initCapabilityToggle() {
+    $$('.capability-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.capability-card');
+        if (!card) return;
+        const open = card.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.firstChild.nodeValue = open ? 'Hide examples' : 'See examples';
+      });
+    });
+  }
+
+  /* ── Career timeline ── */
+  function initTimeline() {
+    const items = $$('.timeline-item');
+    const yearEl  = $('[data-timeline-year]');
+    const titleEl = $('[data-timeline-title]');
+    const copyEl  = $('[data-timeline-copy]');
+    const tagsEl  = $('[data-timeline-tags]');
+    if (!items.length || !yearEl) return;
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        yearEl.textContent  = item.dataset.year  || '';
+        titleEl.innerHTML   = item.dataset.title || '';
+        copyEl.textContent  = item.dataset.copy  || '';
+        const tags = (item.dataset.tags || '').split('|').filter(Boolean);
+        tagsEl.innerHTML = tags.map(t => `<span class="chip">${t}</span>`).join('');
+      });
+    });
+  }
+
+  /* ── Quick explorer ── */
+  function initExplorer() {
+    const buttons = $$('[data-explorer]');
+    const out = $('[data-explorer-output]');
+    if (!buttons.length || !out) return;
+
+    const messages = {
+      AI: 'AI/ML: Engineered production-grade GenAI pipelines and predictive models (95.18% cognitive classification accuracy) and built risk-modeling frameworks at Amazon, accelerating the capacity-planning cycle by 60%.',
+      XR: 'XR:  Driving research and productization for CAVE-based and immersive applications—building adaptive environments that capture and translate user behavior into insights for rapid, data-driven decisions.',
+      Product: 'Product impact: An immersive AI-driven XR platform for public health training, enabling 100+ leaders across 10+ modules with >80% engagement while generating real-time behavioral and performance insights.',
+      Research: 'Research: PhD work on AI, XR, and computational thinking development — peer-reviewed publications and applied studies bridging cognitive science and intelligent systems. See the Research page for the full list.'
+    };
+
+    buttons.forEach(b => {
+      b.addEventListener('click', () => {
+        buttons.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        const key = b.dataset.explorer;
+        out.textContent = messages[key] || out.textContent;
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initNav();
@@ -204,5 +344,11 @@
     initSmoothScroll();
     initCounters();
     initCardGlow();
+    initProjectShowcase();
+    initTimeline();
+    initExplorer();
+    initScrollProgress();
+    initSectionLinks();
+    initCapabilityToggle();
   });
 })();
