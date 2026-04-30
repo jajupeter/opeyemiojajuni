@@ -312,6 +312,21 @@
     });
   }
 
+  /* ── Calendly popup ── */
+  function initCalendly() {
+    $$('[data-calendly-url]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = el.dataset.calendlyUrl;
+        if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+          window.Calendly.initPopupWidget({ url });
+        } else {
+          window.open(url, '_blank', 'noopener');
+        }
+      });
+    });
+  }
+
   /* ── Quick explorer ── */
   function initExplorer() {
     const buttons = $$('[data-explorer]');
@@ -350,5 +365,6 @@
     initScrollProgress();
     initSectionLinks();
     initCapabilityToggle();
+    initCalendly();
   });
 })();
