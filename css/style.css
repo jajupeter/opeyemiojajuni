@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ── Design tokens (dark) ── */
+/* ── Design tokens (dark) ── re*/
 [data-theme="dark"] {
   --bg: #0A0A0A;
   --bg-subtle: #141414;
