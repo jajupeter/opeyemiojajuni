@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="t">
+  <title id="t">Illustration: storage totes and a capacity forecast with an uncertainty band (synthetic data)</title>
+  <rect width="1200" height="800" fill="#FBF7F1"/>
+  <g stroke="#17161A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- chart panel -->
+    <rect x="468" y="138" width="640" height="440" rx="18" fill="#2F5BD8" stroke="none" transform="translate(12,10)"/>
+    <rect x="468" y="138" width="640" height="440" rx="18" fill="#FFFFFF"/>
+    <line x1="520" y1="520" x2="1070" y2="520"/>
+    <line x1="520" y1="190" x2="520" y2="520"/>
+    <line x1="800" y1="190" x2="800" y2="520" stroke="#8A847A" stroke-width="2" stroke-dasharray="6 6"/>
+    <path d="M800 370 L855 346 L910 330 L965 308 L1020 286 L1068 266 L1068 394 L1020 398 L965 402 L910 404 L855 398 L800 370 Z" fill="#C9D6F7" stroke="none"/>
+    <path d="M530 440 L570 428 L610 438 L650 410 L690 420 L730 396 L770 402 L800 370"/>
+    <path d="M800 370 L855 364 L910 360 L965 348 L1020 336 L1068 326" stroke="#2F5BD8" stroke-dasharray="12 8"/>
+    <circle cx="800" cy="370" r="7" fill="#17161A" stroke="none"/>
+    <!-- storage totes, offset fills -->
+    <g>
+      <rect x="110" y="440" width="140" height="100" rx="8" fill="#F2C14E" stroke="none" transform="translate(10,8)"/>
+      <rect x="110" y="440" width="140" height="100" rx="8"/>
+      <line x1="150" y1="470" x2="210" y2="470"/>
+      <rect x="270" y="440" width="140" height="100" rx="8" fill="#F2C14E" stroke="none" transform="translate(10,8)"/>
+      <rect x="270" y="440" width="140" height="100" rx="8"/>
+      <line x1="310" y1="470" x2="370" y2="470"/>
+      <rect x="190" y="320" width="140" height="100" rx="8" fill="#D9B8E3" stroke="none" transform="translate(10,8)"/>
+      <rect x="190" y="320" width="140" height="100" rx="8"/>
+      <line x1="230" y1="350" x2="290" y2="350"/>
+      <line x1="80" y1="560" x2="440" y2="560" stroke-width="4"/>
+    </g>
+    <!-- confetti -->
+    <circle cx="140" cy="200" r="22" stroke="#2F5BD8" stroke-dasharray="6 6"/>
+    <path d="M370 190 L398 210 L364 224 Z" fill="#D9534F" stroke="none"/>
+    <circle cx="1120" cy="640" r="7" fill="#2F5BD8" stroke="none"/>
+    <path d="M260 640 L300 620" stroke="#D9B8E3" stroke-width="12"/>
+  </g>
+  <text x="496" y="176" font-family="Menlo, 'IBM Plex Mono', monospace" font-size="16" letter-spacing="2" fill="#3D3A35">ILLUSTRATIVE · SYNTHETIC DATA</text>
+  <text x="820" y="232" font-family="Menlo, 'IBM Plex Mono', monospace" font-size="16" fill="#2F5BD8">forecast + uncertainty band</text>
+  <text x="80" y="690" font-family="Georgia, serif" font-size="30" fill="#17161A">Capacity forecasting with quantified uncertainty</text>
+</svg>

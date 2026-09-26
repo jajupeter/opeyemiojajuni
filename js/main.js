@@ -334,9 +334,9 @@
     if (!buttons.length || !out) return;
 
     const messages = {
-      AI: 'AI/ML: Engineered production-grade GenAI pipelines and predictive models (95.18% cognitive classification accuracy) and built risk-modeling frameworks at Amazon, accelerating the capacity-planning cycle by 60%.',
+      AI: 'AI/ML: Built predictive models and RAG/LLM prototypes, and capacity-forecasting models with quantified uncertainty on 1M+ records during a data science internship at Amazon.',
       XR: 'XR:  Driving research and productization for CAVE-based and immersive applications—building adaptive environments that capture and translate user behavior into insights for rapid, data-driven decisions.',
-      Product: 'Product impact: An immersive AI-driven XR platform for public health training, enabling 100+ leaders across 10+ modules with >80% engagement while generating real-time behavioral and performance insights.',
+      Product: 'Product impact: ICLERT, an immersive crisis-leadership training platform for the Louisiana Department of Health: 10 modules built in 2025 and 35+ crisis leaders trained.',
       Research: 'Research: PhD work on AI, XR, and computational thinking development — peer-reviewed publications and applied studies bridging cognitive science and intelligent systems. See the Research page for the full list.'
     };
 
