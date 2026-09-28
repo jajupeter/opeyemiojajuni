@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PREVIEW ONLY: remove the robots line at launch -->
+<meta name="robots" content="noindex">
+<title>Amazon case study — Opeyemi Peter Ojajuni, PhD</title>
+<meta name="description" content="Data science internship at Amazon: forecasting the storage capacity an automated sorting system would need, with uncertainty shown, and generating stress-test scenarios the history did not contain.">
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/v1.css">
+<link rel="stylesheet" href="../css/work.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="../preview.html" aria-label="Opeyemi Peter Ojajuni, home">
+    <span class="brand-mark" aria-hidden="true">O</span>
+    <span class="brand-name-long">Opeyemi Peter Ojajuni, PhD</span>
+    <span class="brand-name-short">Peter Ojajuni</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="../preview.html">Home</a>
+    <a href="../work.html">Work</a>
+    <a href="../preview.html#about">About</a>
+    <a href="../Opeyemi_Ojajuni_Resume.pdf">Résumé</a>
+    <a class="btn btn-light shadow-cobalt" href="../preview.html#contact">Get in touch</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="cs-hero">
+  <div class="copy">
+    <a class="crumb" href="../work.html#q2">← Work / 02 · Make better operating decisions</a>
+    <div class="tags"><span class="tag t-industry">Industry · Internship</span><span class="tag">Flagship case study</span></div>
+    <h1>Amazon: sizing a system before the money is spent.</h1>
+    <p class="sub">Forecasting how much storage a new automated sorting system would need, with the uncertainty shown, and generating the extreme scenarios the history didn’t contain.</p>
+  </div>
+  <div class="art s-sky">
+    <img src="../img/amazon-forecast-illustration.svg" alt="Illustration of storage totes and a capacity forecast with an uncertainty band (synthetic data)" width="1200" height="800">
+  </div>
+</section>
+
+<dl class="meta">
+  <div><dt>ROLE</dt><dd>Data Scientist Intern</dd></div>
+  <div><dt>TEAM</dt><dd>Amazon Science</dd></div>
+  <div><dt>PERIOD</dt><dd>June – September 2023</dd></div>
+  <div><dt>LOCATION</dt><dd>Seattle</dd></div>
+  <div><dt>STACK</dt><dd>Python · SQL</dd></div>
+</dl>
+
+<div class="cs-body">
+
+  <section class="cs-sec">
+    <span class="eyebrow">The problem</span>
+    <h2>How much space do you need to hold an order that isn’t complete yet?</h2>
+    <p>Amazon was building an automated sorting system that holds customer shipments until every item in an order is ready, then releases them together.</p>
+    <p>Before committing capital, the team needed to know how much storage capacity that system would need, even though volumes change with the season, the time of day and the fulfillment center.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Constraints</span>
+    <h2>What shaped the work.</h2>
+    <ul>
+      <li>Demand varied over time and between sites, so a single average would have been misleading.</li>
+      <li>The simulation team relied heavily on historical data, which rarely contained the extreme low and peak periods they needed to test.</li>
+      <li>The data is confidential. Nothing internal appears on this page, and the illustration uses synthetic data.</li>
+    </ul>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">My role</span>
+    <h2>What I did.</h2>
+    <p>I ran the analytics end to end: framing the problem, designing hypotheses, modelling, validating and preparing the analysis for leadership. I wrangled more than a million logistics and transactional records with Python and SQL.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Approach</span>
+    <h2>Three steps: explore, forecast, stress-test.</h2>
+    <ol class="decisions">
+      <li><span class="n">1</span><div><strong>Map the variability first</strong><p>Exploratory analysis, time-series forecasting and clustering across several fulfillment centers, to see the trend, the seasonality, and how demand varied over time and between sites.</p></div></li>
+      <li><span class="n">2</span><div><strong>Forecast the capacity, and show the range</strong><p>Predicted the storage capacity needed to hold shipments until orders were complete, and presented it to senior management with confidence intervals, so the investment decision rested on a range rather than a single number.</p></div></li>
+      <li><span class="n">3</span><div><strong>Generate the scenarios history didn’t have</strong><p>Built a data-transformation framework that fits probability distributions to the historical data and generates synthetic data under adjusted business scenarios, such as unusually low or peak periods, so the simulation team could stress-test the design.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Results</span>
+    <h2>What I can share.</h2>
+    <div class="results">
+      <div class="result"><b>1M+</b><span class="what">logistics and transactional records wrangled with Python and SQL</span><span class="src">Source: Peter’s account</span></div>
+      <div class="result"><b>Range</b><span class="what">capacity forecasts with confidence intervals, presented to senior management for the investment decision</span><span class="src">Source: Peter’s account</span></div>
+      <div class="result" style="grid-column: 1 / -1;"><b>Scenarios</b><span class="what">a reusable way to generate low- and peak-period data for simulation stress tests</span><span class="src">Source: Peter’s account</span></div>
+    </div>
+    <p class="caveat">The business figures are confidential, so this page describes the method and the decision it supported, not the numbers.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Limits and what I’d improve</span>
+    <h2>Honest limits.</h2>
+    <ul>
+      <li>Synthetic scenarios are only as good as the fitted distributions; tails beyond anything in the history are assumptions, not observations.</li>
+      <li>Next: backtest the capacity forecast against actual volumes once the system runs, and check how well the generated extremes match real peaks.</li>
+    </ul>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">What it proves</span>
+    <div class="proves"><p>I can turn an open capital question into a forecast leaders can act on, show them how uncertain it is, and build the data tools a team needs to test what history never showed.</p></div>
+  </section>
+
+</div>
+
+<div class="cs-next">
+  <div class="btns">
+    <a class="btn btn-dark shadow-mustard" href="../Opeyemi_Ojajuni_Resume_Data_Scientist.pdf">Data Scientist résumé</a>
+    <a class="btn btn-light" href="mailto:jajupeter@gmail.com?subject=Amazon%20case%20study">Email me</a>
+  </div>
+  <a href="iclert.html">Next case study: ICLERT →</a>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Opeyemi Peter Ojajuni</span>
+  <nav aria-label="Elsewhere">
+    <a href="https://github.com/jajupeter">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/">LinkedIn</a>
+    <a href="../projects.html">All projects</a>
+  </nav>
+</footer>
+</body>
+</html>

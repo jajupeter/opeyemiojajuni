@@ -139,3 +139,8 @@
   .pipeline { grid-template-columns: 1fr; gap: 56px; max-width: 560px; }
   .stage:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -44px; transform: translateX(-50%) rotate(90deg); }
 }
+
+.cs-hero .art.s-sky { box-shadow: 10px 10px 0 var(--sky); background: #FBF7F1; }
+
+.flagship .fine { font-size: 13.5px; color: var(--muted); padding-left: 10px; border-left: 3px solid var(--cobalt); }
+.flagship { scroll-margin-top: 24px; }

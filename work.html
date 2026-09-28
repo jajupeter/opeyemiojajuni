@@ -6,7 +6,7 @@
 <!-- PREVIEW ONLY: remove the robots line at launch -->
 <meta name="robots" content="noindex">
 <title>Work — Opeyemi Peter Ojajuni, PhD</title>
-<meta name="description" content="Three outcomes: better operating decisions, a capable workforce and technical systems that hold up, each backed by projects labelled by how far they got.">
+<meta name="description" content="Three outcomes: technical systems that hold up, better operating decisions and a capable workforce, each backed by projects labelled by how far they got.">
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,14 +36,14 @@
 
 <section class="page-intro">
   <span class="eyebrow">Work</span>
-  <h1>Three outcomes I deliver: better decisions, a capable workforce, <em>systems that hold up.</em></h1>
+  <h1>Three outcomes I deliver: systems that hold up, better decisions, <em>a capable workforce.</em></h1>
   <p class="sub">Each outcome has a flagship project and the evidence behind it. Every project is labelled by how far it got.</p>
 </section>
 
 <nav class="jump jump-3" aria-label="Jump to an outcome">
-  <a href="#q1"><span class="n">01 · BUSINESS OPTIMIZATION</span><span class="q">Make better operating decisions</span></a>
-  <a href="#q2"><span class="n">02 · WORKFORCE DEVELOPMENT</span><span class="q">Build a capable workforce</span></a>
-  <a href="#q3"><span class="n">03 · TECHNICAL SYSTEMS</span><span class="q">Ship systems that hold up</span></a>
+  <a href="#q1"><span class="n">01 · TECHNICAL SYSTEMS</span><span class="q">Ship systems that hold up</span></a>
+  <a href="#q2"><span class="n">02 · BUSINESS OPTIMIZATION</span><span class="q">Make better operating decisions</span></a>
+  <a href="#q3"><span class="n">03 · WORKFORCE DEVELOPMENT</span><span class="q">Build a capable workforce</span></a>
 </nav>
 <div class="key"><span>How far it got:</span><div class="tags"><span class="tag t-research">Research</span><span class="tag t-prototype">Prototype</span><span class="tag t-inuse">Pilot / In use</span><span class="tag t-industry">Industry</span></div></div>
 
@@ -51,6 +51,41 @@
 <section class="band" id="q1" style="margin-top:56px">
   <div class="band-head">
     <span class="band-num" aria-hidden="true">01</span>
+    <div>
+      <span class="eyebrow">Technical systems</span>
+      <h2>Ship systems that hold up.</h2>
+      <p>Benchmarks against strong baselines, and honest reporting of what isn’t ready yet.</p>
+    </div>
+  </div>
+  <div class="band-body">
+    <article class="flagship" id="fedids">
+      <img class="media fit-green" src="img/fedids-diagram.svg" alt="Diagram: connected cars each train a local attack detector and share only what they learned, not their raw data, with a central server" loading="lazy">
+      <div class="fc">
+        <span class="label">FLAGSHIP CASE STUDY</span>
+        <div class="tags"><span class="tag t-research">Research · Paper submitted</span><span class="tag">AI security · Connected cars</span></div>
+        <h3>Federated intrusion detection for connected vehicles</h3>
+        <p>Connected cars share their speed and position; a hacked car sending fake messages could cause a crash. I built an AI attack detector that learns from many cars without collecting their driving data, and gives cars that are often out of range a fairer say.</p>
+        <div class="kpis">
+          <div class="kpi"><b>92%</b><span>of attacks caught in testing</span></div>
+          <div class="kpi"><b>4 in 10</b><span>cars never stayed in range long enough to take part</span></div>
+          <div class="kpi"><b class="w">Private</b><span>raw driving data stays in the car</span></div>
+        </div>
+        <p class="fine">Not road-ready yet: it also flags about 8 in 10 normal messages, and was tested on simulated traffic.</p>
+        <a class="more" href="work/fedids.html">Read the case study →</a>
+      </div>
+    </article>
+    <div class="evidence">
+      <span class="eyebrow">More evidence for this outcome</span>
+      <div class="ev-item"><strong>InsightBot — a research assistant that cites its sources</strong><span class="tag t-prototype">PROTOTYPE</span><p>Retrieval-augmented Q&amp;A with links back to the passages used. Used by a research team.</p></div>
+      <div class="ev-item"><strong>Predicting computational-thinking skill level</strong><span class="tag t-research">RESEARCH</span><p>Benchmarked SVM, KNN, Random Forest and XGBoost to classify engineering students’ CT level: SVM reached 95.2% accuracy on a held-out test set of 83 (5-fold CV 95.2 ± 5.6%). SITE 2025.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band alt" id="q2">
+  <div class="band-head">
+    <span class="band-num" aria-hidden="true">02</span>
     <div>
       <span class="eyebrow">Business optimization</span>
       <h2>Make better operating decisions.</h2>
@@ -61,16 +96,16 @@
     <article class="flagship s-sky">
       <img class="media fit" src="img/amazon-forecast-illustration.svg" alt="Illustration of storage totes and a capacity forecast with an uncertainty band (synthetic data)" loading="lazy">
       <div class="fc">
-        <span class="label">FLAGSHIP PROJECT</span>
+        <span class="label">FLAGSHIP CASE STUDY</span>
         <div class="tags"><span class="tag t-industry">Industry · Internship</span><span class="tag">Forecasting · Python · SQL</span></div>
         <h3>Amazon — capacity forecasting for capital planning</h3>
-        <p>Data Scientist intern, 2023. Built capacity-forecasting models with quantified uncertainty to inform capital-investment planning.</p>
+        <p>Data Scientist intern, 2023. Forecast the storage a new automated sorting system would need, with confidence intervals for the investment decision.</p>
         <div class="kpis">
           <div class="kpi"><b>1M+</b><span>records wrangled (Python, SQL)</span></div>
           <div class="kpi"><b class="w">Forecasts</b><span>with quantified uncertainty</span></div>
-          <div class="kpi"><b class="w">Capital</b><span>planning decision informed</span></div>
+          <div class="kpi"><b class="w">Scenarios</b><span>synthetic peaks and lows for stress tests</span></div>
         </div>
-        <a class="more" href="projects.html">Details in all projects →</a>
+        <a class="more" href="work/amazon.html">Read the case study →</a>
       </div>
     </article>
     <div class="evidence">
@@ -81,10 +116,10 @@
   </div>
 </section>
 
-<!-- 02 -->
-<section class="band alt" id="q2">
+<!-- 03 -->
+<section class="band" id="q3">
   <div class="band-head">
-    <span class="band-num" aria-hidden="true">02</span>
+    <span class="band-num" aria-hidden="true">03</span>
     <div>
       <span class="eyebrow">Workforce development</span>
       <h2>Build a capable workforce.</h2>
@@ -97,12 +132,12 @@
       <article class="stage-card s-lilac">
         <div class="tags"><span class="tag t-research">Research</span><span class="tag">Flagship</span></div>
         <h3>VR vs. traditional instruction: a four-year impact study</h3>
-        <p>Quasi-experimental, between-subjects study in NSF-funded engineering courses, Fall 2021 to Spring 2025 (ASEE 2026). Extends my dissertation research on immersive technology and computational thinking.</p>
+        <p>Quasi-experimental study of introductory engineering courses taught with a CAVE (design → 3D visualisation → 3D printing) vs. traditional lectures, Fall 2021 to Spring 2025 (NSF-funded, ASEE 2026). Extends my dissertation research.</p>
         <div class="kpis kpis-2">
-          <div class="kpi"><b>987</b><span>participants</span></div>
-          <div class="kpi"><b>4 yrs</b><span>2021–2025</span></div>
+          <div class="kpi"><b>866</b><span>students analysed (487 VR, 379 lecture)</span></div>
+          <div class="kpi"><b class="w">3.28 vs 3.01</b><span>mean final grade (5-point scale), VR vs lecture</span></div>
         </div>
-        <p class="finding"><strong>Finding:</strong> <span class="ph">[effect on final grades, from the ASEE 2026 paper — needs source]</span></p>
+        <p class="finding"><strong>Finding:</strong> VR sections earned higher final grades (Mann–Whitney p = .008; Welch’s t p = .010), consistently across semesters. The effect is small (d = 0.18), and groups were not randomly assigned.</p>
         <a class="more" href="https://peer.asee.org/nsf-iuse-evaluating-academic-performance-in-virtual-reality-enhanced-engineering-education-a-quasi-experimental-study">Read the study →</a>
       </article>
     </li>
@@ -125,7 +160,7 @@
       <article class="stage-card s-mint">
         <div class="tags"><span class="tag t-prototype">VR app + CAVE</span><span class="tag t-inuse">Pilot</span></div>
         <h3>SURADD — VR lessons for middle-school science</h3>
-        <div class="shot shot-ph" role="img" aria-label="Screenshot placeholder"><span class="ph">[SURADD VR app screenshot]</span></div>
+        <img class="shot" src="img/suradd-app.jpg" alt="SURADD VR app: a science-lab panel inside a virtual space station, with a light-intensity slider" loading="lazy">
         <p>Federally funded teacher training with VR-infused lessons. I was on the VR team that designed the app, and I ran the evaluation (Kirkpatrick model).</p>
         <div class="kpis kpis-2">
           <div class="kpi"><b>+62%</b><span>self-efficacy, pre→post</span></div>
@@ -136,40 +171,6 @@
     </li>
   </ol>
   <p class="pipe-note">Read in order: what the research showed → a VR app piloted with crisis leaders → a VR app piloted with teachers.</p>
-</section>
-
-<!-- 03 -->
-<section class="band" id="q3">
-  <div class="band-head">
-    <span class="band-num" aria-hidden="true">03</span>
-    <div>
-      <span class="eyebrow">Technical systems</span>
-      <h2>Ship systems that hold up.</h2>
-      <p>Benchmarks against strong baselines, and honest reporting of what isn’t ready yet.</p>
-    </div>
-  </div>
-  <div class="band-body">
-    <article class="flagship">
-      <img class="media fit-green" src="img/fedids-diagram.svg" alt="Diagram: connected vehicles train local intrusion detectors and share model updates, not raw data, with an aggregator" loading="lazy">
-      <div class="fc">
-        <span class="label">FLAGSHIP PROJECT</span>
-        <div class="tags"><span class="tag t-research">Research</span><span class="tag">Federated learning · Security</span></div>
-        <h3>Federated intrusion detection for connected vehicles</h3>
-        <p>Mobility-aware federated learning benchmarked against FedAvg, FedProx, FedNova and FedBuff on VeReMi data. The false-positive rate is the reported blocker to deployment.</p>
-        <div class="kpis">
-          <div class="kpi"><b>0.92</b><span>malicious recall, frozen test set</span></div>
-          <div class="kpi"><b>199,663</b><span>test samples</span></div>
-          <div class="kpi"><b>~53%</b><span>estimated communication savings</span></div>
-        </div>
-        <a class="more" href="projects.html">Details in all projects →</a>
-      </div>
-    </article>
-    <div class="evidence">
-      <span class="eyebrow">More evidence for this outcome</span>
-      <div class="ev-item"><strong>InsightBot — a research assistant that cites its sources</strong><span class="tag t-prototype">PROTOTYPE</span><p>Retrieval-augmented Q&amp;A with links back to the passages used. Used by a research team.</p></div>
-      <div class="ev-item"><strong>Predicting computational-thinking skill level</strong><span class="tag t-research">RESEARCH</span><p>Benchmarked SVM, KNN, Random Forest and XGBoost to classify engineering students’ CT level: SVM reached 95.2% accuracy on a held-out test set of 83 (5-fold CV 95.2 ± 5.6%). SITE 2025.</p></div>
-    </div>
-  </div>
 </section>
 
 <section class="section cta">

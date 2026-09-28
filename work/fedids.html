@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PREVIEW ONLY: remove the robots line at launch -->
+<meta name="robots" content="noindex">
+<title>Federated intrusion detection case study — Opeyemi Peter Ojajuni, PhD</title>
+<meta name="description" content="An AI attack detector for connected cars that learns without collecting driving data, and a fix for the bias created when cars drive in and out of range. Research, paper submitted.">
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/v1.css">
+<link rel="stylesheet" href="../css/work.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="../preview.html" aria-label="Opeyemi Peter Ojajuni, home">
+    <span class="brand-mark" aria-hidden="true">O</span>
+    <span class="brand-name-long">Opeyemi Peter Ojajuni, PhD</span>
+    <span class="brand-name-short">Peter Ojajuni</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="../preview.html">Home</a>
+    <a href="../work.html">Work</a>
+    <a href="../preview.html#about">About</a>
+    <a href="../Opeyemi_Ojajuni_Resume.pdf">Résumé</a>
+    <a class="btn btn-light shadow-cobalt" href="../preview.html#contact">Get in touch</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="cs-hero">
+  <div class="copy">
+    <a class="crumb" href="../work.html#q1">← Work / 01 · Ship systems that hold up</a>
+    <div class="tags"><span class="tag t-research">Research · Paper submitted</span><span class="tag">Flagship case study</span></div>
+    <h1>Catching hacked cars without collecting anyone’s driving data.</h1>
+    <p class="sub">An AI attack detector for connected vehicles that learns across many cars, and a fix for the blind spot created when cars drive in and out of range.</p>
+  </div>
+  <div class="art" style="background:#EEF4EF;">
+    <img src="../img/fedids-diagram.svg" alt="Diagram: connected cars each train a local attack detector and share only what they learned, not their raw data, with a central server" width="1200" height="800">
+  </div>
+</section>
+
+<dl class="meta">
+  <div><dt>ROLE</dt><dd>Sole researcher and author</dd></div>
+  <div><dt>OUTPUT</dt><dd>Research paper, submitted</dd></div>
+  <div><dt>DATA</dt><dd>Simulated traffic (VeReMi, SUMO)</dd></div>
+  <div><dt>METHOD</dt><dd>Federated learning</dd></div>
+  <div><dt>STATUS</dt><dd>Research, not deployed</dd></div>
+</dl>
+
+<div class="cs-body">
+
+  <section class="cs-sec">
+    <span class="eyebrow">The problem</span>
+    <h2>A fake message can make a whole street see the wrong road.</h2>
+    <p>Connected cars constantly share their position, speed and heading so they can warn each other about hazards. A hacked car, or a faulty sensor, can send false messages and give nearby cars and roadside equipment the wrong picture of the road.</p>
+    <p>AI can learn to spot those fake messages, but the usual approach collects everyone’s driving data in one place. That raises privacy and data-governance problems, because the data shows where people drive.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">The idea</span>
+    <h2>Let each car learn locally and share only the lesson.</h2>
+    <p>With federated learning, each car trains the detector on its own messages and sends back only what it learned. A central server combines those lessons into one shared detector. Raw driving data stays in the car.</p>
+    <p>The catch: cars keep driving in and out of range of roadside units. The detector ends up learning mostly from cars that happen to stay connected, and cars on quieter roads or in weak-coverage areas barely get a say.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">My approach</span>
+    <h2>Three steps: measure, predict, rebalance.</h2>
+    <ol class="decisions">
+      <li><span class="n">1</span><div><strong>Measure who actually gets a say</strong><p>I simulated realistic traffic and checked which cars took part in training. Of 438 eligible cars, 4 in 10 never took part at all, and at least half of those that did joined only once. Planned participation fell by more than half.</p></div></li>
+      <li><span class="n">2</span><div><strong>Predict who will be reachable next</strong><p>I built a lightweight model that predicts, 30 seconds ahead, whether a car will be in range, using only information available at that moment: its position, speed and distance to the nearest roadside unit. It ranks reachable cars well (0.89 on a 0-to-1 scale), and I checked that its probabilities are trustworthy enough to use, not just its rankings.</p></div></li>
+      <li><span class="n">3</span><div><strong>Give rarely seen cars a fairer, capped say</strong><p>When a car that is usually out of range does contribute, its lesson counts for a bit more. The boost is capped so that no single car can dominate the shared detector.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Results</span>
+    <h2>What the tests showed.</h2>
+    <div class="results">
+      <div class="result"><b>92%</b><span class="what">of attacks caught, on nearly 200,000 test messages the model had never seen</span><span class="src">Source: submitted paper (BCMFA)</span></div>
+      <div class="result"><b>0.89</b><span class="what">how well the model predicts which cars will be reachable (1.0 is perfect)</span><span class="src">Source: submitted paper (BCMFA)</span></div>
+      <div class="result"><b>4 in 10</b><span class="what">cars never stayed in range long enough to take part in training</span><span class="src">Source: submitted paper (BCMFA)</span></div>
+      <div class="result"><b>8 in 10</b><span class="what">normal messages were also flagged as attacks: far too many false alarms for real use</span><span class="src">Source: submitted paper (BCMFA)</span></div>
+    </div>
+    <p class="caveat">The rebalancing helped a little, but it cannot help cars that never take part at all. The detector finds attacks but raises too many false alarms, so this is promising research, not something to put on the road.</p>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">Limits and what I’d improve</span>
+    <h2>Honest limits.</h2>
+    <ul>
+      <li>Everything ran on simulated traffic: one city grid and one highway, with four roadside units. Real roads, radio conditions and traffic may behave differently.</li>
+      <li>The detector says “attack” or “normal”; it does not yet tell attack types apart.</li>
+      <li>Upload traffic fell by about half under realistic mobility, but that came from fewer cars being in range, not from my method, and the paper says so.</li>
+      <li>Next: cut false alarms with better alert thresholds, test on more road layouts, and test against attacks aimed at the learning process itself.</li>
+    </ul>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">For technical readers</span>
+    <h2>Under the hood.</h2>
+    <ul>
+      <li><strong>Method:</strong> Bias-Corrected Mobility-Aware Federated Aggregation (BCMFA), a bounded inverse-availability weighting (probability floor 0.20, maximum factor 5), compared with FedAvg, FedProx, FedNova and FedBuff.</li>
+      <li><strong>Data:</strong> VeReMi NextGen messages (38 engineered features, official splits) with SUMO urban-grid and highway mobility traces; 30 federated rounds.</li>
+      <li><strong>Availability predictor:</strong> isotonic-calibrated random forest on 19 mobility and coverage features, chronological 60/20/20 split with a 30-second purge gap; test ROC AUC 0.8922, Brier score 0.1345.</li>
+      <li><strong>Detector (frozen test, 199,663 samples):</strong> malicious recall 92.33%, ROC AUC 0.7934, PR AUC 0.9390, false-positive rate 79.89%. Checkpoint chosen on validation data only; the test set was used once.</li>
+    </ul>
+  </section>
+
+  <section class="cs-sec">
+    <span class="eyebrow">What it proves</span>
+    <div class="proves"><p>I can find a hidden bias in how an AI system learns, design a careful fix, test it honestly, and report the result that says “not ready yet”.</p></div>
+  </section>
+
+</div>
+
+<div class="cs-next">
+  <div class="btns">
+    <a class="btn btn-dark shadow-mustard" href="../Opeyemi_Ojajuni_Resume_Research_Scientist.pdf">Research Scientist résumé</a>
+    <a class="btn btn-light" href="mailto:jajupeter@gmail.com?subject=Federated%20intrusion%20detection">Email me</a>
+  </div>
+  <a href="amazon.html">Next case study: Amazon →</a>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Opeyemi Peter Ojajuni</span>
+  <nav aria-label="Elsewhere">
+    <a href="https://github.com/jajupeter">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=RHYIIcYAAAAJ">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/opeyemi-ojajuni-ph-d-78419283/">LinkedIn</a>
+    <a href="../projects.html">All projects</a>
+  </nav>
+</footer>
+</body>
+</html>
